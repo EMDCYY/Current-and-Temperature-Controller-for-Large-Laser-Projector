@@ -65,9 +65,9 @@ extern __IO uint16_t  Ismon_Data[20];
 void delay_ms(int k)
 {
 	int i, j;
-  for(i=0;i<k;i++)
+  for(i=0; i<k; i++)
 	  {
-			for(j=0;j<48000;j++);
+			for(j=0; j<48000; j++);
 		}
 }
 
@@ -100,7 +100,8 @@ void NMI_Handler(void)
 {
 }
 
-
+/*
+//Transfer 1 channel ADC data
 void USART1_IRQHandler(void)
 {
 	uint16_t temp = 0x0000;
@@ -122,8 +123,10 @@ void USART1_IRQHandler(void)
 		USART_ClearITPendingBit(USART1, USART_IT_RXNE);
 	}
 }
+/*
 
-// /*
+/*
+// 
 // void USART1_IRQHandler(void)
 // {
 // 	uint16_t temp = 0x0000;
@@ -146,7 +149,7 @@ void USART1_IRQHandler(void)
 // 		USART_Cmd(USART1, ENABLE);
 // 	}
 // }
-// */
+*/
 
 // void USART1_IRQHandler(void)
 // {	
