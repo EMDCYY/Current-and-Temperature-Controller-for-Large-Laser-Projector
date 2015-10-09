@@ -29,4 +29,11 @@
 *.hex
 
 # Debug files
+<<<<<<< HEAD
 *.dSYM/
+=======
+*.dSYM/
+
+# Unkown
+*.plg
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734

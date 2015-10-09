@@ -25,6 +25,7 @@ extern __IO uint16_t  Tep_Data[10];
 uint32_t Tep_Mean;
 
 void delay(int k)
+<<<<<<< HEAD
 
 
 {
@@ -33,6 +34,14 @@ void delay(int k)
 	{
 		for(j=0; j<48000; j++);
 	}
+=======
+{
+	int i, j;
+  for(i=0;i<k;i++)
+	  {
+			for(j=0;j<48000;j++);
+		}
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
 }
 
 int main(void)
@@ -45,9 +54,15 @@ int main(void)
 	Fault_Init();
 	USART_Configuration();
 	Dir_Init();
+<<<<<<< HEAD
 //	ADC1_Config1();
 //	ADC1_Config2();
 //	NTC_ADC1_DMA_Init();
+=======
+	ADC1_Config1();
+	ADC1_Config2();
+	NTC_ADC1_DMA_Init();
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
 // 	Ismon_ADC1_DMA_Init();
 // 	PWM_Init();
 	

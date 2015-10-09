@@ -236,7 +236,11 @@
       <Focus>0</Focus>
       <ColumnNumber>34</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
+<<<<<<< HEAD
       <TopLine>153</TopLine>
+=======
+      <TopLine>152</TopLine>
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
       <CurrentLine>168</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\inc\system_stm32f0xx.c</PathWithFileName>
@@ -258,10 +262,17 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
+<<<<<<< HEAD
       <ColumnNumber>13</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
       <CurrentLine>56</CurrentLine>
+=======
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>1</TopLine>
+      <CurrentLine>33</CurrentLine>
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
       <bDave2>0</bDave2>
       <PathWithFileName>.\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -272,7 +283,11 @@
 
   <Group>
     <GroupName>lib</GroupName>
+<<<<<<< HEAD
     <tvExp>1</tvExp>
+=======
+    <tvExp>0</tvExp>
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -300,7 +315,11 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
+<<<<<<< HEAD
       <TopLine>1237</TopLine>
+=======
+      <TopLine>1236</TopLine>
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
       <CurrentLine>1239</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\lib\stm32f0xx_rcc.c</PathWithFileName>
@@ -314,10 +333,17 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
+<<<<<<< HEAD
       <ColumnNumber>28</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>118</TopLine>
       <CurrentLine>19</CurrentLine>
+=======
+      <ColumnNumber>34</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>1976</TopLine>
+      <CurrentLine>1988</CurrentLine>
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
       <bDave2>0</bDave2>
       <PathWithFileName>..\lib\stm32f0xx_usart.c</PathWithFileName>
       <FilenameWithoutPath>stm32f0xx_usart.c</FilenameWithoutPath>
@@ -346,10 +372,17 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
+<<<<<<< HEAD
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>96</TopLine>
       <CurrentLine>125</CurrentLine>
+=======
+      <ColumnNumber>1</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>232</TopLine>
+      <CurrentLine>259</CurrentLine>
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
       <bDave2>0</bDave2>
       <PathWithFileName>..\lib\stm32f0xx_it.c</PathWithFileName>
       <FilenameWithoutPath>stm32f0xx_it.c</FilenameWithoutPath>
@@ -396,7 +429,11 @@
       <Focus>0</Focus>
       <ColumnNumber>45</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
+<<<<<<< HEAD
       <TopLine>19</TopLine>
+=======
+      <TopLine>18</TopLine>
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
       <CurrentLine>23</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\lib\stm32f0xx_tim.c</PathWithFileName>
@@ -412,7 +449,11 @@
       <Focus>0</Focus>
       <ColumnNumber>6</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
+<<<<<<< HEAD
       <TopLine>183</TopLine>
+=======
+      <TopLine>182</TopLine>
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
       <CurrentLine>184</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\lib\stm32f0xx_adc.c</PathWithFileName>
@@ -456,7 +497,11 @@
 
   <Group>
     <GroupName>drive</GroupName>
+<<<<<<< HEAD
     <tvExp>1</tvExp>
+=======
+    <tvExp>0</tvExp>
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -466,10 +511,17 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
+<<<<<<< HEAD
       <ColumnNumber>16</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
       <CurrentLine>22</CurrentLine>
+=======
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>55</TopLine>
+      <CurrentLine>94</CurrentLine>
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
       <bDave2>0</bDave2>
       <PathWithFileName>..\drive\uart.c</PathWithFileName>
       <FilenameWithoutPath>uart.c</FilenameWithoutPath>

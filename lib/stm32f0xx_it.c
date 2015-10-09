@@ -65,9 +65,15 @@ extern __IO uint16_t  Ismon_Data[20];
 void delay_ms(int k)
 {
 	int i, j;
+<<<<<<< HEAD
   for(i=0;i<k;i++)
 	  {
 			for(j=0;j<48000;j++);
+=======
+  for(i=0; i<k; i++)
+	  {
+			for(j=0; j<48000; j++);
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
 		}
 }
 
@@ -100,10 +106,18 @@ void NMI_Handler(void)
 {
 }
 
+<<<<<<< HEAD
 
 void USART1_IRQHandler(void)
 {
   uint16_t temp = 0x0000;
+=======
+/*
+//Transfer 1 channel ADC data
+void USART1_IRQHandler(void)
+{
+	uint16_t temp = 0x0000;
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
 	if(USART_GetFlagStatus(USART1, USART_IT_RXNE)!=RESET)
 	{
 		if(USART_ReceiveData(USART1) == 0x00af)
@@ -122,8 +136,15 @@ void USART1_IRQHandler(void)
 		USART_ClearITPendingBit(USART1, USART_IT_RXNE);
 	}
 }
+<<<<<<< HEAD
 
 // /*
+=======
+/*
+
+/*
+// 
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
 // void USART1_IRQHandler(void)
 // {
 // 	uint16_t temp = 0x0000;
@@ -146,7 +167,11 @@ void USART1_IRQHandler(void)
 // 		USART_Cmd(USART1, ENABLE);
 // 	}
 // }
+<<<<<<< HEAD
 // */
+=======
+*/
+>>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
 
 // void USART1_IRQHandler(void)
 // {	
