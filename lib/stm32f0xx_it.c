@@ -103,7 +103,7 @@ void NMI_Handler(void)
 
 void USART1_IRQHandler(void)
 {
-	uint16_t temp = 0x0000;
+  uint16_t temp = 0x0000;
 	if(USART_GetFlagStatus(USART1, USART_IT_RXNE)!=RESET)
 	{
 		if(USART_ReceiveData(USART1) == 0x00af)
