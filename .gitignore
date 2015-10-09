@@ -29,15 +29,10 @@
 *.hex
 
 # Debug files
-<<<<<<< HEAD
 *.dSYM/
-=======
 *.dSYM/
 
 # Unkown
 *.plg
-<<<<<<< HEAD
 *.bak
-=======
->>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
->>>>>>> df5e731057f74389fe3449fdeda04881d43ff0b6
+
