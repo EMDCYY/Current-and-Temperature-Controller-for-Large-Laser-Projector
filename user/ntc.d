@@ -2,7 +2,7 @@ ntc.o: ..\drive\ntc.c
 ntc.o: ..\drive\ntc.h
 ntc.o: C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h
 ntc.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
-ntc.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+ntc.o: C:\Keil\ARM\RV31\Inc\stdint.h
 ntc.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
 ntc.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
 ntc.o: C:\Keil\ARM\Inc\ST\STM32F0xx\system_stm32f0xx.h

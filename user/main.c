@@ -25,23 +25,12 @@ extern __IO uint16_t  Tep_Data[10];
 uint32_t Tep_Mean;
 
 void delay(int k)
-<<<<<<< HEAD
-
-
 {
 	int i, j;
 	for(i=0; i<k; i++)
 	{
 		for(j=0; j<48000; j++);
 	}
-=======
-{
-	int i, j;
-  for(i=0;i<k;i++)
-	  {
-			for(j=0;j<48000;j++);
-		}
->>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
 }
 
 int main(void)
