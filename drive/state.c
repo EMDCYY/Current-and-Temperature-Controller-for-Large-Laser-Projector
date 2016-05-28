@@ -1,4 +1,5 @@
 #include "state.h"
+#include "delay.h"
 /**********************************************/
 /* Function		:	Initial Enable Pin        */
 /* Parameter	:	None                      */
@@ -13,8 +14,9 @@ void State_Init(void)
  	GPIO_InitStruct.GPIO_PuPd  = GPIO_PuPd_UP;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_Level_1;
 	GPIO_Init(State_PORT, &GPIO_InitStruct);
-	GPIO_ResetBits(State_PORT, State_PIN );
+	GPIO_ResetBits(State_PORT, State_PIN);
 }
+
 
 /**********************************************/
 /* Function		:	Enable Pin Off            */
@@ -56,23 +58,23 @@ void State_Toggle(void)
 void State_Vmode(void)
 {
 			GPIO_ResetBits(State_PORT, State_PIN );
-			delay_state(20);
+			delay_ms(200);
 			GPIO_SetBits(State_PORT, State_PIN );
-			delay_state(20);
+			delay_ms(200);
 			GPIO_ResetBits(State_PORT, State_PIN );
-			delay_state(100);
+			delay_ms(1000);
 			GPIO_SetBits(State_PORT, State_PIN );
-			delay_state(20);
+			delay_ms(200);
 }
 
 void State_Short(void)
 {
 			GPIO_ResetBits(State_PORT, State_PIN );
-			delay_state(20);
+			delay_ms(200);
 			GPIO_SetBits(State_PORT, State_PIN );
-			delay_state(20);
+			delay_ms(200);
 			GPIO_ResetBits(State_PORT, State_PIN );
-			delay_state(20);
+			delay_ms(200);
 			GPIO_SetBits(State_PORT, State_PIN );
-			delay_state(20);
+			delay_ms(200);
 }

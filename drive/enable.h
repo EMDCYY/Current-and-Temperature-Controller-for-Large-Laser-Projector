@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdbool.h>
 #ifndef __enable_H
 #define	__enable_H
 
@@ -8,4 +10,6 @@ void Enable_Init(void);
 void Enable_On(void);
 void Enable_Off(void);
 void Enable_Toggle(void);
+void StartUp(void);
+void ShutDown(void);
 #endif /* __Enable_H */

@@ -1,8 +1,8 @@
 pwm.o: ..\drive\PWM.c
-pwm.o: ..\inc\stm32f0xx_tim.h
+pwm.o: ..\drive\PWM.h
 pwm.o: C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h
 pwm.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
-pwm.o: C:\Keil\ARM\RV31\Inc\stdint.h
+pwm.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 pwm.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
 pwm.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
 pwm.o: C:\Keil\ARM\Inc\ST\STM32F0xx\system_stm32f0xx.h

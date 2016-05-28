@@ -2,7 +2,7 @@ uart.o: ..\drive\uart.c
 uart.o: ..\drive\uart.h
 uart.o: C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h
 uart.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
-uart.o: C:\Keil\ARM\RV31\Inc\stdint.h
+uart.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 uart.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
 uart.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
 uart.o: C:\Keil\ARM\Inc\ST\STM32F0xx\system_stm32f0xx.h
@@ -29,5 +29,5 @@ uart.o: ..\inc\stm32f0xx_tim.h
 uart.o: ..\inc\stm32f0xx_usart.h
 uart.o: ..\inc\stm32f0xx_wwdg.h
 uart.o: ..\inc\stm32f0xx_misc.h
-uart.o: C:\Keil\ARM\RV31\Inc\stdio.h
-uart.o: C:\Keil\ARM\RV31\Inc\stdarg.h
+uart.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+uart.o: C:\Keil\ARM\ARMCC\bin\..\include\stdarg.h

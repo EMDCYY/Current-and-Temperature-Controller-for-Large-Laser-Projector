@@ -2,7 +2,7 @@ state.o: ..\drive\state.c
 state.o: ..\drive\state.h
 state.o: C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h
 state.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
-state.o: C:\Keil\ARM\RV31\Inc\stdint.h
+state.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 state.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
 state.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
 state.o: C:\Keil\ARM\Inc\ST\STM32F0xx\system_stm32f0xx.h
@@ -29,3 +29,4 @@ state.o: ..\inc\stm32f0xx_tim.h
 state.o: ..\inc\stm32f0xx_usart.h
 state.o: ..\inc\stm32f0xx_wwdg.h
 state.o: ..\inc\stm32f0xx_misc.h
+state.o: ..\drive\delay.h

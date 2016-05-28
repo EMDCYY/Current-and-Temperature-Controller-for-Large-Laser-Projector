@@ -1,7 +1,8 @@
 dac.o: ..\drive\dac.c
+dac.o: ..\drive\dac.h
 dac.o: C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h
 dac.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
-dac.o: C:\Keil\ARM\RV31\Inc\stdint.h
+dac.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 dac.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
 dac.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
 dac.o: C:\Keil\ARM\Inc\ST\STM32F0xx\system_stm32f0xx.h
@@ -28,4 +29,5 @@ dac.o: ..\inc\stm32f0xx_tim.h
 dac.o: ..\inc\stm32f0xx_usart.h
 dac.o: ..\inc\stm32f0xx_wwdg.h
 dac.o: ..\inc\stm32f0xx_misc.h
-dac.o: ..\drive\dac.h
+dac.o: ..\drive\state.h
+dac.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h

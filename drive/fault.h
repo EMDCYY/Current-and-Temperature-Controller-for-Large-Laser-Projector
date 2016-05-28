@@ -1,6 +1,6 @@
-#ifndef __fault_H
-#define	__fault_H
+#ifndef __FAULT_H
+#define	__FAULT_H
 
 #include "stm32f0xx.h"
 void Fault_Init(void);
-#endif /* __fault_H */
+#endif /* __FAULT_H */

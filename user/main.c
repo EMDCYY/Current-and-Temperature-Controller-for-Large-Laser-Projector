@@ -1,91 +1,96 @@
-/**************** (C) COPYRIGHT 2015 LiuXin Academy of Optic-Electronic***********
+/*****(C) COPYRIGHT 2016 LiuXin Academy of Optic-Electronic******
  * File					:	main.c
  * Description  :	LD Power Driver Control          
  * Platform			:	stm32f051
  * Producer			:	Liu Xin
  * Web					:	www.emdcyy.com
-**********************************************************************************/
+*****************************************************************/
 
 #include "stm32f0xx.h"
 #include <stdio.h>
 
+
+
+/* Basic State Setup--------------------------------------------*/
 #include "state.h"
 #include "enable.h"
+#include "delay.h"
 
+/* Fault Report Intial------------------------------------------*/
+// #include "fault.h"
+
+/* UART RS485 Header--------------------------------------------*/
+#include "dir.h"	//The Direction of RS485 -- Recive or Transmit
+#include "uart.h"	//RS485 Configuration
+
+/* DAC Header---------------------------------------------------*/
 #include "dac.h"
-#include "fault.h"
 
-#include "uart.h"
-#include "dir.h"
-#include "ntc.h"
+/* ADC for NTC or ISMON or IVINMON Header-----------------------*/
+// #include "ntc.h"
+
+/* Protocol Header----------------------------------------------*/
+#include "protocol.h"
+
+/* Other Function-----------------------------------------------*/
 // #include "ismon.h"
 // #include "PWM.h"
 
-extern __IO uint16_t  Tep_Data[10];
-uint32_t Tep_Mean;
 
-void delay(int k)
-{
-	int i, j;
-	for(i=0; i<k; i++)
-	{
-		for(j=0; j<48000; j++);
-	}
-}
 
 int main(void)
 {
-// 	int i;
-	SystemInit();
-	State_Init();
-	Enable_Init();
-	DAC_exInit();
-	Fault_Init();
-	USART_Configuration();
-	Dir_Init();
-<<<<<<< HEAD
-//	ADC1_Config1();
-//	ADC1_Config2();
-//	NTC_ADC1_DMA_Init();
-=======
-	ADC1_Config1();
-	ADC1_Config2();
-	NTC_ADC1_DMA_Init();
->>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
-// 	Ismon_ADC1_DMA_Init();
-// 	PWM_Init();
+  SystemInit();
 	
-	delay(100);
-	State_Off();
-	
-	delay(1000);
-	State_On();
-	DAC_On(); 
+/* Basic State Setup----------------------------------------------------*/
+	Enable_Init();	//Enable LT3763
+	State_Init(); 	//LED Show
 
-	delay(50);
-	State_Off();
+/* Fault Report Intial--------------------------------------------------*/
+// 	Fault_Init();
 	
-	delay(1);
-	State_On();
-	Enable_On();
+/* PWM Intial-----------------------------------------------------------*/
+//   PWM_Init();
+  
+/* DAC output for Ctrl Pin input of LT3763 for soft start---------------*/	
+// 	DAC_exInit();
 	
-	delay(200);
+/* UART RS485 Initial---------------------------------------------------*/
+	Dir_Init();							//The Direction of RS485 -- Recive or Transmit
+	delay_ms(10);
+	UART_Configuration();	  //RS485 Configuration
+	delay_ms(10);
+ 	Dir_Receive();
 
-	Dir_Off();
-	
+//   delay_ms(10);
+// 	State_Off();
+// 	Fault_Init();
+//   GPIO_ResetBits(GPIOB, GPIO_Pin_3);
+
+// 	delay_ms(10);
+//   State_Off();
+ 
+
+//看门狗  
   while (1)
   {
-		State_Toggle();
-		delay(200);
-//   	Tep_Mean = 0;
-//   	for(i=0; i<10; i++)
-//   	{
-//   		Tep_Mean = Tep_Mean + Tep_Data[i];
-//   	}
-// 			Tep_Mean = Tep_Mean / 10;
-	
-	}
+    if (Problem ==Short)
+    {
+    	State_Short();
+    }
+    else if(Problem = Vmode)
+    {
+    	State_Vmode();
+    }
+    else
+    {
+    	State_Toggle();
+		delay_ms(500);
+    }
+  }
 }	
+
+
 
 
 

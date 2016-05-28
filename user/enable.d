@@ -1,8 +1,10 @@
 enable.o: ..\drive\enable.c
 enable.o: ..\drive\enable.h
+enable.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+enable.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 enable.o: C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h
 enable.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
-enable.o: C:\Keil\ARM\RV31\Inc\stdint.h
+enable.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 enable.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
 enable.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
 enable.o: C:\Keil\ARM\Inc\ST\STM32F0xx\system_stm32f0xx.h
@@ -29,3 +31,6 @@ enable.o: ..\inc\stm32f0xx_tim.h
 enable.o: ..\inc\stm32f0xx_usart.h
 enable.o: ..\inc\stm32f0xx_wwdg.h
 enable.o: ..\inc\stm32f0xx_misc.h
+enable.o: ..\drive\state.h
+enable.o: ..\drive\delay.h
+enable.o: ..\drive\dac.h

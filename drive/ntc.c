@@ -5,6 +5,10 @@
 /* Private define ------------------------------------------------------------*/
 #define NTC_ADC1_DR_Address      0x40012440
 __IO uint16_t Tep_Data[40];
+__IO uint16_t InputCurrent;
+__IO uint16_t OutputCurrent;
+__IO uint16_t Temperature1;
+__IO uint16_t Temperature2;
 
 void ADC1_Config1(void)
 {

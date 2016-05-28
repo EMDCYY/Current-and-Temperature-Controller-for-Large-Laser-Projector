@@ -32,11 +32,19 @@
 #include "enable.h"
 #include "uart.h"
 #include "state.h"
+#include "protocol.h"
 #include "dir.h"
-extern __IO uint16_t  Tep_Mean;
-extern __IO uint16_t  Tep_Data[20];
-extern __IO uint16_t  Ismon_Data[20];
-
+#include "delay.h"
+#include <stdarg.h>
+#include <stdio.h>
+// extern __IO uint16_t  Tep_Mean;
+// extern __IO uint16_t  Tep_Data[20];
+// extern __IO uint16_t  Ismon_Data[20];
+__IO uint8_t  rd[19];
+extern __IO uint8_t  wd[18];
+uint16_t cd[12];
+int k = 0;
+int i = 0;
 
 /** @addtogroup STM32F0_Discovery_Peripheral_Examples
   * @{
@@ -62,40 +70,24 @@ extern __IO uint16_t  Ismon_Data[20];
   * @param  None
   * @retval None
   */
-void delay_ms(int k)
-{
-	int i, j;
-<<<<<<< HEAD
-  for(i=0;i<k;i++)
-	  {
-			for(j=0;j<48000;j++);
-=======
-  for(i=0; i<k; i++)
-	  {
-			for(j=0; j<48000; j++);
->>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
-		}
-}
+int count ;	
+int lastcount ;
+int flag;
+
 
 void EXTI4_15_IRQHandler(void)
 {
-  if(EXTI_GetITStatus(EXTI_Line5) != RESET)
+  if(EXTI_GetITStatus(EXTI_Line6) != RESET)
   {
 		Enable_Off();
-		while(1)
-		{
-			State_Short();
-		}
+		Problem = Short;
 // DON'T EXIT INTERUPT!!!
 // EXTI_ClearITPendingBit(EXTI_Line5);
   }
-	else if(EXTI_GetITStatus(EXTI_Line6) != RESET)
+	else if(EXTI_GetITStatus(EXTI_Line7) != RESET)
 	{
 		Enable_Off();
-		while(1)
-		{
-			State_Vmode();
-		}
+		Problme = Vmode;
 // DON'T EXIT INTERUPT!!!
 // EXTI_ClearITPendingBit(EXTI_Line6);
 	}
@@ -106,120 +98,235 @@ void NMI_Handler(void)
 {
 }
 
-<<<<<<< HEAD
-
-void USART1_IRQHandler(void)
-{
-  uint16_t temp = 0x0000;
-=======
-/*
-//Transfer 1 channel ADC data
-void USART1_IRQHandler(void)
-{
-	uint16_t temp = 0x0000;
->>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
-	if(USART_GetFlagStatus(USART1, USART_IT_RXNE)!=RESET)
-	{
-		if(USART_ReceiveData(USART1) == 0x00af)
-		{
-			Enable_Toggle();
-			delay_ms(3);
-			temp = ADC_GetConversionValue(ADC1) >> 8;
-			USART_SendData(USART1,temp);
-			while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
-			USART_SendData(USART1, ADC_GetConversionValue(ADC1) );
-			while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
-		}
-	}
-	if(USART_GetITStatus(USART1, USART_IT_RXNE)!= RESET)
-	{
-		USART_ClearITPendingBit(USART1, USART_IT_RXNE);
-	}
-}
-<<<<<<< HEAD
-
-// /*
-=======
-/*
-
-/*
-// 
->>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
+//---------------EXAMPLE 1---------------------//
 // void USART1_IRQHandler(void)
 // {
-// 	uint16_t temp = 0x0000;
 // 	if(USART_GetFlagStatus(USART1, USART_IT_RXNE)!=RESET)
 // 	{
-// 		
-// 		Dir_On();
-// 		delay_ms(1);
-// 		temp = ADC_GetConversionValue(ADC1) >> 8;
-// 		USART_SendData(USART1,temp);
+// 		Dir_Transmit();
+// 		delay_us(800);		
+// 		USART_SendData(USART1, 0xAA37);
 // 		while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
-// 		USART_SendData(USART1, ADC_GetConversionValue(ADC1) );
-// 		delay_ms(1);
-// 		Dir_Off();
-// 		State_Toggle();
-// 		USART_ClearITPendingBit(USART1, USART_IT_RXNE);
+// 		USART_SendData(USART1, 0xAA92);
+// 		while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
+// 		delay_us(900);
+// 		USART_Cmd(USART1, DISABLE);
+// // 		delay_us(100);
+// 		USART_Cmd(USART1, ENABLE);
+// 	}
+// 		Dir_Receive();
 // 		USART_ClearITPendingBit(USART1, USART_IT_TC);
-// 		USART1->USART_RQR_RXFRQ |=0x00000008;
+// 		USART_ClearITPendingBit(USART1, USART_IT_RXNE);
+// }
+//--------------------------------------------------
+
+// void USART1_IRQHandler(void) 
+// { 
+//     uint16_t i; 
+//      
+//     if(USART_GetFlagStatus(USART1,USART_IT_RXNE)==SET) 
+//     {               
+//         i = USART_ReceiveData(USART1); 
+//         USART_SendData(USART1,i); 
+//         while(USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET) 
+//         { 
+//         }                
+//   0  }
+//     if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) 
+//     { 
+//          
+//         USART_ClearITPendingBit(USART1, USART_IT_RXNE);
+//     }
+// }
+
+
+//---------------EXAMPLE 2---------------------//
+// void USART1_IRQHandler(void)
+// {
+// 	if(USART_GetFlagStatus(USART1, USART_IT_RXNE)!=RESET)
+// 	{
+//     Dir_Transmit();
+// 		delay_ms(1);		
+// 		USART_SendData(USART1, USART_ReceiveData(USART1));
+// 		while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
+//     delay_ms(1);
+// 		USART_SendData(USART1, 0x92);
+// 		while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
+// 		delay_ms(1);
 // 		USART_Cmd(USART1, DISABLE);
 // 		USART_Cmd(USART1, ENABLE);
 // 	}
+// 		Dir_Receive();
+// // 		USART_ClearITPendingBit(USART1, USART_IT_TC);
+// 		USART_ClearITPendingBit(USART1, USART_IT_RXNE);
 // }
-<<<<<<< HEAD
-// */
-=======
-*/
->>>>>>> 3fa4ac42ffe091db06dc90f3116ae795573dc734
+
+
+//---------------EXAMPLE 3---------------------//
+// void USART1_IRQHandler(void)
+// {
+
+// 		cd[0] = 0xABCD;
+//     Dir_Transmit();
+// 		delay_ms(1);		
+//     USART_SendData(USART1, cd[0]);
+// 		while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
+// 		USART_SendData(USART1, cd[0]>>8);
+// 		while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
+
+// 		delay_ms(1);
+// 		USART_Cmd(USART1, DISABLE);
+// 		USART_Cmd(USART1, ENABLE);
+// 		Dir_Receive();
+// }
+
+//--------------------------------------------------
+
+// //---------------EXAMPLE 3.1---------------------//
+// void USART1_IRQHandler(void)
+// {
+// 	if(USART_GetFlagStatus(USART1, USART_IT_RXNE)!=RESET)
+// 	{
+//     rd[0] = USART_ReceiveData(USART1);
+//     
+//     if (rd[0] == 0xDD)
+//     {
+//       Dir_Transmit();
+//       delay_ms(1);		
+//       USART_SendData(USART1, rd[0]);
+//       while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
+//       delay_ms(1);
+//       USART_SendData(USART1, 0x92);
+//       while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
+//       
+//     }
+//     delay_ms(1);
+// 		USART_Cmd(USART1, DISABLE);
+// 		USART_Cmd(USART1, ENABLE);
+// 	}
+// 		Dir_Receive();
+// // 		USART_ClearITPendingBit(USART1, USART_IT_TC);
+// // 		USART_ClearITPendingBit(USART1, USART_IT_RXNE);
+// }
+
+//--------------------------------------------------
+
+//---------------EXAMPLE 3.1---------------------//
 
 // void USART1_IRQHandler(void)
-// {	
-// 	int i;
-// 	uint16_t temp = 0x0000;
-// 	if(USART_GetFlagStatus(USART1, USART_IT_RXNE)!=RESET)
-// 	{
-// 		for(i=0; i<40 ;i++)
+// {
+//   if(USART_GetITStatus(USART1, USART_IT_RXNE)!=RESET)	
+//   {
+//     rd[0] = USART_ReceiveData(USART1); 
+//     Dir_Transmit();
+//     delay_ms(1);	
+//     USART_SendData(USART1, rd[0]);
+//     delay_ms(1);	
+//     Dir_Receive();
+//   }
+//   
+//   if (USART_GetITStatus(USART1, USART_IT_TC) != RESET)
+//   {
+//     USART_ClearITPendingBit(USART1, USART_IT_TC);
+//   }
+// } 
+
+//---------------EXAMPLE 3.2---------------------//
+
+void USART1_IRQHandler(void)
+{
+  if(USART_GetITStatus(USART1, USART_IT_RXNE)!=RESET)	
+  {
+    rd[k++] = USART_ReceiveData(USART1); 
+    if(rd[k-1]==0x16)
+    {
+      for(i=0; i<k; i++)
+      {
+        Dir_Transmit();
+        delay_ms(1);	
+        USART_SendData(USART1, rd[i]);
+      }
+      delay_ms(2);	
+      Dir_Receive();
+      k = 0;
+      protocol();
+    }
+  }
+} 
+
+
+//---------------EXAMPLE 4---------------------//
+// void USART1_IRQHandler(void)
+// {
+// 		
+//   rd[0] = USART_ReceiveData(USART1);
+//   if (rd[0] == 0xAA)
+//   {
+//     Dir_Transmit();
+//     delay_us(10);		
+//     USART_SendData(USART1, rd[0]);
+//     while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
+//     USART_SendData(USART1, 0x92);
+//     while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
+//   }
+//     
+//   delay_us(1000);
+// 	USART_Cmd(USART1, DISABLE);
+// 	delay_us(10);
+// 	USART_Cmd(USART1, ENABLE);
+// 	Dir_Receive();
+// } 
+
+//---------------EXAMPLE 5---------------------//
+// void USART1_IRQHandler(void)
+// {
+// 	
+//   rd[0] = USART_ReceiveData(USART1);
+//   if (rd[0] == 0xAA)
+//   {
+//     count = 0;
+//     flag =1;
+//   }
+//   else if(rd[0] == 0xDD && count > 0)
+//   {
+//     
+//     Dir_Transmit();
+//     delay_ms(1);		
+//     USART_SendData(USART1, rd[count]);
+//     while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
+//     count --;
+//     if (count == 0) flag = 0;
+//   }
+//   else if( flag == 1 && rd[0] != 0xDD && rd[0] != 0xAA)
+//   {
+//     count++;
+//     rd[count] = USART_ReceiveData(USART1);
+//   }
+//     
+//   delay_ms(1);
+// 	USART_Cmd(USART1, DISABLE);
+// 	USART_Cmd(USART1, ENABLE);
+// 	Dir_Receive();
+// }  
+
+//---------------EXAMPLE 6---------------------//
+// void USART1_IRQHandler(void)
+// {
+// 	
+//   while(1)
 // 		{
-// 		Dir_On();
-// 		delay_ms(1);
-// 		temp = Tep_Data[i] >> 8;
-// 		USART_SendData(USART1,temp);
-// 		while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
-// 		USART_SendData(USART1, Tep_Data[i] );
-// 		delay_ms(1);
+//       State_On();
+//       delay_us(500);
+//       GPIO_SetBits(GPIOB, GPIO_Pin_3);
+//       State_Off();
+//       delay_us(500);
+//       GPIO_ResetBits(GPIOB, GPIO_Pin_3);
 // 		}
-// 		
-// // 		for(i=0; i<20 ;i++)
-// // 		{
-// // 		Dir_On();
-// // 		delay_ms(1);
-// // 		temp = Ismon_Data[i] >> 8;
-// // 		USART_SendData(USART1,temp);
-// // 		while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
-// // 		USART_SendData(USART1, Ismon_Data[i] );
-// // 		delay_ms(1);
-// // 		}
-
-// 		Dir_On();
-// 		delay_ms(1);
-// 		temp = Tep_Mean >> 8;
-// 		USART_SendData(USART1,temp);
-// 		while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
-// 		USART_SendData(USART1, Tep_Mean);
-// 		delay_ms(1);
-// 		
-// 		Dir_Off();
-// 		State_Toggle();
-// 		USART_ClearITPendingBit(USART1, USART_IT_RXNE);
-// 		USART_ClearITPendingBit(USART1, USART_IT_TC);
-// // 		USART1->USART_RQR_RXFRQ |=0x00000008;
-// 		USART_Cmd(USART1, DISABLE);
-// 		USART_Cmd(USART1, ENABLE);
-// 	}
-// }
+// }  
 
 
+
+//--------------------------------------------------
 
 /**
   * @brief  This function handles Hard Fault exception.

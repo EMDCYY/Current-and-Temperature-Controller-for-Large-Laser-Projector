@@ -24,29 +24,20 @@ void Dir_Init(void)
 	GPIO_SetBits(Dir_PORT, Dir_PIN );
 }
 
-/**********************************************/
-/* Function		:	Enable Pin Off            */
-/* Parameter	:	None                      */
-/**********************************************/
-void Dir_On(void)
+/*********************************************/
+/* Function		:	Enable Pin Off   		         */
+/* Parameter	:	None          		           */
+/*********************************************/
+void Dir_Transmit(void)
 {
 	 GPIO_SetBits(Dir_PORT, Dir_PIN );
 }
 
-/**********************************************/
-/* Function		:	Enable Pin On             */
-/* Parameter	:	None                      */
-/**********************************************/
-void Dir_Off(void)
+/*********************************************/
+/* Function		:	Enable Pin On    		         */
+/* Parameter	:	None               		       */
+/*********************************************/
+void Dir_Receive(void)
 {
 	GPIO_ResetBits(Dir_PORT, Dir_PIN );
-}
-
-/**********************************************/
-/* Function		:	Enable Pin Toggle         */
-/* Parameter	:	None                      */
-/**********************************************/
-void Dir_Toggle(void)
-{
-	GPIO_WriteBit(GPIOA, GPIO_Pin_11, (BitAction)((1-GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_11))));
 }

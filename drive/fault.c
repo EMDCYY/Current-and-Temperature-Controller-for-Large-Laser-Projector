@@ -28,19 +28,19 @@ void Fault_Init(void)
 		NVIC_Init(&NVIC_InitStruct);
 	
 	  	/* EXTI line gpio config(PA6) */	
-		GPIO_InitStruct.GPIO_Pin = GPIO_Pin_5 | GPIO_Pin_6; 
-// 	  GPIO_InitStruct.GPIO_Pin = GPIO_Pin_5 ;
+		GPIO_InitStruct.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7; 
+// 	  GPIO_InitStruct.GPIO_Pin = GPIO_Pin_6 ;
 	  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN;
 		GPIO_InitStruct.GPIO_Speed = GPIO_Speed_Level_2;
     GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL; // 上拉输入
 		GPIO_Init(GPIOA, &GPIO_InitStruct);
-		GPIO_ResetBits(GPIOA, GPIO_Pin_5 | GPIO_Pin_6 );
-// 		GPIO_ResetBits(GPIOA, GPIO_Pin_5 );		
+		GPIO_ResetBits(GPIOA, GPIO_Pin_6 | GPIO_Pin_7 );
+// 		GPIO_ResetBits(GPIOA, GPIO_Pin_6 );		
 		/* EXTI line(PA6) mode config */
-		SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOA, EXTI_PinSource5 | EXTI_PinSource6);
-// 		SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOA, EXTI_PinSource5 );
-		EXTI_InitStruct.EXTI_Line = EXTI_Line5 | EXTI_Line6;
-// 		EXTI_InitStruct.EXTI_Line = EXTI_Line5 ;
+		SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOA, EXTI_PinSource6 | EXTI_PinSource7);
+// 		SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOA, EXTI_PinSource6 );
+		EXTI_InitStruct.EXTI_Line = EXTI_Line6 | EXTI_Line7;
+// 		EXTI_InitStruct.EXTI_Line = EXTI_Line6 ;
 		EXTI_InitStruct.EXTI_Mode = EXTI_Mode_Interrupt;
 		EXTI_InitStruct.EXTI_Trigger = EXTI_Trigger_Falling; //下降沿中断
 		EXTI_InitStruct.EXTI_LineCmd = ENABLE;

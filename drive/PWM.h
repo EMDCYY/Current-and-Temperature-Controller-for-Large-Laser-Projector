@@ -1,9 +1,9 @@
-#ifndef __PWM_H
-#define	__PWM_H
+#ifndef __pwm_H
+#define	__pwm_H
 
 #include "stm32f0xx.h"
-void TIM_Config(void);
-void TIM_PWM_Config(void);
-void PWM_On(void);
-void PWM_Off(void);
-#endif /* __Enable_H */
+#define PWM_PIN      GPIO_Pin_3
+#define PWM_PORT     GPIOB
+void PWM_Init(void);
+
+#endif /* __PWM_H */
