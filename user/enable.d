@@ -34,3 +34,4 @@ enable.o: ..\inc\stm32f0xx_misc.h
 enable.o: ..\drive\state.h
 enable.o: ..\drive\delay.h
 enable.o: ..\drive\dac.h
+enable.o: ..\drive\converter.h

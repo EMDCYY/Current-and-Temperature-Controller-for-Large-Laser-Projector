@@ -26,8 +26,8 @@
 /* DAC Header---------------------------------------------------*/
 #include "dac.h"
 
-/* ADC for NTC or ISMON or IVINMON Header-----------------------*/
-// #include "ntc.h"
+/* ADC for Light Power or Under Voltage Protection or NTC or ISMON or CSOUT Header-----------------------*/
+#include "adc.h"
 
 /* Protocol Header----------------------------------------------*/
 #include "protocol.h"
@@ -36,7 +36,12 @@
 // #include "ismon.h"
 // #include "PWM.h"
 
+/* Interupt-----------------------------------------------------*/
+#include "stm32f0xx_it.h"
 
+extern __IO uint8_t  Error;
+extern __IO uint16_t ADC_Data[6];
+extern __IO uint8_t rd[19];
 
 int main(void)
 {
@@ -49,11 +54,12 @@ int main(void)
 /* Fault Report Intial--------------------------------------------------*/
 // 	Fault_Init();
 	
-/* PWM Intial-----------------------------------------------------------*/
+// /* PWM Intial-----------------------------------------------------------*/
 //   PWM_Init();
   
 /* DAC output for Ctrl Pin input of LT3763 for soft start---------------*/	
-// 	DAC_exInit();
+	DAC_Config();
+
 	
 /* UART RS485 Initial---------------------------------------------------*/
 	Dir_Init();							//The Direction of RS485 -- Recive or Transmit
@@ -62,30 +68,47 @@ int main(void)
 	delay_ms(10);
  	Dir_Receive();
 
-//   delay_ms(10);
-// 	State_Off();
-// 	Fault_Init();
-//   GPIO_ResetBits(GPIOB, GPIO_Pin_3);
-
-// 	delay_ms(10);
-//   State_Off();
- 
+/* ADC Intial-----------------------------------------------------------*/
+  ADC_LP_UVP_NTC_Config();
+  ADC_CSOUT_ISMON_Config();
+  ADC_DMA_Init();
 
 //看门狗  
   while (1)
   {
-    if (Problem ==Short)
+    if (Error ==Short)
     {
-    	State_Short();
+      Enable_Off();
+    	while(1)
+      {
+        State_Short();
+      }
     }
-    else if(Problem = Vmode)
+    else if(Error == Vmode)
     {
-    	State_Vmode();
+      Enable_Off();
+      while(1)
+      {
+        State_Vmode();
+      }
     }
     else
     {
     	State_Toggle();
-		delay_ms(500);
+      delay_ms(1000);
+      if (ADC_Data[5] >0x0010 && rd[5] ==0x02 && rd[7]==0x00 && rd[8]==0x00 && rd[9]==0x00 && rd[10]==0x00) //Runing and Want to Shut Down
+      {
+        ShutDown();
+      }
+      else if ((ADC_Data[5] <0x0010 || ADC_Data[5] ==0x0010) && rd[5] ==0x01 && rd[7]==0x00 && rd[8]==0x00 && rd[9]==0x00 && rd[10]==0x00) //Shuting Down and Want to Run
+      {
+        StartUp();	
+      }
+      else if ( ADC_Data[5] >0x0010 && rd[5] ==0x04 && rd[7]==0x00 && rd[8]==0x00)
+      {
+        Tune();
+      }
+      
     }
   }
 }	

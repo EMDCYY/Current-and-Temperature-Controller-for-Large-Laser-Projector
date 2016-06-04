@@ -29,5 +29,3 @@ dac.o: ..\inc\stm32f0xx_tim.h
 dac.o: ..\inc\stm32f0xx_usart.h
 dac.o: ..\inc\stm32f0xx_wwdg.h
 dac.o: ..\inc\stm32f0xx_misc.h
-dac.o: ..\drive\state.h
-dac.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h

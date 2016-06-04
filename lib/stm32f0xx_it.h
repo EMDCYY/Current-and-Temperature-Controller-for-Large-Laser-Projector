@@ -40,7 +40,10 @@
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
-
+#define Short  0x0F
+#define Vmode  0x0D
+#define TooHot 0x0E
+#define NoWarn 0x0C
 
 void NMI_Handler(void);
 void HardFault_Handler(void);

@@ -136,9 +136,10 @@
             <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
             <RestoreFunctions>0</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
+            <RestoreTracepoints>0</RestoreTracepoints>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>14</TargetSelection>
+          <TargetSelection>13</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -344,6 +345,7 @@
             <Rwpi>0</Rwpi>
             <wLevel>0</wLevel>
             <uThumb>0</uThumb>
+            <uSurpInc>0</uSurpInc>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER STM32F0XX</Define>
@@ -359,6 +361,7 @@
             <SplitLS>0</SplitLS>
             <SwStkChk>0</SwStkChk>
             <NoWarn>0</NoWarn>
+            <uSurpInc>0</uSurpInc>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
@@ -514,11 +517,6 @@
               <FilePath>..\drive\dir.c</FilePath>
             </File>
             <File>
-              <FileName>ntc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\drive\ntc.c</FilePath>
-            </File>
-            <File>
               <FileName>rdctrl.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\drive\rdctrl.c</FilePath>
@@ -532,6 +530,16 @@
               <FileName>delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\drive\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\drive\adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>converter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\drive\converter.c</FilePath>
             </File>
           </Files>
         </Group>

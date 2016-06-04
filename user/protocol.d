@@ -36,4 +36,5 @@ protocol.o: ..\drive\state.h
 protocol.o: ..\drive\uart.h
 protocol.o: ..\drive\dir.h
 protocol.o: ..\drive\delay.h
+protocol.o: ..\drive\converter.h
 protocol.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h

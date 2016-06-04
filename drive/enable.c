@@ -10,16 +10,15 @@
 #include "state.h"
 #include "delay.h"
 #include "dac.h"
+#include "converter.h"
 #include <stdbool.h>
 
-extern uint16_t ctrlSoftOperation[137];
-extern const uint16_t ctrlSoftStart[137];
-extern const uint16_t ctrlSoftShut[137];
-__O bool state	= false;
-__O bool swich	=	false;
-
-
-
+extern __IO uint16_t  ctrlSoftTune;
+extern __IO uint8_t rd[19];
+extern __IO uint16_t CurrentMaxim;
+extern __IO uint16_t CurrentMinum;
+extern __IO uint16_t CurrentTuneValue;
+extern __IO uint16_t ADC_Data[6];
 
 /**********************************************/
 /* Function		:	Initial Enable Pin        		*/
@@ -68,42 +67,46 @@ void Enable_Toggle(void)
 
 void StartUp(void)
 {
-	delay_ms(900);
-	State_On();
-
-	delay_ms(100);
-	DAC_On();
-	
-
-	delay_ms(50);
-	State_Off();
-	
-	delay_ms(1);
-	State_On();
+	delay_ms(10);
+//   DAC_On();
+  DAC_On();
+	delay_ms(10);
 	Enable_On();
-	state = true;
-	swich	= true;
-	
-	delay_ms(200);
 }
 
 void ShutDown(void)
 {
-	delay_ms(900);
-	State_On();
-
-	delay_ms(100);
-	DAC_Off(); 
-	
-	
-	delay_ms(50);
-	State_Off();
-	
-	delay_ms(1);
-	State_On();
+	int i;
+  delay_ms(10);
+  DAC_Off();
+  for(i = 0; i < 6; i++)
+  {
+    delay_ms(1000);
+    State_Toggle();
+  }
 	Enable_Off();
-	state	= false;
-	swich = false;
-	
-	delay_ms(200);
+}
+
+void Tune(void)
+{
+  
+  if((CurrentTuneValue < CurrentMaxim)&&(CurrentTuneValue > CurrentMinum))
+  {
+    
+    while((CurrentTuneValue > ADC_Data[5]+0x0004) || (CurrentTuneValue < ADC_Data[5]-0x0004))
+    {
+       if((CurrentTuneValue < ADC_Data[5]) && (ctrlSoftTune > 1395))
+       {
+         ctrlSoftTune --;
+         delay_ms(2);
+         DAC_Tune();
+       }
+       else if((CurrentTuneValue > ADC_Data[5]) && (ctrlSoftTune < 4095))
+       {
+        ctrlSoftTune ++;
+        delay_ms(2);
+        DAC_Tune();
+       }
+    }
+  }
 }

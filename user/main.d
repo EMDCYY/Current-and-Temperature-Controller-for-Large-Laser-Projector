@@ -36,4 +36,6 @@ main.o: ..\drive\delay.h
 main.o: ..\drive\dir.h
 main.o: ..\drive\uart.h
 main.o: ..\drive\dac.h
+main.o: ..\drive\adc.h
 main.o: ..\drive\protocol.h
+main.o: ..\lib\stm32f0xx_it.h

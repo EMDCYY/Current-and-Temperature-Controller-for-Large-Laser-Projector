@@ -35,8 +35,11 @@
 #include "protocol.h"
 #include "dir.h"
 #include "delay.h"
-#include <stdarg.h>
-#include <stdio.h>
+#include "stdarg.h"
+#include "stdio.h"
+
+__IO uint8_t  Error = NoWarn;
+
 // extern __IO uint16_t  Tep_Mean;
 // extern __IO uint16_t  Tep_Data[20];
 // extern __IO uint16_t  Ismon_Data[20];
@@ -79,15 +82,14 @@ void EXTI4_15_IRQHandler(void)
 {
   if(EXTI_GetITStatus(EXTI_Line6) != RESET)
   {
-		Enable_Off();
-		Problem = Short;
+
+		Error = Short;
 // DON'T EXIT INTERUPT!!!
 // EXTI_ClearITPendingBit(EXTI_Line5);
   }
 	else if(EXTI_GetITStatus(EXTI_Line7) != RESET)
 	{
-		Enable_Off();
-		Problme = Vmode;
+		Error = Vmode;
 // DON'T EXIT INTERUPT!!!
 // EXTI_ClearITPendingBit(EXTI_Line6);
 	}
@@ -240,17 +242,21 @@ void USART1_IRQHandler(void)
     rd[k++] = USART_ReceiveData(USART1); 
     if(rd[k-1]==0x16)
     {
-      for(i=0; i<k; i++)
-      {
-        Dir_Transmit();
-        delay_ms(1);	
-        USART_SendData(USART1, rd[i]);
-      }
-      delay_ms(2);	
-      Dir_Receive();
+//       for(i=0; i<k; i++)
+//       {
+//         Dir_Transmit();
+//         delay_ms(1);	
+//         USART_SendData(USART1, rd[i]);
+//       }
+//       delay_ms(2);	
+//       Dir_Receive();
       k = 0;
       protocol();
     }
+//    if (USART_GetITStatus(USART1, USART_IT_TC) != RESET)
+//    {
+//       USART_ClearITPendingBit(USART1, USART_IT_TC);
+//    }
   }
 } 
 

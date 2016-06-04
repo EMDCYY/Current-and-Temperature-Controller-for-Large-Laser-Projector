@@ -1,11 +1,14 @@
 #include "dac.h"
 #include "stm32f0xx.h"
-#include "state.h"
-#include <stdbool.h>
+
 // #include "exit.h"
 
 #define DAC_DHR12R1_ADDRESS      0x40007408
-#define DAC_DHR8R1_ADDRESS       0x40007410
+#define DAC_DHR8R1_ADDRESS       0x40007418
+
+DAC_InitTypeDef				DAC_InitStructure;
+TIM_TimeBaseInitTypeDef		TIM_TimeBaseStructure;
+DMA_InitTypeDef				DMA_InitStructure;
 
 const uint16_t ctrlSoftStart[137] = {
 	1395,1415,1435,1455,1475,1495,1515,1535,1555,
@@ -25,7 +28,7 @@ const uint16_t ctrlSoftStart[137] = {
 
 const uint16_t ctrlSoftShut[137] = {
 	4095,4075,4055,4035,4015,3995,3975,
-	3955,3935,3915,3895,3975,3855,3835,3815,3795,3775,
+	3955,3935,3915,3895,3875,3855,3835,3815,3795,3775,
 	3755,3735,3715,3695,3675,3655,3635,3615,3595,3575,
 	3555,3535,3515,3495,3475,3455,3435,3415,3395,3375,
 	3355,3335,3315,3295,3275,3255,3235,3215,3195,3175,
@@ -39,15 +42,25 @@ const uint16_t ctrlSoftShut[137] = {
 	1755,1735,1715,1695,1675,1655,1635,1615,1595,1575,
 	1555,1535,1515,1495,1475,1455,1435,1415,1395};
 
-uint16_t ctrlSoftOperation[137];
-	
+const uint16_t ctrlSoftIdle[137] = {
+	0000,0000,0000,0000,0000,0000,0000,0000,0000,0000,
+	0000,0000,0000,0000,0000,0000,0000,0000,0000,0000,
+	0000,0000,0000,0000,0000,0000,0000,0000,0000,0000,
+	0000,0000,0000,0000,0000,0000,0000,0000,0000,0000,
+	0000,0000,0000,0000,0000,0000,0000,0000,0000,0000,
+	0000,0000,0000,0000,0000,0000,0000,0000,0000,0000,
+	0000,0000,0000,0000,0000,0000,0000,0000,0000,0000,
+	0000,0000,0000,0000,0000,0000,0000,0000,0000,0000,
+	0000,0000,0000,0000,0000,0000,0000,0000,0000,0000,
+	0000,0000,0000,0000,0000,0000,0000,0000,0000,0000,
+	0000,0000,0000,0000,0000,0000,0000,0000,0000,0000,
+	0000,0000,0000,0000,0000,0000,0000,0000,0000,0000,
+	0000,0000,0000,0000,0000,0000,0000,0000,0000,0000,
+	0000,0000,0000,0000,0000,0000,0000};
 
-const uint8_t Escalator8bit[6] = {0x0, 0x33, 0x66, 0x99, 0xCC, 0xFF};
-uint8_t Idx = 0;
-extern volatile unsigned char SelectedWavesForm,WaveChange ; 
-extern __O bool state;
-extern __O bool swich;
-
+__IO uint16_t  ctrlSoftTune = 4095;
+extern  __IO  uint8_t rd[19];
+extern __IO uint16_t ADC_Data[6];
 
 /**
   * @brief  Main program.
@@ -55,92 +68,162 @@ extern __O bool swich;
   * @retval None
   */
 
-void DAC_exInit(void)
+void DAC_Config(void)
 {
-  GPIO_InitTypeDef					GPIO_InitStructure;
-	DAC_InitTypeDef						DAC_InitStructure;
-	TIM_TimeBaseInitTypeDef		TIM_TimeBaseStructure;
-	DMA_InitTypeDef           DMA_InitStructure;
-	
+  GPIO_InitTypeDef GPIO_InitStructure;
+
+  /* DMA1 clock enable (to be used with DAC) */
+  RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
+
+  /* DAC Periph clock enable */
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_DAC, ENABLE);
+
   /* GPIOA clock enable */
   RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
+  
   /* Configure PA.04 (DAC_OUT1) as analog */
   GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_4;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AN;
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
-// 	GPIO_ResetBits(DAC_PORT, DAC_PIN );
   GPIO_Init(GPIOA, &GPIO_InitStructure);
+}
+  
+  
+void DAC_Init_StartUp(void)
+{
 
-	 /* DAC Periph clock enable */
-  RCC_APB1PeriphClockCmd(RCC_APB1Periph_DAC, ENABLE);
+
 	DAC_InitStructure.DAC_Trigger = DAC_Trigger_T2_TRGO;
-  DAC_InitStructure.DAC_OutputBuffer = DAC_OutputBuffer_Enable;
+	DAC_InitStructure.DAC_OutputBuffer = DAC_OutputBuffer_Enable;
 	DAC_Init(DAC_Channel_1, &DAC_InitStructure);
 	DAC_Cmd(DAC_Channel_1, ENABLE);
 
 	/* TIM2 外设时钟使能*/
-  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
-  /* 定时器基础配置 */
-  TIM_TimeBaseStructInit(&TIM_TimeBaseStructure); 
-  TIM_TimeBaseStructure.TIM_Period = 0xffff;          
-  TIM_TimeBaseStructure.TIM_Prescaler = 0x1a;       
-  TIM_TimeBaseStructure.TIM_ClockDivision = 0x0;    
-  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;  
-  TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
+	/* 定时器基础配置 */
+	TIM_TimeBaseStructInit(&TIM_TimeBaseStructure); 
+	TIM_TimeBaseStructure.TIM_Period = 0xffff;          
+	TIM_TimeBaseStructure.TIM_Prescaler = 0x1a;       
+	TIM_TimeBaseStructure.TIM_ClockDivision = 0x0;    
+	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;  
+	TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
 	/* TIM2触发输出模式选择  */
-  TIM_SelectOutputTrigger(TIM2, TIM_TRGOSource_Update);
-   /* TIM2使能 */
-  TIM_Cmd(TIM2, ENABLE);
-
-  /* DMA1 clock enable (to be used with DAC) */
-  RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
-	DMA_DeInit(DMA1_Channel3); 
-	DMA_InitStructure.DMA_PeripheralBaseAddr = DAC_DHR12R1_ADDRESS;
-	if(state == true && swich == true)
-	{
-		DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)&ctrlSoftStart;
-	}	
-	else if(state == false && swich == false)
-	{
-		DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)&ctrlSoftShut;	
-	}
-	else
-	{
-		DMA_InitStructure.DMA_MemoryBaseAddr = 0x00000000;
-	}
-  DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralDST;
-  DMA_InitStructure.DMA_BufferSize = 136;
-  DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
-  DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
-  DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
-  DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
-//   DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
-	DMA_InitStructure.DMA_Mode = DMA_Mode_Normal;
-  DMA_InitStructure.DMA_Priority = DMA_Priority_High;
-  DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;
-  DMA_Init(DMA1_Channel3, &DMA_InitStructure);
-          /* 使能DMA1通道3 */
-  DMA_Cmd(DMA1_Channel3, ENABLE);
-          /* DAC 通道1初始化 */
-          /* 使能DAC 通道1: 当 DAC 通道1被使能 , PA.04 自动与DAC转换器相连. */
-
-          /* 使能DAC通道1的DMA */
-//   DAC_DMACmd(DAC_Channel_1, ENABLE);
+	TIM_SelectOutputTrigger(TIM2, TIM_TRGOSource_Update);
+	/* TIM2使能 */
+	TIM_Cmd(TIM2, ENABLE);
 	
-// 	DAC_Cmd(DAC_Channel_1, DISABLE);
-// 	TIM_Cmd(TIM2, DISABLE);
-// 	DMA_Cmd(DMA1_Channel3, DISABLE);
-// 	DAC_DMACmd(DAC_Channel_1, DISABLE);
+		DMA_DeInit(DMA1_Channel3); 
+
+		DMA_InitStructure.DMA_PeripheralBaseAddr = DAC_DHR12R1_ADDRESS;
+		DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)&ctrlSoftStart;
+		DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralDST;
+  		DMA_InitStructure.DMA_BufferSize = 136;
+  		DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+  		DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
+  		DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
+  		DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
+		DMA_InitStructure.DMA_Mode = DMA_Mode_Normal;
+  		DMA_InitStructure.DMA_Priority = DMA_Priority_High;
+  		DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;
+  		DMA_Init(DMA1_Channel3, &DMA_InitStructure);
+		DMA_Cmd(DMA1_Channel3, ENABLE);
+}
+
+void DAC_Init_ShutDown(void)
+{
+	
+  
+	DAC_InitStructure.DAC_Trigger = DAC_Trigger_T2_TRGO;
+	DAC_InitStructure.DAC_OutputBuffer = DAC_OutputBuffer_Enable;
+	DAC_Init(DAC_Channel_1, &DAC_InitStructure);
+	DAC_Cmd(DAC_Channel_1, ENABLE);
+
+	/* TIM2 外设时钟使能*/
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
+	/* 定时器基础配置 */
+	TIM_TimeBaseStructInit(&TIM_TimeBaseStructure); 
+	TIM_TimeBaseStructure.TIM_Period = 0xffff;          
+	TIM_TimeBaseStructure.TIM_Prescaler = 0x1a;       
+	TIM_TimeBaseStructure.TIM_ClockDivision = 0x0;    
+	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;  
+	TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
+	/* TIM2触发输出模式选择  */
+	TIM_SelectOutputTrigger(TIM2, TIM_TRGOSource_Update);
+	/* TIM2使能 */
+	TIM_Cmd(TIM2, ENABLE);
+	
+		DMA_DeInit(DMA1_Channel3); 
+
+		DMA_InitStructure.DMA_PeripheralBaseAddr = DAC_DHR12R1_ADDRESS;
+		DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)&ctrlSoftShut;
+		DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralDST;
+  		DMA_InitStructure.DMA_BufferSize = 136;
+  		DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+  		DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
+  		DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
+  		DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
+		DMA_InitStructure.DMA_Mode = DMA_Mode_Normal;
+  		DMA_InitStructure.DMA_Priority = DMA_Priority_High;
+  		DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;
+  		DMA_Init(DMA1_Channel3, &DMA_InitStructure);
+		DMA_Cmd(DMA1_Channel3, ENABLE);
+}
+
+void DAC_Init_Tune(void)
+{
+
+	DAC_InitStructure.DAC_Trigger = DAC_Trigger_T2_TRGO;
+	DAC_InitStructure.DAC_OutputBuffer = DAC_OutputBuffer_Enable;
+	DAC_Init(DAC_Channel_1, &DAC_InitStructure);
+	DAC_Cmd(DAC_Channel_1, ENABLE);
+
+	/* TIM2 外设时钟使能*/
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
+	/* 定时器基础配置 */
+	TIM_TimeBaseStructInit(&TIM_TimeBaseStructure); 
+	TIM_TimeBaseStructure.TIM_Period = 0xffff;          
+	TIM_TimeBaseStructure.TIM_Prescaler = 0x1a;       
+	TIM_TimeBaseStructure.TIM_ClockDivision = 0x0;    
+	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;  
+	TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
+	/* TIM2触发输出模式选择  */
+	TIM_SelectOutputTrigger(TIM2, TIM_TRGOSource_Update);
+	/* TIM2使能 */
+	TIM_Cmd(TIM2, ENABLE);
+	
+		DMA_DeInit(DMA1_Channel3); 
+
+		DMA_InitStructure.DMA_PeripheralBaseAddr = DAC_DHR12R1_ADDRESS;
+		DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)&ctrlSoftTune;
+		DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralDST;
+  		DMA_InitStructure.DMA_BufferSize = 1;
+  		DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+  		DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
+  		DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
+  		DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
+		DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
+  		DMA_InitStructure.DMA_Priority = DMA_Priority_High;
+  		DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;
+  		DMA_Init(DMA1_Channel3, &DMA_InitStructure);
+		DMA_Cmd(DMA1_Channel3, ENABLE);
 }
 
 void DAC_On(void)
 {
 	/* 使能DAC通道1的DMA */
+  DAC_Init_StartUp();
   DAC_DMACmd(DAC_Channel_1, ENABLE);
 }
 
 void DAC_Off(void)
 {
 	/* 使能DAC通道1的DMA */
-  DAC_DMACmd(DAC_Channel_1, DISABLE);
+  DAC_Init_ShutDown();
+  DAC_DMACmd(DAC_Channel_1, ENABLE);
+}
+
+void DAC_Tune(void)
+{
+  DAC_Init_Tune();
+  DAC_DMACmd(DAC_Channel_1, ENABLE);
 }

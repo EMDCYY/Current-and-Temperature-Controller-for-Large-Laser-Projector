@@ -12,4 +12,5 @@ void Enable_Off(void);
 void Enable_Toggle(void);
 void StartUp(void);
 void ShutDown(void);
+void Tune(void);
 #endif /* __Enable_H */

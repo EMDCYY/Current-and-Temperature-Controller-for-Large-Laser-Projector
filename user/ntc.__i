@@ -1,0 +1,5 @@
+-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\inc -I..\stm32f0 -I..\lib -I..\drive -I..\user 
+-I C:\Keil\ARM\RV31\INC 
+-I C:\Keil\ARM\CMSIS\Include 
+-I C:\Keil\ARM\Inc\ST\STM32F0xx 
+-DUSE_STDPERIPH_DRIVER -DSTM32F0XX -o "ntc.o" --omf_browse "ntc.crf" --depend "ntc.d" "..\drive\ntc.c"

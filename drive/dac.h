@@ -14,8 +14,10 @@
 #include "stm32f0xx.h"
 #define DAC_PIN      GPIO_Pin_4
 #define DAC_PORT     GPIOA
-void DAC_exInit(void);
+void DAC_Config(void);
+void DAC_Init_Start(void);
+void DAC_Init_Shut(void);
 void DAC_On(void);
 void DAC_Off(void);
-void DAC_Toggle(void);
+void DAC_Tune(void);
 #endif /* __DAC_H */
