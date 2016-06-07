@@ -38,3 +38,4 @@ protocol.o: ..\drive\dir.h
 protocol.o: ..\drive\delay.h
 protocol.o: ..\drive\converter.h
 protocol.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+protocol.o: ..\drive\eeprom_emulation.h

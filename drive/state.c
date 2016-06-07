@@ -54,19 +54,6 @@ void State_Toggle(void)
 	GPIO_WriteBit(GPIOA, GPIO_Pin_12, (BitAction)((1-GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_12))));
 }
 
-
-void State_Vmode(void)
-{
-			GPIO_ResetBits(State_PORT, State_PIN );
-			delay_ms(200);
-			GPIO_SetBits(State_PORT, State_PIN );
-			delay_ms(200);
-			GPIO_ResetBits(State_PORT, State_PIN );
-			delay_ms(1000);
-			GPIO_SetBits(State_PORT, State_PIN );
-			delay_ms(200);
-}
-
 void State_Short(void)
 {
 			GPIO_ResetBits(State_PORT, State_PIN );
@@ -78,3 +65,17 @@ void State_Short(void)
 			GPIO_SetBits(State_PORT, State_PIN );
 			delay_ms(200);
 }
+
+void State_Vmode(void)
+{
+			GPIO_ResetBits(State_PORT, State_PIN );
+			delay_ms(200);
+			GPIO_SetBits(State_PORT, State_PIN );
+			delay_ms(1000);
+			GPIO_ResetBits(State_PORT, State_PIN );
+			delay_ms(200);
+			GPIO_SetBits(State_PORT, State_PIN );
+			delay_ms(200);
+}
+
+

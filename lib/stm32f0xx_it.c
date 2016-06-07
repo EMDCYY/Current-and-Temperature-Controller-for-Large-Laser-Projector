@@ -84,14 +84,14 @@ void EXTI4_15_IRQHandler(void)
   {
 
 		Error = Short;
-// DON'T EXIT INTERUPT!!!
-// EXTI_ClearITPendingBit(EXTI_Line5);
+    Enable_Off();
+    EXTI_ClearITPendingBit(EXTI_Line6);
   }
 	else if(EXTI_GetITStatus(EXTI_Line7) != RESET)
 	{
 		Error = Vmode;
-// DON'T EXIT INTERUPT!!!
-// EXTI_ClearITPendingBit(EXTI_Line6);
+    Enable_Off();
+    EXTI_ClearITPendingBit(EXTI_Line7);
 	}
 }
 
@@ -99,6 +99,46 @@ void EXTI4_15_IRQHandler(void)
 void NMI_Handler(void)
 {
 }
+
+/**
+  * @brief  This function handles TIM14 global interrupt request.
+  * @param  None
+  * @retval None
+  */
+// void TIM14_IRQHandler(void)
+// {
+//   if (TIM_GetITStatus(TIM14, TIM_IT_CC1) != RESET)
+//   {    
+//     if(CaptureNumber == 0)
+//     {
+//       /* 获得输入比较的值 */
+//       IC1ReadValue1 = TIM_GetCapture1(TIM14);
+//     }
+//     else if(CaptureNumber == 1)
+//     {
+//       /* 获得输入比较的值 */
+//       IC1ReadValue2 = TIM_GetCapture1(TIM14); 
+//       
+//       /* 比较2次的值 */
+//       if (IC1ReadValue2 > IC1ReadValue1)
+//       {
+//         Capture = (IC1ReadValue2 - IC1ReadValue1); 
+//       }
+//       else
+//       {
+//         Capture = ((0xFFFF - IC1ReadValue1) + IC1ReadValue2); 
+//       }
+//       /*  频率计算*/ 
+//       LsiFreq = (uint32_t) SystemCoreClock / Capture;
+//       LsiFreq *= 8;
+//     }
+//     
+//     CaptureNumber++;
+//     
+//     /* 清除TIM4捕获比较中断位*/
+//     TIM_ClearITPendingBit(TIM14, TIM_IT_CC1);
+//   }
+// }
 
 //---------------EXAMPLE 1---------------------//
 // void USART1_IRQHandler(void)
@@ -253,6 +293,7 @@ void USART1_IRQHandler(void)
       k = 0;
       protocol();
     }
+
 //    if (USART_GetITStatus(USART1, USART_IT_TC) != RESET)
 //    {
 //       USART_ClearITPendingBit(USART1, USART_IT_TC);

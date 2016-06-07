@@ -33,6 +33,7 @@ main.o: ..\drive\state.h
 main.o: ..\drive\enable.h
 main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 main.o: ..\drive\delay.h
+main.o: ..\drive\fault.h
 main.o: ..\drive\dir.h
 main.o: ..\drive\uart.h
 main.o: ..\drive\dac.h

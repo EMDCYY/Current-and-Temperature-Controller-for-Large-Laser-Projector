@@ -16,20 +16,19 @@
 #include "stm32f0xx.h"
 #include "string.h"
 #include "stdbool.h"
+#include "eeprom_emulation.h"
 
-#define ID			0x0005
+
 #define COLOR		0x0A   //0x0A - Red; 0x0B - Green; 0x0C - Blue; 0x00 - Check
 #define	FrameHead	0xAB
 #define	FrameTail	0x16
 #define Rsvserved	0xFF
 #define DataLength_in_Response 	0x0A
 
-uint8_t	ID_H = (ID & 0xFF00)>>8;
-uint8_t	ID_L = (ID & 0x00FF);
-
 
 extern	__IO	uint8_t rd[19];
 extern	__IO	uint8_t Error;
+
 __IO  uint16_t  CurrentMaxim;
 __IO  uint16_t  CurrentMinum;
 __IO  uint16_t  CurrentTuneValue;
@@ -38,7 +37,7 @@ uint8_t	wd[19];
 
 extern __IO uint8_t  Problem;
 extern __IO uint16_t ADC_Data[6];
-
+extern __IO uint32_t PAGE0_BASE_ADDRESS;
 
 
 //extern __IO uint16_t  COLOR;	//0x0A - Red; 0x0B - Green; 0x0C - Blue; 0x00 - Check
@@ -79,16 +78,26 @@ void protocol(void)
 
 void First_Check_ID(void)
 {
-	ID_H =	(ID & 0xFF00)>>8;
-	ID_L =	(ID & 0x00FF);
+  uint16_t ID;
+  uint8_t	ID_H;
+  uint8_t	ID_L;
+  ID = (*(__IO uint32_t*)(PAGE0_BASE_ADDRESS));
+  delay_ms(3);
+  ID_H = (ID & 0xFF00)>>8;
+  ID_L = (ID & 0x00FF);
+  
   if (rd[1]==ID_H && rd[2]==ID_L)
 	{
 		Second_Check_Frame();
 	}
-	else
+	else if(rd[1] == 0xCD && rd[2] == 0xCD)
 	{
-//     Response(0xE1);
+    Response(Error);
 	}
+  else
+  {
+  
+  }
 }
 
 void Second_Check_Frame(void)
@@ -158,7 +167,7 @@ void Sixth_Check_Color(void)
 	{
 		rd_Operate();
 	}
-	else if (rd[4]==0x00)
+	else if (rd[4]==0x00 && rd[5]!=0x06) // Response without requirement only with right ID
 	{
 		Response(Error);
 	}
@@ -241,7 +250,20 @@ void wr_TEC(void)
 
 void wr_ID(void)
 {
-	//FLASH
+	uint16_t data = 0x0000;
+  data = rd[7] ;
+  data = (data  & 0x00FF)<<8;
+  data = data + (rd[8] & 0x00FF);
+//   Dir_Transmit();
+//   delay_ms(1);	
+//   USART_SendData(USART1, data);
+//   delay_ms(2);	
+//   Dir_Receive();
+  
+  WR_EEPROM(data);
+  delay_ms(3);
+  
+  
   Response(Error);
 }
 
@@ -250,6 +272,14 @@ void Response(uint8_t Error)
 	int ByteNum = 0;
 	uint8_t  CheckSum;
   uint16_t ConverterData;
+  
+  uint16_t ID = 0x0000;
+  uint8_t	ID_H = 0x00;
+  uint8_t	ID_L = 0x00;
+  ID = (*(__IO uint32_t*)(PAGE0_BASE_ADDRESS));
+  delay_ms(3);
+  ID_H = (ID & 0xFF00)>>8;
+  ID_L = (ID & 0x00FF);
   
   wd[0] = FrameHead;
 	wd[1] = ID_H;
@@ -278,10 +308,10 @@ void Response(uint8_t Error)
   wd[11]= (ConverterData & 0xFF00)>>8;
 	wd[12]= (ConverterData & 0x00FF);
   
-  wd[13]= (CurrentTuneValue & 0xFF00)>>8;
-	wd[14]= (CurrentTuneValue & 0x00FF);
-//   wd[13]= (ADC_Data[2] & 0xFF00)>>8;
-//   wd[14]= (ADC_Data[2] & 0x00FF);
+//   wd[13]= (CurrentTuneValue & 0xFF00)>>8;
+// 	wd[14]= (CurrentTuneValue & 0x00FF);
+  wd[13]= (ADC_Data[2] & 0xFF00)>>8;
+  wd[14]= (ADC_Data[2] & 0x00FF);
   
 	wd[15]= (ADC_Data[3] & 0xFF00)>>8;
 	wd[16]= (ADC_Data[3] & 0x00FF);

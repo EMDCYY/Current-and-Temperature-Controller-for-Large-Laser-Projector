@@ -476,6 +476,11 @@
               <FileType>1</FileType>
               <FilePath>..\lib\stm32f0xx_exti.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f0xx_iwdg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\lib\stm32f0xx_iwdg.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -517,11 +522,6 @@
               <FilePath>..\drive\dir.c</FilePath>
             </File>
             <File>
-              <FileName>ntc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\drive\ntc.c</FilePath>
-            </File>
-            <File>
               <FileName>rdctrl.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\drive\rdctrl.c</FilePath>
@@ -535,6 +535,21 @@
               <FileName>delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\drive\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\drive\adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>converter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\drive\converter.c</FilePath>
+            </File>
+            <File>
+              <FileName>iwdg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\drive\iwdg.c</FilePath>
             </File>
           </Files>
         </Group>

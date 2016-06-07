@@ -17,7 +17,7 @@
 #include "delay.h"
 
 /* Fault Report Intial------------------------------------------*/
-// #include "fault.h"
+#include "fault.h"
 
 /* UART RS485 Header--------------------------------------------*/
 #include "dir.h"	//The Direction of RS485 -- Recive or Transmit
@@ -33,18 +33,25 @@
 #include "protocol.h"
 
 /* Other Function-----------------------------------------------*/
-// #include "ismon.h"
 // #include "PWM.h"
 
 /* Interupt-----------------------------------------------------*/
 #include "stm32f0xx_it.h"
+
+/* IWDG---------------------------------------------------------*/
+// #include "iwdg.h"
+
+/* EEPROM-------------------------------------------------------*/
+// #include "eeprom_emulation.h"
 
 extern __IO uint8_t  Error;
 extern __IO uint16_t ADC_Data[6];
 extern __IO uint8_t rd[19];
 
 int main(void)
-{
+{ 
+
+  
   SystemInit();
 	
 /* Basic State Setup----------------------------------------------------*/
@@ -52,7 +59,11 @@ int main(void)
 	State_Init(); 	//LED Show
 
 /* Fault Report Intial--------------------------------------------------*/
-// 	Fault_Init();
+	Fault_Init();
+  
+/* IWDG Intial----------------------------------------------------------*/
+//   TIM14_ConfigForLSI();
+//   IWDG_Configuration();
 	
 // /* PWM Intial-----------------------------------------------------------*/
 //   PWM_Init();
@@ -73,24 +84,19 @@ int main(void)
   ADC_CSOUT_ISMON_Config();
   ADC_DMA_Init();
 
-//看门狗  
+ 
   while (1)
   {
-    if (Error ==Short)
+    if (Error == Short)
     {
       Enable_Off();
-    	while(1)
-      {
-        State_Short();
-      }
+      State_Short();
+
     }
     else if(Error == Vmode)
     {
       Enable_Off();
-      while(1)
-      {
-        State_Vmode();
-      }
+      State_Vmode();
     }
     else
     {
@@ -112,10 +118,4 @@ int main(void)
     }
   }
 }	
-
-
-
-
-
-
 

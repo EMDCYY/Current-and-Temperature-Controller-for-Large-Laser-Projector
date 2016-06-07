@@ -29,7 +29,7 @@ I (..\inc\stm32f0xx_tim.h)(0x4F976AF4)
 I (..\inc\stm32f0xx_usart.h)(0x4F976AF4)
 I (..\inc\stm32f0xx_wwdg.h)(0x4F976AF4)
 I (..\inc\stm32f0xx_misc.h)(0x4F976AF4)
-F (.\main.c)(0x574FD10C)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\inc -I..\stm32f0 -I..\lib -I..\drive -I..\user -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F0xx -DUSE_STDPERIPH_DRIVER -DSTM32F0XX -o "main.o" --omf_browse "main.crf" --depend "main.d")
+F (.\main.c)(0x57562BCA)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\inc -I..\stm32f0 -I..\lib -I..\drive -I..\user -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F0xx -DUSE_STDPERIPH_DRIVER -DSTM32F0XX -o "main.o" --omf_browse "main.crf" --depend "main.d")
 I (C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h)(0x5546FD29)
 I (C:\Keil\ARM\CMSIS\Include\core_cm0.h)(0x50062982)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB0D284)
@@ -63,12 +63,13 @@ I (..\drive\state.h)(0x55F7DF9E)
 I (..\drive\enable.h)(0x574FC812)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h)(0x4EB0D288)
 I (..\drive\delay.h)(0x5743ADBE)
+I (..\drive\fault.h)(0x56DD4074)
 I (..\drive\dir.h)(0x56E10818)
 I (..\drive\uart.h)(0x56E10818)
 I (..\drive\dac.h)(0x574EC8F8)
 I (..\drive\adc.h)(0x574CF2C0)
 I (..\drive\protocol.h)(0x56D453AA)
-I (..\lib\stm32f0xx_it.h)(0x574D4A9A)
+I (..\lib\stm32f0xx_it.h)(0x5756211F)
 F (..\lib\stm32f0xx_gpio.c)(0x554C6154)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\inc -I..\stm32f0 -I..\lib -I..\drive -I..\user -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F0xx -DUSE_STDPERIPH_DRIVER -DSTM32F0XX -o "stm32f0xx_gpio.o" --omf_browse "stm32f0xx_gpio.crf" --depend "stm32f0xx_gpio.d")
 I (..\lib\stm32f0xx_gpio.h)(0x4F976AF4)
 I (C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h)(0x5546FD29)
@@ -191,8 +192,8 @@ I (..\inc\stm32f0xx_tim.h)(0x4F976AF4)
 I (..\inc\stm32f0xx_usart.h)(0x4F976AF4)
 I (..\inc\stm32f0xx_wwdg.h)(0x4F976AF4)
 I (..\inc\stm32f0xx_misc.h)(0x4F976AF4)
-F (..\lib\stm32f0xx_it.c)(0x574E96A2)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\inc -I..\stm32f0 -I..\lib -I..\drive -I..\user -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F0xx -DUSE_STDPERIPH_DRIVER -DSTM32F0XX -o "stm32f0xx_it.o" --omf_browse "stm32f0xx_it.crf" --depend "stm32f0xx_it.d")
-I (..\lib\stm32f0xx_it.h)(0x574D4A9A)
+F (..\lib\stm32f0xx_it.c)(0x57562A80)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\inc -I..\stm32f0 -I..\lib -I..\drive -I..\user -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F0xx -DUSE_STDPERIPH_DRIVER -DSTM32F0XX -o "stm32f0xx_it.o" --omf_browse "stm32f0xx_it.crf" --depend "stm32f0xx_it.d")
+I (..\lib\stm32f0xx_it.h)(0x5756211F)
 I (C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h)(0x5546FD29)
 I (C:\Keil\ARM\CMSIS\Include\core_cm0.h)(0x50062982)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB0D284)
@@ -412,6 +413,66 @@ I (..\inc\stm32f0xx_tim.h)(0x4F976AF4)
 I (..\inc\stm32f0xx_usart.h)(0x4F976AF4)
 I (..\inc\stm32f0xx_wwdg.h)(0x4F976AF4)
 I (..\inc\stm32f0xx_misc.h)(0x4F976AF4)
+F (..\lib\stm32f0xx_iwdg.c)(0x4F976AF4)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\inc -I..\stm32f0 -I..\lib -I..\drive -I..\user -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F0xx -DUSE_STDPERIPH_DRIVER -DSTM32F0XX -o "stm32f0xx_iwdg.o" --omf_browse "stm32f0xx_iwdg.crf" --depend "stm32f0xx_iwdg.d")
+I (..\lib\stm32f0xx_iwdg.h)(0x4F976AF4)
+I (C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h)(0x5546FD29)
+I (C:\Keil\ARM\CMSIS\Include\core_cm0.h)(0x50062982)
+I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB0D284)
+I (C:\Keil\ARM\CMSIS\Include\core_cmInstr.h)(0x50595C8C)
+I (C:\Keil\ARM\CMSIS\Include\core_cmFunc.h)(0x4FDA945C)
+I (C:\Keil\ARM\Inc\ST\STM32F0xx\system_stm32f0xx.h)(0x5003760C)
+I (..\stm32f0\stm32f0xx_conf.h)(0x4F976AF0)
+I (..\inc\stm32f0xx_adc.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_cec.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_crc.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_comp.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_dac.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_dbgmcu.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_dma.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_exti.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_flash.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_gpio.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_syscfg.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_i2c.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_iwdg.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_pwr.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_rcc.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_rtc.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_spi.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_tim.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_usart.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_wwdg.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_misc.h)(0x4F976AF4)
+F (..\lib\stm32f0xx_flash.c)(0x4F976AF4)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\inc -I..\stm32f0 -I..\lib -I..\drive -I..\user -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F0xx -DUSE_STDPERIPH_DRIVER -DSTM32F0XX -o "stm32f0xx_flash.o" --omf_browse "stm32f0xx_flash.crf" --depend "stm32f0xx_flash.d")
+I (..\lib\stm32f0xx_flash.h)(0x4F976AF4)
+I (C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h)(0x5546FD29)
+I (C:\Keil\ARM\CMSIS\Include\core_cm0.h)(0x50062982)
+I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB0D284)
+I (C:\Keil\ARM\CMSIS\Include\core_cmInstr.h)(0x50595C8C)
+I (C:\Keil\ARM\CMSIS\Include\core_cmFunc.h)(0x4FDA945C)
+I (C:\Keil\ARM\Inc\ST\STM32F0xx\system_stm32f0xx.h)(0x5003760C)
+I (..\stm32f0\stm32f0xx_conf.h)(0x4F976AF0)
+I (..\inc\stm32f0xx_adc.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_cec.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_crc.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_comp.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_dac.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_dbgmcu.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_dma.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_exti.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_flash.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_gpio.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_syscfg.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_i2c.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_iwdg.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_pwr.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_rcc.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_rtc.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_spi.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_tim.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_usart.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_wwdg.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_misc.h)(0x4F976AF4)
 F (..\drive\uart.c)(0x5719ECF2)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\inc -I..\stm32f0 -I..\lib -I..\drive -I..\user -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F0xx -DUSE_STDPERIPH_DRIVER -DSTM32F0XX -o "uart.o" --omf_browse "uart.crf" --depend "uart.d")
 I (..\drive\uart.h)(0x56E10818)
 I (C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h)(0x5546FD29)
@@ -510,7 +571,7 @@ I (..\inc\stm32f0xx_tim.h)(0x4F976AF4)
 I (..\inc\stm32f0xx_usart.h)(0x4F976AF4)
 I (..\inc\stm32f0xx_wwdg.h)(0x4F976AF4)
 I (..\inc\stm32f0xx_misc.h)(0x4F976AF4)
-F (..\drive\state.c)(0x5743AEC6)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\inc -I..\stm32f0 -I..\lib -I..\drive -I..\user -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F0xx -DUSE_STDPERIPH_DRIVER -DSTM32F0XX -o "state.o" --omf_browse "state.crf" --depend "state.d")
+F (..\drive\state.c)(0x575620AA)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\inc -I..\stm32f0 -I..\lib -I..\drive -I..\user -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F0xx -DUSE_STDPERIPH_DRIVER -DSTM32F0XX -o "state.o" --omf_browse "state.crf" --depend "state.d")
 I (..\drive\state.h)(0x55F7DF9E)
 I (C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h)(0x5546FD29)
 I (C:\Keil\ARM\CMSIS\Include\core_cm0.h)(0x50062982)
@@ -661,7 +722,7 @@ I (..\inc\stm32f0xx_tim.h)(0x4F976AF4)
 I (..\inc\stm32f0xx_usart.h)(0x4F976AF4)
 I (..\inc\stm32f0xx_wwdg.h)(0x4F976AF4)
 I (..\inc\stm32f0xx_misc.h)(0x4F976AF4)
-F (..\drive\protocol.c)(0x574FD000)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\inc -I..\stm32f0 -I..\lib -I..\drive -I..\user -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F0xx -DUSE_STDPERIPH_DRIVER -DSTM32F0XX -o "protocol.o" --omf_browse "protocol.crf" --depend "protocol.d")
+F (..\drive\protocol.c)(0x575519D1)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\inc -I..\stm32f0 -I..\lib -I..\drive -I..\user -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F0xx -DUSE_STDPERIPH_DRIVER -DSTM32F0XX -o "protocol.o" --omf_browse "protocol.crf" --depend "protocol.d")
 I (..\drive\protocol.h)(0x56D453AA)
 I (C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h)(0x5546FD29)
 I (C:\Keil\ARM\CMSIS\Include\core_cm0.h)(0x50062982)
@@ -700,6 +761,7 @@ I (..\drive\dir.h)(0x56E10818)
 I (..\drive\delay.h)(0x5743ADBE)
 I (..\drive\converter.h)(0x574EC8F9)
 I (C:\Keil\ARM\ARMCC\bin\..\include\string.h)(0x4EB0D286)
+I (..\drive\eeprom_emulation.h)(0x575506EC)
 F (..\drive\delay.c)(0x5743AF14)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\inc -I..\stm32f0 -I..\lib -I..\drive -I..\user -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F0xx -DUSE_STDPERIPH_DRIVER -DSTM32F0XX -o "delay.o" --omf_browse "delay.crf" --depend "delay.d")
 I (..\drive\delay.h)(0x5743ADBE)
 I (C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h)(0x5546FD29)
@@ -792,3 +854,34 @@ I (..\inc\stm32f0xx_wwdg.h)(0x4F976AF4)
 I (..\inc\stm32f0xx_misc.h)(0x4F976AF4)
 I (C:\Keil\ARM\ARMCC\bin\..\include\string.h)(0x4EB0D286)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h)(0x4EB0D288)
+F (..\drive\iwdg.c)(0x5750F758)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\inc -I..\stm32f0 -I..\lib -I..\drive -I..\user -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F0xx -DUSE_STDPERIPH_DRIVER -DSTM32F0XX -o "iwdg.o" --omf_browse "iwdg.crf" --depend "iwdg.d")
+F (..\drive\eeprom_emulation.c)(0x57550742)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\inc -I..\stm32f0 -I..\lib -I..\drive -I..\user -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F0xx -DUSE_STDPERIPH_DRIVER -DSTM32F0XX -o "eeprom_emulation.o" --omf_browse "eeprom_emulation.crf" --depend "eeprom_emulation.d")
+I (..\drive\eeprom_emulation.h)(0x575506EC)
+I (C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h)(0x5546FD29)
+I (C:\Keil\ARM\CMSIS\Include\core_cm0.h)(0x50062982)
+I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB0D284)
+I (C:\Keil\ARM\CMSIS\Include\core_cmInstr.h)(0x50595C8C)
+I (C:\Keil\ARM\CMSIS\Include\core_cmFunc.h)(0x4FDA945C)
+I (C:\Keil\ARM\Inc\ST\STM32F0xx\system_stm32f0xx.h)(0x5003760C)
+I (..\stm32f0\stm32f0xx_conf.h)(0x4F976AF0)
+I (..\inc\stm32f0xx_adc.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_cec.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_crc.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_comp.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_dac.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_dbgmcu.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_dma.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_exti.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_flash.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_gpio.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_syscfg.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_i2c.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_iwdg.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_pwr.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_rcc.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_rtc.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_spi.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_tim.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_usart.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_wwdg.h)(0x4F976AF4)
+I (..\inc\stm32f0xx_misc.h)(0x4F976AF4)
