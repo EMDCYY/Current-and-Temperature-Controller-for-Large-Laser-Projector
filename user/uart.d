@@ -30,4 +30,6 @@ uart.o: ..\inc\stm32f0xx_usart.h
 uart.o: ..\inc\stm32f0xx_wwdg.h
 uart.o: ..\inc\stm32f0xx_misc.h
 uart.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+uart.o: ..\drive\dir.h
+uart.o: ..\drive\delay.h
 uart.o: C:\Keil\ARM\ARMCC\bin\..\include\stdarg.h

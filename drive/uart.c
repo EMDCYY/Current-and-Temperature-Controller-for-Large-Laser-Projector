@@ -1,6 +1,8 @@
 #include "uart.h"
-#include <stdarg.h>
-#include <stdio.h>
+#include "dir.h"
+#include "delay.h"
+#include "stdarg.h"
+#include "stdio.h"
 
 /* Private function prototypes -----------------------------------------------*/
 
@@ -56,6 +58,15 @@ void UART_Configuration(void)//串口初始化函数
         USART_Cmd(USART1, ENABLE);//使能串口1
 // 				USART_ClearFlag(USART1,USART_FLAG_TC);   
 		}	
+
+void UART_Init(void)
+{
+  Dir_Init();             //The Direction of RS485 -- Recive or Transmit
+  delay_ms(10);
+  UART_Configuration();   //RS485 Configuration
+  delay_ms(10);
+  Dir_Receive();
+}
 
 void UART_send_byte(uint8_t byte) //发送1字节数据
 {

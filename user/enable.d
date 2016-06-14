@@ -35,3 +35,6 @@ enable.o: ..\drive\state.h
 enable.o: ..\drive\delay.h
 enable.o: ..\drive\dac.h
 enable.o: ..\drive\converter.h
+enable.o: ..\drive\eeprom_emulation.h
+enable.o: ..\drive\dir.h
+enable.o: ..\drive\uart.h

@@ -3,6 +3,10 @@
 /* Function		:	Initial PWM Pin               */
 /* Parameter	:	None                          */
 /**********************************************/
+
+#define PWM_PIN      GPIO_Pin_3
+#define PWM_PORT     GPIOB
+
 void PWM_Init(void)
 {
 	GPIO_InitTypeDef GPIO_InitStruct;

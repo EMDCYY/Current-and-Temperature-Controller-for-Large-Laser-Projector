@@ -68,7 +68,7 @@ extern __IO uint16_t ADC_Data[6];
   * @retval None
   */
 
-void DAC_Config(void)
+void DAC_exInit(void)
 {
   GPIO_InitTypeDef GPIO_InitStructure;
 

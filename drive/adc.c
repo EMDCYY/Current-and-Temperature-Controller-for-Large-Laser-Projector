@@ -93,3 +93,10 @@ void ADC_DMA_Init(void)
   /* Enable ADC_DMA */
   ADC_DMACmd(ADC1, ENABLE);  
 }
+
+void ADC_exInit(void)
+{
+  ADC_LP_UVP_NTC_Config();
+  ADC_CSOUT_ISMON_Config();
+  ADC_DMA_Init();
+}

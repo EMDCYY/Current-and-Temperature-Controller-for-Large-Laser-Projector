@@ -5,6 +5,7 @@
 #include <stdio.h>
 
 void UART_Configuration(void);
+void UART_Init(void);
 int fputc(int ch, FILE *f);
 void UART_send_byte(uint8_t byte);
 void UART_Send(uint8_t *Buffer, uint32_t Length);

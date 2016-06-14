@@ -29,9 +29,9 @@ protocol.o: ..\inc\stm32f0xx_tim.h
 protocol.o: ..\inc\stm32f0xx_usart.h
 protocol.o: ..\inc\stm32f0xx_wwdg.h
 protocol.o: ..\inc\stm32f0xx_misc.h
+protocol.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 protocol.o: ..\drive\enable.h
 protocol.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
-protocol.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 protocol.o: ..\drive\state.h
 protocol.o: ..\drive\uart.h
 protocol.o: ..\drive\dir.h
@@ -39,3 +39,4 @@ protocol.o: ..\drive\delay.h
 protocol.o: ..\drive\converter.h
 protocol.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
 protocol.o: ..\drive\eeprom_emulation.h
+protocol.o: ..\lib\stm32f0xx_it.h

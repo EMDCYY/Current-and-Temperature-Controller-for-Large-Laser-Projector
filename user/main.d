@@ -29,9 +29,9 @@ main.o: ..\inc\stm32f0xx_usart.h
 main.o: ..\inc\stm32f0xx_wwdg.h
 main.o: ..\inc\stm32f0xx_misc.h
 main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 main.o: ..\drive\state.h
 main.o: ..\drive\enable.h
-main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 main.o: ..\drive\delay.h
 main.o: ..\drive\fault.h
 main.o: ..\drive\dir.h
@@ -39,4 +39,6 @@ main.o: ..\drive\uart.h
 main.o: ..\drive\dac.h
 main.o: ..\drive\adc.h
 main.o: ..\drive\protocol.h
+main.o: ..\drive\eeprom_emulation.h
 main.o: ..\lib\stm32f0xx_it.h
+main.o: ..\drive\iwdg.h

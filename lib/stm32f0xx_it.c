@@ -45,6 +45,7 @@ __IO uint8_t  Error = NoWarn;
 // extern __IO uint16_t  Ismon_Data[20];
 __IO uint8_t  rd[19];
 extern __IO uint8_t  wd[18];
+extern __IO bool  Flag_On;
 uint16_t cd[12];
 int k = 0;
 int i = 0;
@@ -82,16 +83,24 @@ void EXTI4_15_IRQHandler(void)
 {
   if(EXTI_GetITStatus(EXTI_Line6) != RESET)
   {
-
-		Error = Short;
-    Enable_Off();
+    if(Flag_On == true)
+    {
+      GPIO_ResetBits(Enable_PORT, Enable_PIN );
+      Error = Short;
+      
+    }
     EXTI_ClearITPendingBit(EXTI_Line6);
   }
 	else if(EXTI_GetITStatus(EXTI_Line7) != RESET)
 	{
-		Error = Vmode;
-    Enable_Off();
+		if(Flag_On == true)
+    {
+      GPIO_ResetBits(Enable_PORT, Enable_PIN );
+      Error = Vmode;
+      
+    }
     EXTI_ClearITPendingBit(EXTI_Line7);
+    
 	}
 }
 

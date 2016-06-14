@@ -7,6 +7,10 @@
 **********************************************************************************/
 
 #include "dir.h"
+
+#define Dir_PIN      GPIO_Pin_11
+#define Dir_PORT     GPIOA
+
 /**********************************************/
 /* Function		:	Initial Enable Pin        */
 /* Parameter	:	None                      */

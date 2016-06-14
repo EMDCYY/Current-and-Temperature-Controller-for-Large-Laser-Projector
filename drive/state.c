@@ -4,6 +4,10 @@
 /* Function		:	Initial Enable Pin        */
 /* Parameter	:	None                      */
 /**********************************************/
+
+#define State_PIN      GPIO_Pin_12
+#define State_PORT     GPIOA
+
 void State_Init(void)
 {
 	GPIO_InitTypeDef GPIO_InitStruct;

@@ -3,5 +3,4 @@
 
 #include "stm32f0xx.h"
 void IWDG_Configuration(void);
-void TIM14_ConfigForLSI(void);
 #endif /* __iwdg_H */

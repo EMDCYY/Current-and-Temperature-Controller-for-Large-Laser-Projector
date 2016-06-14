@@ -40,7 +40,7 @@
 ### ADS-LD Output File: 'drivCtrl.axf'
 ### ADS-LD Command File: 'drivCtrl.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'drivCtrl.lnp', Handle=0x00000698
+### Creating CmdFile 'drivCtrl.lnp', Handle=0x000003C4
 ### Writing '.lnp' file
 ### ADS-LD Command file 'drivCtrl.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.
