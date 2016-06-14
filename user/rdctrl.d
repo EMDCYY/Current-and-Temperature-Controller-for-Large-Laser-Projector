@@ -2,7 +2,7 @@ rdctrl.o: ..\drive\rdctrl.c
 rdctrl.o: ..\drive\rdctrl.h
 rdctrl.o: C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h
 rdctrl.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
-rdctrl.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+rdctrl.o: C:\Keil\ARM\RV31\Inc\stdint.h
 rdctrl.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
 rdctrl.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
 rdctrl.o: C:\Keil\ARM\Inc\ST\STM32F0xx\system_stm32f0xx.h

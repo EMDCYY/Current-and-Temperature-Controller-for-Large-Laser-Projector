@@ -2,7 +2,7 @@ iwdg.o: ..\drive\iwdg.c
 iwdg.o: ..\drive\iwdg.h
 iwdg.o: C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h
 iwdg.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
-iwdg.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+iwdg.o: C:\Keil\ARM\RV31\Inc\stdint.h
 iwdg.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
 iwdg.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
 iwdg.o: C:\Keil\ARM\Inc\ST\STM32F0xx\system_stm32f0xx.h

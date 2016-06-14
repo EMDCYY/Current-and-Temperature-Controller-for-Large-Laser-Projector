@@ -384,7 +384,7 @@ ARM Macro Assembler    Page 6
               00000200 
               00000000 
 Command Line: --debug --xref --cpu=Cortex-M0 --apcs=interwork --depend=startup_
-stm32f0xx.d -ostartup_stm32f0xx.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\In
+stm32f0xx.d -ostartup_stm32f0xx.o -IC:\Keil\ARM\RV31\Inc -IC:\Keil\ARM\CMSIS\In
 clude -IC:\Keil\ARM\Inc\ST\STM32F0xx --list=startup_stm32f0xx.lst startup_stm32
 f0xx.s
 

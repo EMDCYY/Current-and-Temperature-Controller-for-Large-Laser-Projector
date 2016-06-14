@@ -481,6 +481,11 @@
               <FileType>1</FileType>
               <FilePath>..\lib\stm32f0xx_iwdg.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f0xx_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\lib\stm32f0xx_flash.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -550,6 +555,11 @@
               <FileName>iwdg.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\drive\iwdg.c</FilePath>
+            </File>
+            <File>
+              <FileName>eeprom_emulation.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\drive\eeprom_emulation.c</FilePath>
             </File>
           </Files>
         </Group>

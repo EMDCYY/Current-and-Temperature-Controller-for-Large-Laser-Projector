@@ -2,7 +2,7 @@ converter.o: ..\drive\converter.c
 converter.o: ..\drive\converter.h
 converter.o: C:\Keil\ARM\Inc\ST\STM32F0xx\stm32f0xx.h
 converter.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
-converter.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+converter.o: C:\Keil\ARM\RV31\Inc\stdint.h
 converter.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
 converter.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
 converter.o: C:\Keil\ARM\Inc\ST\STM32F0xx\system_stm32f0xx.h
@@ -29,5 +29,5 @@ converter.o: ..\inc\stm32f0xx_tim.h
 converter.o: ..\inc\stm32f0xx_usart.h
 converter.o: ..\inc\stm32f0xx_wwdg.h
 converter.o: ..\inc\stm32f0xx_misc.h
-converter.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
-converter.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+converter.o: C:\Keil\ARM\RV31\Inc\string.h
+converter.o: C:\Keil\ARM\RV31\Inc\stdbool.h
