@@ -1,0 +1,51 @@
+*** Creating Trace Output File 'drivCtrl.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup_stm32f0xx.o"'
+### List of Objects: adding '"system_stm32f0xx.o"'
+### List of Objects: adding '"main.o"'
+### List of Objects: adding '"stm32f0xx_gpio.o"'
+### List of Objects: adding '"stm32f0xx_rcc.o"'
+### List of Objects: adding '"stm32f0xx_usart.o"'
+### List of Objects: adding '"stm32f0xx_misc.o"'
+### List of Objects: adding '"stm32f0xx_it.o"'
+### List of Objects: adding '"stm32f0xx_dac.o"'
+### List of Objects: adding '"stm32f0xx_dma.o"'
+### List of Objects: adding '"stm32f0xx_tim.o"'
+### List of Objects: adding '"stm32f0xx_adc.o"'
+### List of Objects: adding '"stm32f0xx_syscfg.o"'
+### List of Objects: adding '"stm32f0xx_exti.o"'
+### List of Objects: adding '"stm32f0xx_flash.o"'
+### List of Objects: adding '"stm32f0xx_iwdg.o"'
+### List of Objects: adding '"enable.o"'
+### List of Objects: adding '"dac.o"'
+### List of Objects: adding '"state.o"'
+### List of Objects: adding '"fault.o"'
+### List of Objects: adding '"pwm.o"'
+### List of Objects: adding '"dir.o"'
+### List of Objects: adding '"rdctrl.o"'
+### List of Objects: adding '"usart.o"'
+### List of Objects: adding '"eeprom_emulation.o"'
+### List of Objects: adding '"protocol.o"'
+### List of Objects: adding '"adc.o"'
+### List of Objects: adding '"converter.o"'
+### List of Objects: adding '"delay.o"'
+### List of Objects: adding '"exit.o"'
+### List of Objects: adding '"iwdg.o"'
+### List of Objects: adding '"systick.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M0 "startup_stm32f0xx.o" "system_stm32f0xx.o" "main.o" "stm32f0xx_gpio.o" "stm32f0xx_rcc.o" "stm32f0xx_usart.o" "stm32f0xx_misc.o" "stm32f0xx_it.o" "stm32f0xx_dac.o" "stm32f0xx_dma.o" "stm32f0xx_tim.o" "stm32f0xx_adc.o" "stm32f0xx_syscfg.o" "stm32f0xx_exti.o" "stm32f0xx_flash.o" "stm32f0xx_iwdg.o" "enable.o" "dac.o" "state.o" "fault.o" "pwm.o" "dir.o" "rdctrl.o" "usart.o" "eeprom_emulation.o" "protocol.o" "adc.o" "converter.o" "delay.o" "exit.o" "iwdg.o" "systick.o" 
+--strict --scatter "drivCtrl.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\drivCtrl.map" -o drivCtrl.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'drivCtrl.axf'
+### ADS-LD Command File: 'drivCtrl.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'drivCtrl.lnp', Handle=0x0000084C
+### Writing '.lnp' file
+### ADS-LD Command file 'drivCtrl.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

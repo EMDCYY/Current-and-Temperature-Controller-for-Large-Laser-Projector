@@ -1,0 +1,47 @@
+
+T167C 000:402 SEGGER J-Link V5.00l Log File (0001ms, 0261ms total)
+T167C 000:402 DLL Compiled: Aug  7 2015 15:52:45 (0001ms, 0261ms total)
+T167C 000:402 Logging started @ 2016-03-30 15:19 (0001ms, 0261ms total)
+T167C 000:403 JLINK_SetWarnOutHandler(...) (0000ms, 0261ms total)
+T167C 000:403 JLINK_OpenEx(...)
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N: 99999993
+Feature(s): RDI,FlashDL,FlashBP,JFlash,GDBFULL  returns O.K. (0263ms, 0524ms total)
+T167C 000:666 JLINK_SetErrorOutHandler(...) (0000ms, 0524ms total)
+T167C 000:666 JLINK_ExecCommand("ProjectFile = "E:\laserTrackerDesign\$16LDPower\code\RedDriveCtrlV3.0\user\JLinkSettings.ini"", ...)  returns 0x00 (0000ms, 0524ms total)
+T167C 000:666 JLINK_ExecCommand("Device = STM32F051K8", ...)Device "STM32F051K8" selected.  returns 0x00 (0000ms, 0524ms total)
+T167C 000:666 JLINK_ExecCommand("DisableConnectionTimeout", ...)  returns 0x01 (0000ms, 0524ms total)
+T167C 000:666 JLINK_TIF_Select(JLINKARM_TIF_SWD)  returns 0x00 (0002ms, 0526ms total)
+T167C 000:668 JLINK_SetSpeed(1000) (0001ms, 0527ms total)
+T167C 000:669 JLINK_GetHardwareVersion()  returns 0x13880 (0000ms, 0527ms total)
+T167C 000:669 JLINK_GetDLLVersion()  returns 50012 (0000ms, 0527ms total)
+T167C 000:669 JLINK_GetFirmwareString(...) (0000ms, 0527ms total)
+T167C 000:669 JLINK_GetDLLVersion()  returns 50012 (0000ms, 0527ms total)
+T167C 000:669 JLINK_GetCompileDateTime() (0000ms, 0527ms total)
+T167C 000:669 JLINK_GetFirmwareString(...) (0000ms, 0527ms total)
+T167C 000:669 JLINK_GetHardwareVersion()  returns 0x13880 (0000ms, 0527ms total)
+T167C 000:669 JLINK_SetResetType(JLINKARM_RESET_TYPE_NORMAL)  returns JLINKARM_RESET_TYPE_NORMAL (0000ms, 0527ms total)
+T167C 000:669 JLINK_Reset() >0x108 TIF> >0x108 TIF>STM32F0xxx: Can not connect to CPU. Trying connect under reset. >0x108 TIF> >0x108 TIF>
+  ***** Error: STM32F0xxx: Connecting to CPU via connect under reset failed.
+                JLINK_EMU_HasCapEx(0x0000002C)  returns 0x01 (0000ms, 0000ms total)
+                JLINK_EMU_HasCapEx(0x0000002C)  returns 0x01 (0000ms, 0000ms total)
+              JLINK_GetId() >0x108 TIF> >0x108 TIF>STM32F0xxx: Can not connect to CPU. Trying connect under reset. >0x108 TIF> >0x108 TIF>
+  ***** Error: STM32F0xxx: Connecting to CPU via connect under reset failed.
+                JLINK_EMU_HasCapEx(0x0000002C)  returns 0x01 (0000ms, 0000ms total)
+                JLINK_EMU_HasCapEx(0x0000002C)  returns 0x01 (0000ms, 0000ms total)
+                returns 0x00000000 (6357ms, 13241ms total)
+T167C 013:385 JLINK_GetId() >0x108 TIF> >0x108 TIF>STM32F0xxx: Can not connect to CPU. Trying connect under reset. >0x108 TIF> >0x108 TIF>
+  ***** Error: STM32F0xxx: Connecting to CPU via connect under reset failed.
+                JLINK_EMU_HasCapEx(0x0000002C)  returns 0x01 (0000ms, 0000ms total)
+                returns 0x00000000 (3335ms, 16576ms total)
+T167C 016:721 JLINK_GetFirmwareString(...) (0000ms, 16576ms total)
+T167C 024:992 JLINK_SWO_Control(JLINKARM_SWO_CMD_GET_SPEED_INFO, ...)  returns 0x00 (0001ms, 16577ms total)
+T167C 024:993 JLINK_SWO_Control(JLINKARM_SWO_CMD_GET_SPEED_INFO, ...)  returns 0x00 (0001ms, 16578ms total)
+T167C 024:994 JLINK_SWO_Control(JLINKARM_SWO_CMD_GET_SPEED_INFO, ...)  returns 0x00 (0001ms, 16579ms total)
+T167C 024:995 JLINK_SWO_Control(JLINKARM_SWO_CMD_GET_SPEED_INFO, ...)  returns 0x00 (0001ms, 16580ms total)
+T167C 024:996 JLINK_SWO_Control(JLINKARM_SWO_CMD_GET_SPEED_INFO, ...)  returns 0x00 (0001ms, 16581ms total)
+T167C 024:997 JLINK_SWO_Control(JLINKARM_SWO_CMD_GET_SPEED_INFO, ...)  returns 0x00 (0000ms, 16581ms total)
+T167C 026:431 JLINK_Close() (0000ms, 16581ms total)
+T167C 026:431  (0000ms, 16581ms total)
+T167C 026:431 Closed (0000ms, 16581ms total)
