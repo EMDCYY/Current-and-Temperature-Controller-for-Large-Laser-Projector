@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=LP- Pin=P5-2
+Added Pin To Net: NetName=DGND Pin=P5-2
+Change Net Name : Old Net Name=DGND New Net Name=LP-
+Change Net Name : Old Net Name=LP- New Net Name=NTC2-

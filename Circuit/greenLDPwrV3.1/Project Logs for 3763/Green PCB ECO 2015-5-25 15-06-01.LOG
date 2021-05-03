@@ -1,0 +1,77 @@
+Change Component Comment : Designator=C4 Old Comment=Altium Electrolytic Cap New Comment=100uF/50V
+Change Component Comment : Designator=C11 Old Comment=Altium Electrolytic Cap New Comment=100uF/50V
+Change Component Comment : Designator=C12 Old Comment=Altium Electrolytic Cap New Comment=100uF/50V
+Change Component Comment : Designator=C19 Old Comment=Cap,0.1uF/0805 New Comment=100nF
+Change Component Comment : Designator=C16 Old Comment=Ceramic Cap,1nF,0805 New Comment=1nF
+Change Component Comment : Designator=C17 Old Comment=Ceramic Cap,1nF,0805 New Comment=1nF
+Change Component Comment : Designator=C6 Old Comment=Ceramic Cap,1uF,0805 New Comment=1uF
+Change Component Comment : Designator=C8 Old Comment=Ceramic Cap,2.2uF,0805 New Comment=2.2uF
+Change Component Comment : Designator=C20 Old Comment=Ceramic Cap,4.7nF,0805 New Comment=4.7nF
+Change Component Comment : Designator=C14 Old Comment=Ceramic Cap,4.7uF,0805 New Comment=4.7uF
+Change Component Comment : Designator=C9 Old Comment=Ceramic Cap,22uF/50V,1206 New Comment=22uF/50V
+Change Component Comment : Designator=C10 Old Comment=Ceramic Cap,22uF/50V,1206 New Comment=47uF/50V
+Change Component Comment : Designator=C13 Old Comment=Ceramic Cap,22uF/50V,1206 New Comment=47uF/50V
+Change Component Comment : Designator=C15 Old Comment=Ceramic Cap,33nF,0805 New Comment=33nF
+Change Component Comment : Designator=C18 Old Comment=Ceramic Cap,50nF,0805 New Comment=50nF
+Change Component Comment : Designator=C7 Old Comment=Ceramic Cap,220nF,0805 New Comment=220nF
+Change Component Comment : Designator=C21 Old Comment=Ceramic Cap New Comment=2.2uF/50V
+Change Component Comment : Designator=C3 Old Comment=Ceramic Cap New Comment=4.7uF/50V
+Change Component Comment : Designator=C34 Old Comment=Ceramic Cap New Comment=10uF
+Change Component Comment : Designator=C37 Old Comment=Ceramic Cap New Comment=10uF
+Change Component Comment : Designator=C25 Old Comment=Ceramic Cap New Comment=20pF
+Change Component Comment : Designator=C26 Old Comment=Ceramic Cap New Comment=20pF
+Change Component Comment : Designator=C2 Old Comment=Ceramic Cap New Comment=22uF/50V
+Change Component Comment : Designator=C32 Old Comment=Ceramic Cap New Comment=22uF
+Change Component Comment : Designator=C33 Old Comment=Ceramic Cap New Comment=22uF
+Change Component Comment : Designator=C36 Old Comment=Ceramic Cap New Comment=22uF
+Change Component Comment : Designator=C1 Old Comment=Ceramic Cap New Comment=47uF/50V
+Change Component Comment : Designator=C5 Old Comment=Ceramic Cap New Comment=47uF/50V
+Change Component Comment : Designator=C23 Old Comment=Ceramic Cap New Comment=100nF
+Change Component Comment : Designator=C24 Old Comment=Ceramic Cap New Comment=100nF
+Change Component Comment : Designator=C27 Old Comment=Ceramic Cap New Comment=100nF
+Change Component Comment : Designator=C28 Old Comment=Ceramic Cap New Comment=100nF
+Change Component Comment : Designator=C29 Old Comment=Ceramic Cap New Comment=100nF
+Change Component Comment : Designator=C30 Old Comment=Ceramic Cap New Comment=100nF
+Change Component Comment : Designator=C31 Old Comment=Ceramic Cap New Comment=100nF
+Change Component Comment : Designator=C35 Old Comment=Ceramic Cap New Comment=100nF
+Change Component Comment : Designator=C22 Old Comment=Ceramic Cap New Comment=100pF/50V
+Change Component Comment : Designator=Q2 Old Comment=PWR_RJK030 New Comment=RJK0301
+Change Component Comment : Designator=Q1 Old Comment=PWR_RJK030 New Comment=RJK0305
+Change Component Comment : Designator=Q3 Old Comment=PWR_RJK030 New Comment=RJK0305
+Change Component Comment : Designator=R6 Old Comment=Re New Comment=0.008
+Change Component Comment : Designator=R7 Old Comment=Re New Comment=0.008
+Change Component Comment : Designator=R16 Old Comment=Res,0/0805 New Comment=0
+Change Component Comment : Designator=R3 Old Comment=Res,1K/0805 New Comment=1K
+Change Component Comment : Designator=R4 Old Comment=Res,1K/0805 New Comment=1K
+Change Component Comment : Designator=R11 Old Comment=Res,10/0805 New Comment=10
+Change Component Comment : Designator=R12 Old Comment=Res,10/0805 New Comment=10
+Change Component Comment : Designator=R17 Old Comment=Res,10K/0805 New Comment=10K
+Change Component Comment : Designator=R5 Old Comment=Res,15.4K/0805 New Comment=2K
+Change Component Comment : Designator=R15 Old Comment=Res,31.5K/0805 New Comment=31.5K
+Change Component Comment : Designator=R20 Old Comment=Res,47.5K/0805 New Comment=47.5K
+Change Component Comment : Designator=R13 Old Comment=Res,50/0805 New Comment=50
+Change Component Comment : Designator=R14 Old Comment=Res,50/0805 New Comment=50
+Change Component Comment : Designator=R19 Old Comment=Res,82.5K/0805 New Comment=82.5K
+Change Component Comment : Designator=R1 Old Comment=Res New Comment=0.002
+Change Component Comment : Designator=R22 Old Comment=Res New Comment=0
+Change Component Comment : Designator=R30 Old Comment=Res New Comment=0
+Change Component Comment : Designator=R32 Old Comment=Res New Comment=2K
+Change Component Comment : Designator=R25 Old Comment=Res New Comment=3.3K
+Change Component Comment : Designator=R27 Old Comment=Res New Comment=3.3K
+Change Component Comment : Designator=R28 Old Comment=Res New Comment=3.3K
+Change Component Comment : Designator=R29 Old Comment=Res New Comment=3.3K
+Change Component Comment : Designator=R21 Old Comment=Res New Comment=5K
+Change Component Comment : Designator=R9 Old Comment=Res New Comment=10K
+Change Component Comment : Designator=R18 Old Comment=Res New Comment=10K
+Change Component Comment : Designator=R24 Old Comment=Res New Comment=10K
+Change Component Comment : Designator=R33 Old Comment=Res New Comment=10K
+Change Component Comment : Designator=R34 Old Comment=Res New Comment=10K
+Change Component Comment : Designator=R31 Old Comment=Res New Comment=20K
+Change Component Comment : Designator=R26 Old Comment=Res New Comment=120
+Change Component Comment : Designator=R23 Old Comment=Res New Comment=390
+Change Component Comment : Designator=R8 Old Comment=Res New Comment=NoP_6K
+Change Component Comment : Designator=R2 Old Comment=Res New Comment=NoP_10K
+Change Component Comment : Designator=R10 Old Comment=Res Adj1 New Comment=20K
+Change Component Description : Designator=C4 Old Description=Polarized Capacitor (Radial) New Description=Altium Electrolytic Cap
+Change Component Description : Designator=C12 Old Description=Polarized Capacitor (Radial) New Description=Altium Electrolytic Cap
+Change Component Description : Designator=C11 Old Description=Polarized Capacitor (Radial) New Description=Tantum Cap

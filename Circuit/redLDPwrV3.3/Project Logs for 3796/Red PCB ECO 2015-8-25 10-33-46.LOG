@@ -1,0 +1,3 @@
+Added Component: Designator=T4(TestPoint)
+Added Pin To Net: NetName=CS_P Pin=T4-1
+Added Member To Class: ClassName=PWR Member=Component T4 Test Point

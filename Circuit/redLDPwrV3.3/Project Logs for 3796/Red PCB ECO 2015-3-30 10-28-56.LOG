@@ -1,0 +1,10 @@
+Added Component: Designator=Q1(INF-PG-TDSON-8-1_V)
+Added Pin To Net: NetName=NetQ1_1 Pin=Q1-1
+Added Pin To Net: NetName=NetQ1_1 Pin=Q1-2
+Added Pin To Net: NetName=NetQ1_1 Pin=Q1-3
+Added Pin To Net: NetName=NetQ1_4 Pin=Q1-4
+Added Pin To Net: NetName=NetD1_1 Pin=Q1-5
+Added Pin To Net: NetName=NetD1_1 Pin=Q1-6
+Added Pin To Net: NetName=NetD1_1 Pin=Q1-7
+Added Pin To Net: NetName=NetD1_1 Pin=Q1-8
+Added Member To Class: ClassName=3796 Member=Component Q1 BSC160N10NS3 G

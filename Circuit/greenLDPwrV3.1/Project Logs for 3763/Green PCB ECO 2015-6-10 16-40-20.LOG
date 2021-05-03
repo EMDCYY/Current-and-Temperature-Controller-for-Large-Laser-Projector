@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=IVINMON Pin=U2-14
+Removed Pin From Net: NetName=NetR32_2 Pin=U2-15
+Added Pin To Net: NetName=NetR32_2 Pin=U2-14
+Added Pin To Net: NetName=IVINMON Pin=U2-15
+Added Member To Class: ClassName=MCU Member=Component U2 STM32F051K8T6

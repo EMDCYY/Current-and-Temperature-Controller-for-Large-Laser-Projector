@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=DGND Pin=P1-1
+Removed Pin From Net: NetName=SWCLK Pin=P1-2
+Removed Pin From Net: NetName=SWDAT Pin=P1-3
+Removed Pin From Net: NetName=3V3 Pin=P1-4
+Removed Member From Class: ClassName=MCU Member=C29
+Removed Member From Class: ClassName=MCU Member=P1
+Removed Member From Class: ClassName=MCU Member=R25
+Change Component Designator: OldDesignator=P2 NewDesignator=P1
+Change Component Designator: OldDesignator=P3 NewDesignator=P2
+Change Component Designator: OldDesignator=P4 NewDesignator=P3
+Added Component: Designator=P4(4P)
+Added Pin To Net: NetName=DGND Pin=P4-1
+Added Pin To Net: NetName=SWCLK Pin=P4-2
+Added Pin To Net: NetName=SWDAT Pin=P4-3
+Added Pin To Net: NetName=3V3 Pin=P4-4
+Added Member To Class: ClassName=MCU Member=Component C25 Ceramic Cap
+Added Member To Class: ClassName=PWR Member=Component P4 Header 4
+Added Member To Class: ClassName=MCU Member=Component R24 Res

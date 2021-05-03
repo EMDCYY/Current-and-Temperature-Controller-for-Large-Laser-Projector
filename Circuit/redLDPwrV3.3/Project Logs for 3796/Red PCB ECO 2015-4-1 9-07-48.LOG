@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=LD+ Pin=P3-1
+Removed Pin From Net: NetName=GND Pin=P3-2
+Removed Pin From Net: NetName=NTC+ Pin=P3-5
+Removed Pin From Net: NetName=NTC+ Pin=P3-6
+Added Pin To Net: NetName=VIN_24V Pin=C17-1
+Added Pin To Net: NetName=NTC+ Pin=P3-1
+Added Pin To Net: NetName=NTC+ Pin=P3-2
+Added Pin To Net: NetName=GND Pin=P3-5
+Added Pin To Net: NetName=LD+ Pin=P3-6
+Added Pin To Net: NetName=VIN_24V Pin=U2-5

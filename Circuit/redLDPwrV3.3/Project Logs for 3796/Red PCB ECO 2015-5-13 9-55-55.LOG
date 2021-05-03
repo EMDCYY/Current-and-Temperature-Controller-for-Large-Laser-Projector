@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=NetP4_1 Pin=P4-1
+Removed Pin From Net: NetName=NetP4_2 Pin=P4-2
+Removed Pin From Net: NetName=NetP4_2 Pin=U3-26
+Removed Pin From Net: NetName=NetP4_1 Pin=U3-27
+Removed Member From Class: ClassName=MCU Member=P4
+Added Component: Designator=T1(TestPoint)
+Added Component: Designator=T2(TestPoint)
+Added Pin To Net: NetName=NetP4_1 Pin=T1-1
+Added Pin To Net: NetName=NetP4_2 Pin=T2-1
+Added Pin To Net: NetName=NetP4_2 Pin=U3-22
+Added Pin To Net: NetName=NetP4_1 Pin=U3-25
+Change Net Name : Old Net Name=NetP4_1 New Net Name=NetT1_1
+Change Net Name : Old Net Name=NetP4_2 New Net Name=NetT2_1
+Added Member To Class: ClassName=MCU Member=Component T1 Test Point
+Added Member To Class: ClassName=MCU Member=Component T2 Test Point

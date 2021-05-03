@@ -1,0 +1,7 @@
+Added Component: Designator=C36(1206[3216] - NP)
+Added Component: Designator=T3(TestPoint)
+Added Pin To Net: NetName=GND Pin=C36-1
+Added Pin To Net: NetName=IS_P Pin=C36-2
+Added Pin To Net: NetName=LD+ Pin=T3-1
+Added Member To Class: ClassName=3796 Member=Component C36 22uF/50V
+Added Member To Class: ClassName=3796 Member=Component T3 Test Point

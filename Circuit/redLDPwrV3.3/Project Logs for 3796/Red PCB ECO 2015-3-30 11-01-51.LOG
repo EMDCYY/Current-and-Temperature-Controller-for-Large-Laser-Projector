@@ -1,0 +1,33 @@
+Removed Pin From Net: NetName=NTC+ Pin=P3-1
+Removed Pin From Net: NetName=NTC+ Pin=P3-2
+Removed Pin From Net: NetName=GND Pin=P3-5
+Removed Pin From Net: NetName=LD+ Pin=P3-6
+Removed Member From Class: ClassName=MCU Member=P3
+Change Component Designator: OldDesignator=C25 NewDesignator=C26
+Change Component Designator: OldDesignator=C26 NewDesignator=C27
+Change Component Designator: OldDesignator=C27 NewDesignator=C28
+Change Component Designator: OldDesignator=C28 NewDesignator=C29
+Change Component Designator: OldDesignator=C29 NewDesignator=C30
+Change Component Designator: OldDesignator=P1 NewDesignator=P2
+Change Component Designator: OldDesignator=P2 NewDesignator=P3
+Change Component Designator: OldDesignator=P3 NewDesignator=P4
+Change Component Designator: OldDesignator=P4 NewDesignator=P1
+Change Component Designator: OldDesignator=R24 NewDesignator=R25
+Change Component Designator: OldDesignator=R25 NewDesignator=R26
+Added Component: Designator=C25(1608[0603])
+Added Component: Designator=R24(1608[0603])
+Added Pin To Net: NetName=3V3 Pin=C25-1
+Added Pin To Net: NetName=NTC+ Pin=C25-2
+Added Pin To Net: NetName=LD+ Pin=P4-1
+Added Pin To Net: NetName=GND Pin=P4-2
+Added Pin To Net: NetName=GND Pin=P4-3
+Added Pin To Net: NetName=GND Pin=P4-4
+Added Pin To Net: NetName=NTC+ Pin=P4-5
+Added Pin To Net: NetName=NTC+ Pin=P4-6
+Added Pin To Net: NetName=3V3 Pin=R24-1
+Added Pin To Net: NetName=NTC+ Pin=R24-2
+Change Net Name : Old Net Name=GND New Net Name=NTC-
+Added Member To Class: ClassName=MCU Member=Component C25 Ceramic Cap
+Added Member To Class: ClassName=MCU Member=Component P1 Header 4
+Added Member To Class: ClassName=PWR Member=Component P4 Header 6
+Added Member To Class: ClassName=MCU Member=Component R24 Res

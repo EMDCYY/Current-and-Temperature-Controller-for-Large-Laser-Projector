@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=NTC- Pin=P3-3
+Removed Pin From Net: NetName=NTC- Pin=P3-4
+Added Pin To Net: NetName=DGND Pin=P3-3
+Added Pin To Net: NetName=DGND Pin=P3-4
+Change Net Name : Old Net Name=DGND New Net Name=NTC-
+Change Net Name : Old Net Name=NTC- New Net Name=GND
+Added Member To Class: ClassName=PWR Member=Component P1 Header 2

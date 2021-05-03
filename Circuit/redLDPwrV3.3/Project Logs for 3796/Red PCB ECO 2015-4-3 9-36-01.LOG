@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=NTC+ Pin=P3-2
+Removed Pin From Net: NetName=NTC- Pin=P3-3
+Removed Pin From Net: NetName=NTC- Pin=P3-4
+Removed Pin From Net: NetName=GND Pin=P3-5
+Removed Pin From Net: NetName=F\A\U\L\T\ Pin=U3-11
+Removed Pin From Net: NetName=V\M\O\D\E\ Pin=U3-12
+Removed Pin From Net: NetName=ISMON Pin=U3-13
+Removed Pin From Net: NetName=PWM Pin=U3-15
+Added Pin To Net: NetName=NTC- Pin=P3-2
+Added Pin To Net: NetName=GND Pin=P3-3
+Added Pin To Net: NetName=GND Pin=P3-4
+Added Pin To Net: NetName=LD+ Pin=P3-5
+Added Pin To Net: NetName=ISMON Pin=U3-11
+Added Pin To Net: NetName=PWM Pin=U3-12
+Added Pin To Net: NetName=F\A\U\L\T\ Pin=U3-13
+Added Pin To Net: NetName=V\M\O\D\E\ Pin=U3-15

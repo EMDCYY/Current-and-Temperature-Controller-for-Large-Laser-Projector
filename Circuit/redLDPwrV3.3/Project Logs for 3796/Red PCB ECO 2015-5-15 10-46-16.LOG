@@ -1,0 +1,4 @@
+Added Component: Designator=R34(1608[0603])
+Added Pin To Net: NetName=LP- Pin=R34-1
+Added Pin To Net: NetName=STATUS Pin=R34-2
+Added Member To Class: ClassName=PWR Member=Component R34 Res

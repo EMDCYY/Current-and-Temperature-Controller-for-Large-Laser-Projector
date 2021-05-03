@@ -1,0 +1,4 @@
+Removed Member From Class: ClassName=PWR Member=P1
+Removed Member From Class: ClassName=PWR Member=P2
+Added Member To Class: ClassName=PWR Member=Component P4 VH Connector, B2P-VH
+Added Member To Class: ClassName=PWR Member=Component P5 TJC3B-8AD

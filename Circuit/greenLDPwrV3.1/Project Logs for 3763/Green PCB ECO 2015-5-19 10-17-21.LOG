@@ -1,0 +1,4 @@
+Removed Member From Class: ClassName=PWR Member=C31
+Removed Member From Class: ClassName=3763 Member=D4
+Added Pin To Net: NetName=INVTCC Pin=C19-2
+Added Pin To Net: NetName=INVTCC Pin=R18-1

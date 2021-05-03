@@ -1,0 +1,4 @@
+Added Component: Designator=L1(IHLP4040)
+Added Pin To Net: NetName=NetL1_1 Pin=L1-1
+Added Pin To Net: NetName=NetD1_1 Pin=L1-2
+Added Member To Class: ClassName=3796 Member=Component L1 Inductor

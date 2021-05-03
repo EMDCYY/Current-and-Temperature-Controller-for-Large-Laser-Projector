@@ -1,0 +1,25 @@
+Added Component: Designator=P4(HDR1X6)
+Added Pin To Net: NetName=SWCLK Pin=P3-5
+Added Pin To Net: NetName=SWDIO Pin=P3-6
+Added Pin To Net: NetName=NetP4_1 Pin=P4-1
+Added Pin To Net: NetName=NetP4_1 Pin=U3-30
+Added Net: Name=NetP4_1
+Added Pin To Net: NetName=NetP4_2 Pin=P4-2
+Added Pin To Net: NetName=NetP4_2 Pin=U3-29
+Added Net: Name=NetP4_2
+Added Pin To Net: NetName=NetP4_3 Pin=P4-3
+Added Pin To Net: NetName=NetP4_3 Pin=U3-28
+Added Net: Name=NetP4_3
+Added Pin To Net: NetName=NetP4_4 Pin=P4-4
+Added Pin To Net: NetName=NetP4_4 Pin=U3-27
+Added Net: Name=NetP4_4
+Added Pin To Net: NetName=NetP4_5 Pin=P4-5
+Added Pin To Net: NetName=NetP4_5 Pin=U3-26
+Added Net: Name=NetP4_5
+Added Pin To Net: NetName=NetP4_6 Pin=P4-6
+Added Pin To Net: NetName=NetP4_6 Pin=U3-25
+Added Net: Name=NetP4_6
+Added Pin To Net: NetName=SYNC Pin=P3-7
+Added Pin To Net: NetName=SYNC Pin=U3-22
+Added Net: Name=SYNC
+Added Member To Class: ClassName=MCU Member=Component P4 Header 6

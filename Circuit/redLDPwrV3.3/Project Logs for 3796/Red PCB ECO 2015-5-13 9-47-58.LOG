@@ -1,0 +1,21 @@
+Removed Pin From Net: NetName=485A Pin=P2-3
+Removed Pin From Net: NetName=485B Pin=P2-4
+Removed Pin From Net: NetName=SWCLK Pin=P2-5
+Removed Pin From Net: NetName=SWDIO Pin=P2-6
+Removed Pin From Net: NetName=PWM Pin=P2-7
+Removed Pin From Net: NetName=PWM Pin=U3-18
+Removed Member From Class: ClassName=MCU Member=C34
+Removed Member From Class: ClassName=MCU Member=R31
+Added Pin To Net: NetName=PWM Pin=P2-3
+Added Pin To Net: NetName=SWCLK Pin=P2-4
+Added Pin To Net: NetName=SWDIO Pin=P2-5
+Added Pin To Net: NetName=485B Pin=P2-6
+Added Pin To Net: NetName=485A Pin=P2-7
+Added Pin To Net: NetName=PWM Pin=U3-28
+Added Member To Class: ClassName=MCU Member=Component C27 Ceramic Cap
+Added Member To Class: ClassName=PWR Member=Component C30 Ceramic Cap
+Added Member To Class: ClassName=PWR Member=Component C33 Ceramic Cap
+Added Member To Class: ClassName=PWR Member=Component P2 HY-8AD
+Added Member To Class: ClassName=MCU Member=Component R27 Res
+Added Member To Class: ClassName=MCU Member=Component R29 Res
+Added Member To Class: ClassName=PWR Member=Component R30 Res

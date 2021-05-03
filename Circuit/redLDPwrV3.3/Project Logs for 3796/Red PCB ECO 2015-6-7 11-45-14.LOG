@@ -1,0 +1,28 @@
+Removed Pin From Net: NetName=NTC1+ Pin=P3-1
+Removed Pin From Net: NetName=LP- Pin=P3-2
+Removed Pin From Net: NetName=NTC2+ Pin=P3-3
+Removed Pin From Net: NetName=LP- Pin=P3-4
+Removed Pin From Net: NetName=LD+ Pin=P3-5
+Removed Pin From Net: NetName=LD+ Pin=P3-6
+Removed Pin From Net: NetName=GND Pin=P3-7
+Removed Pin From Net: NetName=GND Pin=P3-8
+Removed Member From Class: ClassName=PWR Member=C8
+Removed Member From Class: ClassName=3796 Member=C21
+Removed Member From Class: ClassName=3796 Member=C22
+Removed Member From Class: ClassName=MCU Member=C30
+Removed Member From Class: ClassName=MCU Member=C33
+Removed Member From Class: ClassName=PWR Member=T3
+Added Pin To Net: NetName=GND Pin=P3-1
+Added Pin To Net: NetName=GND Pin=P3-2
+Added Pin To Net: NetName=LD+ Pin=P3-3
+Added Pin To Net: NetName=LD+ Pin=P3-4
+Added Pin To Net: NetName=LP- Pin=P3-5
+Added Pin To Net: NetName=NTC2+ Pin=P3-6
+Added Pin To Net: NetName=LP- Pin=P3-7
+Added Pin To Net: NetName=NTC1+ Pin=P3-8
+Added Member To Class: ClassName=3796 Member=Component C6 22uF/50V
+Added Member To Class: ClassName=3796 Member=Component C19 22uF/50V
+Added Member To Class: ClassName=MCU Member=Component C21 100nF
+Added Member To Class: ClassName=MCU Member=Component C22 100nF
+Added Member To Class: ClassName=PWR Member=Component C35 10uF
+Added Member To Class: ClassName=PWR Member=Component T4 Test Point

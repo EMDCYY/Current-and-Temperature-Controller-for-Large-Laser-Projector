@@ -1,0 +1,60 @@
+Bill of Material for 
+On 2015-8-12 at 10:02:16
+
+ Comment             Pattern     Quantity  Components
+------------------------------------------------------------------------------
+ 0.01                2512[6432]       1    R14                          Resistor             
+ 0.02                2512[6432]       1    R17                          Resistor             
+ 0.05                2512[6432]       1    R20                          Resistor             
+ 0.2                 2512[6432]       1    R21                          Resistor             
+ 0                   1608[0603]       1    R26                          Resistor             
+ 0                   2012[0805]       1    R41                          Resistor             
+ 100nF               1608[0603]      12    C4, C5, C8, C12, C21, C22    Capacitor            
+                                           C25, C26, C27, C28, C29, C33
+ 100uF/50V           1206[3216] - NP    3    C18, C19, C36                Capacitor            
+ 10K                 1608[0603]       4    R1, R2, R15, R23             Resistor             
+ 10nF                1608[0603]       2    C7, C11                      Capacitor            
+ 10uF                1608[0603]       2    C32, C35                     Capacitor            
+ 120                 1608[0603]       1    R37                          Resistor             
+ 1K                  1608[0603]       3    R28, R32, R33                Resistor             
+ 1uF                 1608[0603]       1    C10                          Capacitor            
+ 2.2uF/50V           2012[0805]       1    C13                          Capacitor            
+ 200K                1608[0603]       1    R10                          Resistor             
+ 20K                 1608[0603]       3    R16, R19, R30                Resistor             
+ 20K                 RES-adj          1    R4                           Variable Resistor    
+ 20pF                1608[0603]       2    C23, C24                     Capacitor            
+ 22uF/50V            1206[3216] - NP    3    C3, C16, C17                 Capacitor            
+ 22uF                1608[0603]       3    C30, C31, C34                Capacitor            
+ 2K                  1608[0603]       2    R8, R40                      Resistor             
+ 2M                  1608[0603]       5    R6, R7, R11, R12, R22        Resistor             
+ 2N2907              SOT95P280X115-3N    1    Q1                           PNP General Purpose Amplifier 
+ 390                 1608[0603]       1    R27                          Resistor             
+ 3K3                 1608[0603]       7    R24, R25, R29, R36, R38, R42 Resistor             
+                                           R43
+ 4.7uF/50V           1206[3216] - NP    1    C9                           Capacitor            
+ 47uF/50V            1206[3216] - NP    2    C2, C15                      Capacitor            
+ 50                  1608[0603]       2    R3, R34                      Resistor             
+ 50K                 1608[0603]       1    R39                          Resistor             
+ 620K                1608[0603]       1    R18                          Resistor             
+ 6K                  1608[0603]       1    R13                          Resistor             
+ AMS1117-3.3V        SOT89-150P410X160-3N    1    U5                           5V×ª3V3 10mA  DC/DC   
+ BSC160N10NS3 G      INF-PG-TDSON-8-1_V    1    Q2                           N-Channel OptiMOS 3 Power-Transistor, 100 V VDS, 42 A ID, -55 to 150 degC, PG-TDSON-8-1, Reel, Green 
+ Header 4            HDR1X4           1    P4                           Header, 4-Pin        
+ HY-8AD              8P -HY-8AD       1    P2                           Header, 8-Pin        
+ IHLP-4040DZ-11      IHLP4040         1    L1                           Inductor             
+ L78L05              SOT89-150P410X160-3N    1    U4                           POSITIVE VOLTAGE REGULATORS 
+ LED                 2012[0805] - LED    3    D1, D2, D6                   Typical INFRARED GaAs LED 
+ NoPop               1206[3216] - NP    1    C14                          Capacitor            
+ NoPop               1608[0603]       2    R5, R9                       Resistor             
+ NoPop               SMC_Altium Capacity 8*10    2    C1, C20                      Polarized Capacitor (Radial) 
+ PDS5100             PowerDI5         1    D4                           Schottky Diode       
+ PWR_LT3796_Boost    TSOP65P640X120_HS-29N    1    U1                           100V Constant-Current and   Constant-Voltage Controller   with Dual Current Sense 
+ Si7113dn            1212-8 Single    1    Q3                           PMOS, Si7113dn       
+ SMAJ26CA            SMA_DIOM5226X26N    1    D5                           Schottky Diode       
+ SMAJ36CA            SMA_DIOM5226X26N    1    D3                           Schottky Diode       
+ SP3485EN            SOIC127P600-8N    1    U3                           Low-Power, Slew-Rate-Limited  RS-485/RS-422 Transceivers 
+ STM32F051K8T6       TQFP80P900X900X160-32N    1    U2                           Low- and medium-density advanced ARM?-based 32-bit MCU with  16 to 64 Kbytes Flash, timers, ADC, DAC and comm. interfaces 
+ Test Point          TestPoint        3    T2, T3, T4                                        
+ TJC3B-8AD           8P-TJC3B8AD      1    P3                           Header, 8-Pin        
+ VH Connector, B2P-VH 2PIN-B2P_VH      1    P1                           Header, 2-Pin        
+ XTAL                XTAL_SMT         1    Y1                           Crystal Oscillator   

@@ -1,0 +1,12 @@
+Change Net Name : Old Net Name=485A New Net Name=485_N
+Change Net Name : Old Net Name=485B New Net Name=485_P
+Change Net Name : Old Net Name=NetC14_2 New Net Name=IS_P
+Change Net Name : Old Net Name=NetC21_1 New Net Name=OSC_P
+Change Net Name : Old Net Name=NetC22_1 New Net Name=OSC_N
+Change Net Name : Old Net Name=NetQ1_2 New Net Name=IS_N
+Change Net Name : Old Net Name=NetR26_2 New Net Name=CLK_P
+Change Net Name : Old Net Name=NetR27_2 New Net Name=CLK_N
+Added Differential Pair: Name=485
+Added Differential Pair: Name=CLK
+Added Differential Pair: Name=IS
+Added Differential Pair: Name=OSC

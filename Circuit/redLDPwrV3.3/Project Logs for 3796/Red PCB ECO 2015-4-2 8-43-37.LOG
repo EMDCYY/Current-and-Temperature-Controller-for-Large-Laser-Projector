@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=VIN_24V Pin=P1-1
+Change Component Designator: OldDesignator=R25 NewDesignator=R8
+Added Component: Designator=R25(2012[0805])
+Added Pin To Net: NetName=VIN_24V Pin=R25-1
+Added Pin To Net: NetName=NetP1_1 Pin=P1-1
+Added Pin To Net: NetName=NetP1_1 Pin=R25-2
+Added Net: Name=NetP1_1
+Added Member To Class: ClassName=PWR Member=Component R25  PTC

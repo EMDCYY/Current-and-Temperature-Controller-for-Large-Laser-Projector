@@ -1,0 +1,2 @@
+Removed Pin From Net: NetName=485DIR Pin=U3-21
+Added Pin To Net: NetName=485DIR Pin=U3-18

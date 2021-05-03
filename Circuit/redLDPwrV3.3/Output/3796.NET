@@ -1,0 +1,4717 @@
+PROTEL NETLIST 2.0
+[
+DESIGNATOR
+C1
+FOOTPRINT
+SMC_Altium Capacity 8*10
+PARTTYPE
+NoPop
+DESCRIPTION
+Polarized Capacitor (Radial)
+Comment
+NoPop
+Component Kind
+Standard
+Description
+Polarized Capacitor (Radial)
+Footprint
+SMC_Altium Capacity 8*10
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap Pol1
+PackageDescription
+Polarized Capacitor (Radial); 2 Leads
+PackageReference
+RB7.6-15
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap Pol
+Simulation
+CAP
+Value
+100uF/50V
+
+*
+]
+[
+DESIGNATOR
+C2
+FOOTPRINT
+1206[3216] - NP
+PARTTYPE
+47uF/50V
+DESCRIPTION
+Capacitor
+Comment
+47uF/50V
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1206[3216] - NP
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+47uF/50V
+
+*
+]
+[
+DESIGNATOR
+C3
+FOOTPRINT
+1206[3216] - NP
+PARTTYPE
+22uF/50V
+DESCRIPTION
+Capacitor
+Comment
+22uF/50V
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1206[3216] - NP
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+22uF/50V
+
+*
+]
+[
+DESIGNATOR
+C4
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100nF
+DESCRIPTION
+Capacitor
+Comment
+100nF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+100nF
+
+*
+]
+[
+DESIGNATOR
+C5
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100nF
+DESCRIPTION
+Capacitor
+Comment
+100nF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+100nF
+
+*
+]
+[
+DESIGNATOR
+C7
+FOOTPRINT
+1608[0603]
+PARTTYPE
+10nF
+DESCRIPTION
+Capacitor
+Comment
+10nF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+10nF
+
+*
+]
+[
+DESIGNATOR
+C8
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100nF
+DESCRIPTION
+Capacitor
+Comment
+100nF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+100nF
+
+*
+]
+[
+DESIGNATOR
+C9
+FOOTPRINT
+1206[3216] - NP
+PARTTYPE
+4.7uF/50V
+DESCRIPTION
+Capacitor
+Comment
+4.7uF/50V
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1206[3216] - NP
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+4.7uF/50V
+
+*
+]
+[
+DESIGNATOR
+C10
+FOOTPRINT
+1608[0603]
+PARTTYPE
+1uF
+DESCRIPTION
+Capacitor
+Comment
+1uF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+1uF
+
+*
+]
+[
+DESIGNATOR
+C11
+FOOTPRINT
+1608[0603]
+PARTTYPE
+10nF
+DESCRIPTION
+Capacitor
+Comment
+10nF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+10nF
+
+*
+]
+[
+DESIGNATOR
+C12
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100nF
+DESCRIPTION
+Capacitor
+Comment
+100nF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+100nF
+
+*
+]
+[
+DESIGNATOR
+C13
+FOOTPRINT
+2012[0805]
+PARTTYPE
+2.2uF/50V
+DESCRIPTION
+Capacitor
+Comment
+2.2uF/50V
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+2012[0805]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+2.2uF/50V
+
+*
+]
+[
+DESIGNATOR
+C14
+FOOTPRINT
+1206[3216] - NP
+PARTTYPE
+NoPop
+DESCRIPTION
+Capacitor
+Comment
+NoPop
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1206[3216] - NP
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+100pF/50V
+
+*
+]
+[
+DESIGNATOR
+C15
+FOOTPRINT
+1206[3216] - NP
+PARTTYPE
+47uF/50V
+DESCRIPTION
+Capacitor
+Comment
+47uF/50V
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1206[3216] - NP
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+47uF/50V
+
+*
+]
+[
+DESIGNATOR
+C16
+FOOTPRINT
+1206[3216] - NP
+PARTTYPE
+22uF/50V
+DESCRIPTION
+Capacitor
+Comment
+22uF/50V
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1206[3216] - NP
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+22uF/50V
+
+*
+]
+[
+DESIGNATOR
+C17
+FOOTPRINT
+1206[3216] - NP
+PARTTYPE
+22uF/50V
+DESCRIPTION
+Capacitor
+Comment
+22uF/50V
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1206[3216] - NP
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+22uF/50V
+
+*
+]
+[
+DESIGNATOR
+C18
+FOOTPRINT
+1206[3216] - NP
+PARTTYPE
+100uF/50V
+DESCRIPTION
+Capacitor
+Comment
+100uF/50V
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1206[3216] - NP
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+100uF/50V
+
+*
+]
+[
+DESIGNATOR
+C19
+FOOTPRINT
+1206[3216] - NP
+PARTTYPE
+100uF/50V
+DESCRIPTION
+Capacitor
+Comment
+100uF/50V
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1206[3216] - NP
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+100uF/50V
+
+*
+]
+[
+DESIGNATOR
+C20
+FOOTPRINT
+SMC_Altium Capacity 8*10
+PARTTYPE
+NoPop
+DESCRIPTION
+Polarized Capacitor (Radial)
+Comment
+NoPop
+Component Kind
+Standard
+Description
+Polarized Capacitor (Radial)
+Footprint
+SMC_Altium Capacity 8*10
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap Pol1
+PackageDescription
+Polarized Capacitor (Radial); 2 Leads
+PackageReference
+RB7.6-15
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap Pol
+Simulation
+CAP
+Value
+100uF/50V
+
+*
+]
+[
+DESIGNATOR
+C21
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100nF
+DESCRIPTION
+Capacitor
+Comment
+100nF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+100nF
+
+*
+]
+[
+DESIGNATOR
+C22
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100nF
+DESCRIPTION
+Capacitor
+Comment
+100nF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+100nF
+
+*
+]
+[
+DESIGNATOR
+C23
+FOOTPRINT
+1608[0603]
+PARTTYPE
+20pF
+DESCRIPTION
+Capacitor
+Comment
+20pF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+20pF
+
+*
+]
+[
+DESIGNATOR
+C24
+FOOTPRINT
+1608[0603]
+PARTTYPE
+20pF
+DESCRIPTION
+Capacitor
+Comment
+20pF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+20pF
+
+*
+]
+[
+DESIGNATOR
+C25
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100nF
+DESCRIPTION
+Capacitor
+Comment
+100nF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+100nF
+
+*
+]
+[
+DESIGNATOR
+C26
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100nF
+DESCRIPTION
+Capacitor
+Comment
+100nF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+100nF
+
+*
+]
+[
+DESIGNATOR
+C27
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100nF
+DESCRIPTION
+Capacitor
+Comment
+100nF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+100nF
+
+*
+]
+[
+DESIGNATOR
+C28
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100nF
+DESCRIPTION
+Capacitor
+Comment
+100nF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+100nF
+
+*
+]
+[
+DESIGNATOR
+C29
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100nF
+DESCRIPTION
+Capacitor
+Comment
+100nF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+100nF
+
+*
+]
+[
+DESIGNATOR
+C30
+FOOTPRINT
+1608[0603]
+PARTTYPE
+22uF
+DESCRIPTION
+Capacitor
+Comment
+22uF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+22uF
+
+*
+]
+[
+DESIGNATOR
+C31
+FOOTPRINT
+1608[0603]
+PARTTYPE
+22uF
+DESCRIPTION
+Capacitor
+Comment
+22uF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+22uF
+
+*
+]
+[
+DESIGNATOR
+C32
+FOOTPRINT
+1608[0603]
+PARTTYPE
+10uF
+DESCRIPTION
+Capacitor
+Comment
+10uF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+10uF
+
+*
+]
+[
+DESIGNATOR
+C33
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100nF
+DESCRIPTION
+Capacitor
+Comment
+100nF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+100nF
+
+*
+]
+[
+DESIGNATOR
+C34
+FOOTPRINT
+1608[0603]
+PARTTYPE
+22uF
+DESCRIPTION
+Capacitor
+Comment
+22uF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+22uF
+
+*
+]
+[
+DESIGNATOR
+C35
+FOOTPRINT
+1608[0603]
+PARTTYPE
+10uF
+DESCRIPTION
+Capacitor
+Comment
+10uF
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+10uF
+
+*
+]
+[
+DESIGNATOR
+C36
+FOOTPRINT
+1206[3216] - NP
+PARTTYPE
+100uF/50V
+DESCRIPTION
+Capacitor
+Comment
+100uF/50V
+Component Kind
+Standard
+Description
+Capacitor
+Footprint
+1206[3216] - NP
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Cap
+PackageDescription
+Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+RAD-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Cap
+Simulation
+CAP
+Value
+100uF/50V
+
+*
+]
+[
+DESIGNATOR
+D3
+FOOTPRINT
+SMA_DIOM5226X26N
+PARTTYPE
+SMAJ36CA
+DESCRIPTION
+Schottky Diode
+Code_JEDEC
+DO-214-AA
+Comment
+SMAJ36CA
+Component Kind
+Standard
+Description
+Schottky Diode
+Footprint
+SMA_DIOM5226X26N
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+D Schottky
+PackageDescription
+DO-214-AA/SMB; 2 C-Bend Leads; Body 5.3 x 3.6 mm, inc. leads (LxW)
+PackageReference
+SMB
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+D Schottky
+Simulation
+SKYDIODE
+
+*
+]
+[
+DESIGNATOR
+D4
+FOOTPRINT
+PowerDI5
+PARTTYPE
+PDS5100
+DESCRIPTION
+Schottky Diode
+Code_JEDEC
+DO-214-AA
+Comment
+PDS5100
+Component Kind
+Standard
+Description
+Schottky Diode
+Footprint
+PowerDI5
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+D Schottky
+PackageDescription
+DO-214-AA/SMB; 2 C-Bend Leads; Body 5.3 x 3.6 mm, inc. leads (LxW)
+PackageReference
+SMB
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+D Schottky
+Simulation
+SKYDIODE
+
+*
+]
+[
+DESIGNATOR
+D5
+FOOTPRINT
+SMA_DIOM5226X26N
+PARTTYPE
+SMAJ26CA
+DESCRIPTION
+Schottky Diode
+Code_JEDEC
+DO-214-AA
+Comment
+SMAJ26CA
+Component Kind
+Standard
+Description
+Schottky Diode
+Footprint
+SMA_DIOM5226X26N
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+D Schottky
+PackageDescription
+DO-214-AA/SMB; 2 C-Bend Leads; Body 5.3 x 3.6 mm, inc. leads (LxW)
+PackageReference
+SMB
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+D Schottky
+Simulation
+SKYDIODE
+
+*
+]
+[
+DESIGNATOR
+D6
+FOOTPRINT
+2012[0805] - LED
+PARTTYPE
+LED
+DESCRIPTION
+Typical INFRARED GaAs LED
+Comment
+LED
+Component Kind
+Standard
+Description
+Typical INFRARED GaAs LED
+Footprint
+2012[0805] - LED
+LatestRevisionDate
+08-Jul-2005
+LatestRevisionNote
+Mech Layer 1 removed.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+LED0
+PackageDescription
+LED; 2 Leads
+PackageReference
+LED-0
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+
+Simulation
+LED0
+
+*
+
+*
+]
+[
+DESIGNATOR
+L1
+FOOTPRINT
+IHLP4040
+PARTTYPE
+IHLP-4040DZ-11
+DESCRIPTION
+Inductor
+Code_IEC
+1005
+Code_JEITA
+0402
+Comment
+IHLP-4040DZ-11
+Component Kind
+Standard
+Description
+Inductor
+Footprint
+IHLP4040
+LatestRevisionDate
+29-May-2009
+LatestRevisionNote
+IPC-7351 Footprint Added.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Inductor
+PackageDescription
+Chip Inductor
+PackageReference
+0402-A
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Inductor
+
+*
+]
+[
+DESIGNATOR
+P1
+FOOTPRINT
+2PIN-B2P_VH
+PARTTYPE
+VH Connector, B2P-VH
+DESCRIPTION
+Header, 2-Pin
+Comment
+VH Connector, B2P-VH
+Component Kind
+Standard
+Description
+Header, 2-Pin
+Footprint
+2PIN-B2P_VH
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Connectors.IntLib
+Library Reference
+Header 2
+PCB3D
+
+Publisher
+Altium Limited
+Signal Integrity
+Connector
+Simulation
+
+
+*
+
+*
+
+*
+
+*
+
+*
+]
+[
+DESIGNATOR
+P2
+FOOTPRINT
+8P -HY-8AD
+PARTTYPE
+HY-8AD
+DESCRIPTION
+Header, 8-Pin
+Comment
+HY-8AD
+Component Kind
+Standard
+Description
+Header, 8-Pin
+Footprint
+8P -HY-8AD
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Connectors.IntLib
+Library Reference
+Header 8
+PCB3D
+
+Publisher
+Altium Limited
+Signal Integrity
+Connector
+Simulation
+
+
+*
+
+*
+
+*
+
+*
+
+*
+]
+[
+DESIGNATOR
+P3
+FOOTPRINT
+8P-TJC3B8AD
+PARTTYPE
+TJC3B-8AD
+DESCRIPTION
+Header, 8-Pin
+Comment
+TJC3B-8AD
+Component Kind
+Standard
+Description
+Header, 8-Pin
+Footprint
+8P-TJC3B8AD
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Connectors.IntLib
+Library Reference
+Header 8
+PCB3D
+
+Publisher
+Altium Limited
+Signal Integrity
+Connector
+Simulation
+
+
+*
+
+*
+
+*
+
+*
+
+*
+]
+[
+DESIGNATOR
+P4
+FOOTPRINT
+HDR1X4
+PARTTYPE
+Header 4
+DESCRIPTION
+Header, 4-Pin
+Comment
+Header 4
+Component Kind
+Standard
+Description
+Header, 4-Pin
+Footprint
+HDR1X4
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Connectors.IntLib
+Library Reference
+Header 4
+PCB3D
+
+Publisher
+Altium Limited
+Signal Integrity
+Connector
+Simulation
+
+
+*
+
+*
+
+*
+
+*
+
+*
+]
+[
+DESIGNATOR
+Q1
+FOOTPRINT
+SOT95P280X115-3N
+PARTTYPE
+2N2907
+DESCRIPTION
+PNP General Purpose Amplifier
+Comment
+2N2907
+Component Kind
+Standard
+ComponentLink1Description
+Manufacturer Link
+ComponentLink1URL
+http://www.fairchildsemi.com/
+ComponentLink2Description
+Datasheet
+ComponentLink2URL
+http://www.fairchildsemi.com/ds/2N%2F2N3906.pdf
+DatasheetVersion
+1997
+Description
+PNP General Purpose Amplifier
+Footprint
+SOT95P280X115-3N
+LatestRevisionDate
+15-Jan-2003
+LatestRevisionNote
+PCB Footprint 'BCY-W3/D4.7' replaced
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+2N3906
+PackageDescription
+TO, Flat Index; 3 In-Line, Axial Leads; Body Dia. 4.5mm; Leads 0.51 x 0.48 mm (max)
+PackageReference
+TO-92A
+PackageVersion
+Sep-1998
+
+*
+]
+[
+DESIGNATOR
+Q2
+FOOTPRINT
+INF-PG-TDSON-8-1_V
+PARTTYPE
+BSC160N10NS3 G
+DESCRIPTION
+N-Channel OptiMOS 3 Power-Transistor, 100 V VDS, 42 A ID, -55 to 150 degC, PG-TDSON-8-1, Reel, Green
+Comment
+BSC160N10NS3 G
+Component Kind
+Standard
+ComponentLink1Description
+Manufacturer URL
+ComponentLink1URL
+http://www.infineon.com/
+ComponentLink2Description
+Datasheet
+ComponentLink2URL
+http://www.infineon.com/dgdl/BSC160N10NS3+Rev2.4.pdf?folderId=db3a304313b8b5a60113cee8763b02d7&fileId=db3a30432239cccd01226040189a7f47
+ComponentLink3Description
+Package Specification
+ComponentLink3URL
+http://www.infineon.com/cms/packages/SMD_-_Surface_Mounted_Devices/P-PG-TDSON/P-PG-TDSON-08-01x_2x_3.html?__locale=en
+DatasheetVersion
+Rev. 2.4
+Description
+N-Channel OptiMOS 3 Power-Transistor, 100 V VDS, 42 A ID, -55 to 150 degC, PG-TDSON-8-1, Reel, Green
+Footprint
+INF-PG-TDSON-8-1_V
+Green
+TRUE
+Halogen-free
+TRUE
+ID (max)
+42 A
+IDpuls (max)
+168 A
+Library Name
+BSC160N10NS3 G.SchLib
+
+*
+]
+[
+DESIGNATOR
+Q3
+FOOTPRINT
+1212-8 Single
+PARTTYPE
+Si7113dn
+DESCRIPTION
+PMOS, Si7113dn
+Comment
+Si7113dn
+Component Kind
+Standard
+ComponentLink1Description
+Manufacturer URL
+ComponentLink1URL
+http://www.infineon.com/
+ComponentLink2Description
+Datasheet
+ComponentLink2URL
+http://www.infineon.com/dgdl/BSC160N10NS3+Rev2.4.pdf?folderId=db3a304313b8b5a60113cee8763b02d7&fileId=db3a30432239cccd01226040189a7f47
+ComponentLink3Description
+Package Specification
+ComponentLink3URL
+http://www.infineon.com/cms/packages/SMD_-_Surface_Mounted_Devices/P-PG-TDSON/P-PG-TDSON-08-01x_2x_3.html?__locale=en
+DatasheetVersion
+Rev. 2.4
+Description
+PMOS, Si7113dn
+Footprint
+1212-8 Single
+Green
+TRUE
+Halogen-free
+TRUE
+ID (max)
+42 A
+IDpuls (max)
+168 A
+Library Name
+Laser-LiuXin.SchLib
+
+*
+]
+[
+DESIGNATOR
+R1
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100K
+DESCRIPTION
+Resistor
+Comment
+100K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+100K
+
+*
+]
+[
+DESIGNATOR
+R2
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100K
+DESCRIPTION
+Resistor
+Comment
+100K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+100K
+
+*
+]
+[
+DESIGNATOR
+R3
+FOOTPRINT
+1608[0603]
+PARTTYPE
+50
+DESCRIPTION
+Resistor
+Comment
+50
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+50
+
+*
+]
+[
+DESIGNATOR
+R4
+FOOTPRINT
+RES-adj
+PARTTYPE
+20K
+DESCRIPTION
+Variable Resistor
+Comment
+20K
+Component Kind
+Standard
+Description
+Variable Resistor
+Footprint
+RES-adj
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res Adj1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.7 in Pin Spacing
+PackageReference
+AXIAL-0.7
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Set Position
+0.5
+Signal Integrity
+Res Adj
+Simulation
+VRES
+
+*
+]
+[
+DESIGNATOR
+R5
+FOOTPRINT
+1608[0603]
+PARTTYPE
+NoPop
+DESCRIPTION
+Resistor
+Comment
+NoPop
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+6K
+
+*
+]
+[
+DESIGNATOR
+R6
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100K
+DESCRIPTION
+Resistor
+Comment
+100K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+100K
+
+*
+]
+[
+DESIGNATOR
+R7
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100K
+DESCRIPTION
+Resistor
+Comment
+100K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+100K
+
+*
+]
+[
+DESIGNATOR
+R8
+FOOTPRINT
+1608[0603]
+PARTTYPE
+2K
+DESCRIPTION
+Resistor
+Comment
+2K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+2K
+
+*
+]
+[
+DESIGNATOR
+R9
+FOOTPRINT
+1608[0603]
+PARTTYPE
+NoPop
+DESCRIPTION
+Resistor
+Comment
+NoPop
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+20K
+
+*
+]
+[
+DESIGNATOR
+R10
+FOOTPRINT
+1608[0603]
+PARTTYPE
+200K
+DESCRIPTION
+Resistor
+Comment
+200K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+200K
+
+*
+]
+[
+DESIGNATOR
+R11
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100K
+DESCRIPTION
+Resistor
+Comment
+100K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+100K
+
+*
+]
+[
+DESIGNATOR
+R12
+FOOTPRINT
+1608[0603]
+PARTTYPE
+100K
+DESCRIPTION
+Resistor
+Comment
+100K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+100K
+
+*
+]
+[
+DESIGNATOR
+R13
+FOOTPRINT
+1608[0603]
+PARTTYPE
+6K
+DESCRIPTION
+Resistor
+Comment
+6K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+6K
+
+*
+]
+[
+DESIGNATOR
+R14
+FOOTPRINT
+2512[6432]
+PARTTYPE
+0.01
+DESCRIPTION
+Resistor
+Comment
+0.01
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+2512[6432]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+10m
+
+*
+]
+[
+DESIGNATOR
+R15
+FOOTPRINT
+1608[0603]
+PARTTYPE
+10K
+DESCRIPTION
+Resistor
+Comment
+10K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+10K
+
+*
+]
+[
+DESIGNATOR
+R16
+FOOTPRINT
+1608[0603]
+PARTTYPE
+20K
+DESCRIPTION
+Resistor
+Comment
+20K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+20K
+
+*
+]
+[
+DESIGNATOR
+R17
+FOOTPRINT
+2512[6432]
+PARTTYPE
+0.02
+DESCRIPTION
+Resistor
+Comment
+0.02
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+2512[6432]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+20m
+
+*
+]
+[
+DESIGNATOR
+R18
+FOOTPRINT
+1608[0603]
+PARTTYPE
+620K
+DESCRIPTION
+Resistor
+Comment
+620K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+620K
+
+*
+]
+[
+DESIGNATOR
+R19
+FOOTPRINT
+1608[0603]
+PARTTYPE
+20K
+DESCRIPTION
+Resistor
+Comment
+20K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+20K
+
+*
+]
+[
+DESIGNATOR
+R20
+FOOTPRINT
+2512[6432]
+PARTTYPE
+0.05
+DESCRIPTION
+Resistor
+Comment
+0.05
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+2512[6432]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+50m
+
+*
+]
+[
+DESIGNATOR
+R21
+FOOTPRINT
+2512[6432]
+PARTTYPE
+0.2
+DESCRIPTION
+Resistor
+Comment
+0.2
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+2512[6432]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+200m
+
+*
+]
+[
+DESIGNATOR
+R22
+FOOTPRINT
+1608[0603]
+PARTTYPE
+2M
+DESCRIPTION
+Resistor
+Comment
+2M
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+10K
+
+*
+]
+[
+DESIGNATOR
+R23
+FOOTPRINT
+1608[0603]
+PARTTYPE
+10k
+DESCRIPTION
+Resistor
+Comment
+10k
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+10K
+
+*
+]
+[
+DESIGNATOR
+R24
+FOOTPRINT
+1608[0603]
+PARTTYPE
+3K3
+DESCRIPTION
+Resistor
+Comment
+3K3
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+3K3
+
+*
+]
+[
+DESIGNATOR
+R25
+FOOTPRINT
+1608[0603]
+PARTTYPE
+3K3
+DESCRIPTION
+Resistor
+Comment
+3K3
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+3K3
+
+*
+]
+[
+DESIGNATOR
+R26
+FOOTPRINT
+1608[0603]
+PARTTYPE
+0
+DESCRIPTION
+Resistor
+Comment
+0
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+0
+
+*
+]
+[
+DESIGNATOR
+R27
+FOOTPRINT
+1608[0603]
+PARTTYPE
+390
+DESCRIPTION
+Resistor
+Comment
+390
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+390
+
+*
+]
+[
+DESIGNATOR
+R28
+FOOTPRINT
+1608[0603]
+PARTTYPE
+1K
+DESCRIPTION
+Resistor
+Comment
+1K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+1k
+
+*
+]
+[
+DESIGNATOR
+R29
+FOOTPRINT
+1608[0603]
+PARTTYPE
+3K3
+DESCRIPTION
+Resistor
+Comment
+3K3
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+3K3
+
+*
+]
+[
+DESIGNATOR
+R30
+FOOTPRINT
+1608[0603]
+PARTTYPE
+20K
+DESCRIPTION
+Resistor
+Comment
+20K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+20K
+
+*
+]
+[
+DESIGNATOR
+R32
+FOOTPRINT
+1608[0603]
+PARTTYPE
+1K
+DESCRIPTION
+Resistor
+Comment
+1K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+1k
+
+*
+]
+[
+DESIGNATOR
+R33
+FOOTPRINT
+1608[0603]
+PARTTYPE
+1K
+DESCRIPTION
+Resistor
+Comment
+1K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+1k
+
+*
+]
+[
+DESIGNATOR
+R34
+FOOTPRINT
+1608[0603]
+PARTTYPE
+50
+DESCRIPTION
+Resistor
+Comment
+50
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+50
+
+*
+]
+[
+DESIGNATOR
+R36
+FOOTPRINT
+1608[0603]
+PARTTYPE
+3K3
+DESCRIPTION
+Resistor
+Comment
+3K3
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+3K3
+
+*
+]
+[
+DESIGNATOR
+R37
+FOOTPRINT
+1608[0603]
+PARTTYPE
+120
+DESCRIPTION
+Resistor
+Comment
+120
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+120
+
+*
+]
+[
+DESIGNATOR
+R38
+FOOTPRINT
+1608[0603]
+PARTTYPE
+3K3
+DESCRIPTION
+Resistor
+Comment
+3K3
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+3K3
+
+*
+]
+[
+DESIGNATOR
+R39
+FOOTPRINT
+1608[0603]
+PARTTYPE
+50K
+DESCRIPTION
+Resistor
+Comment
+50K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+50k
+
+*
+]
+[
+DESIGNATOR
+R40
+FOOTPRINT
+1608[0603]
+PARTTYPE
+2K
+DESCRIPTION
+Resistor
+Comment
+2K
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+50k
+
+*
+]
+[
+DESIGNATOR
+R41
+FOOTPRINT
+2012[0805]
+PARTTYPE
+0
+DESCRIPTION
+Resistor
+Comment
+0
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+2012[0805]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+0
+
+*
+]
+[
+DESIGNATOR
+R42
+FOOTPRINT
+1608[0603]
+PARTTYPE
+3K3
+DESCRIPTION
+Resistor
+Comment
+3K3
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+3K3
+
+*
+]
+[
+DESIGNATOR
+R43
+FOOTPRINT
+1608[0603]
+PARTTYPE
+3K3
+DESCRIPTION
+Resistor
+Comment
+3K3
+Component Kind
+Standard
+Description
+Resistor
+Footprint
+1608[0603]
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+Res1
+PackageDescription
+Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing
+PackageReference
+AXIAL-0.3
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+Res
+Simulation
+RESISTOR
+Value
+3K3
+
+*
+]
+[
+DESIGNATOR
+T2
+FOOTPRINT
+TestPoint
+PARTTYPE
+Test Point
+DESCRIPTION
+
+Comment
+Test Point
+Component Kind
+Standard
+Description
+
+Footprint
+TestPoint
+Library Name
+Laser-LiuXin.SchLib
+Library Reference
+TP
+PCB3D
+
+Signal Integrity
+
+Simulation
+
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+]
+[
+DESIGNATOR
+T3
+FOOTPRINT
+TestPoint
+PARTTYPE
+Test Point
+DESCRIPTION
+
+Comment
+Test Point
+Component Kind
+Standard
+Description
+
+Footprint
+TestPoint
+Library Name
+Laser-LiuXin.SchLib
+Library Reference
+TP
+PCB3D
+
+Signal Integrity
+
+Simulation
+
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+]
+[
+DESIGNATOR
+T4
+FOOTPRINT
+TestPoint
+PARTTYPE
+Test Point
+DESCRIPTION
+
+Comment
+Test Point
+Component Kind
+Standard
+Description
+
+Footprint
+TestPoint
+Library Name
+Laser-LiuXin.SchLib
+Library Reference
+TP
+PCB3D
+
+Signal Integrity
+
+Simulation
+
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+]
+[
+DESIGNATOR
+U1
+FOOTPRINT
+TSOP65P640X120_HS-29N
+PARTTYPE
+PWR_LT3796_Boost
+DESCRIPTION
+100V Constant-Current and   Constant-Voltage Controller   with Dual Current Sense
+Comment
+PWR_LT3796_Boost
+Component Kind
+Standard
+Description
+100V Constant-Current and   Constant-Voltage Controller   with Dual Current Sense
+Footprint
+TSOP65P640X120_HS-29N
+Library Name
+Laser-LiuXin.SchLib
+Library Reference
+PWR_LT3796_Boost
+PCB3D
+
+Signal Integrity
+
+Simulation
+
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+]
+[
+DESIGNATOR
+U2
+FOOTPRINT
+TQFP80P900X900X160-32N
+PARTTYPE
+STM32F051K8T6
+DESCRIPTION
+Low- and medium-density advanced ARM?-based 32-bit MCU with  16 to 64 Kbytes Flash, timers, ADC, DAC and comm. interfaces
+Comment
+STM32F051K8T6
+Component Kind
+Standard
+Description
+Low- and medium-density advanced ARM?-based 32-bit MCU with  16 to 64 Kbytes Flash, timers, ADC, DAC and comm. interfaces
+Footprint
+TQFP80P900X900X160-32N
+Library Name
+Laser-LiuXin.SchLib
+Library Reference
+MCU_STM32F051K8T6
+PCB3D
+
+Signal Integrity
+
+Simulation
+
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+]
+[
+DESIGNATOR
+U3
+FOOTPRINT
+SOIC127P600-8N
+PARTTYPE
+SP3485EN
+DESCRIPTION
+Low-Power, Slew-Rate-Limited  RS-485/RS-422 Transceivers
+Comment
+SP3485EN
+Component Kind
+Standard
+Description
+Low-Power, Slew-Rate-Limited  RS-485/RS-422 Transceivers
+Footprint
+SOIC127P600-8N
+Library Name
+Laser-LiuXin.SchLib
+Library Reference
+LGC_RS485
+PCB3D
+
+Signal Integrity
+
+Simulation
+
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+]
+[
+DESIGNATOR
+U4
+FOOTPRINT
+SOT89-150P410X160-3N
+PARTTYPE
+L78L05
+DESCRIPTION
+POSITIVE VOLTAGE REGULATORS
+Comment
+L78L05
+Component Kind
+Standard
+Description
+POSITIVE VOLTAGE REGULATORS
+Footprint
+SOT89-150P410X160-3N
+Library Name
+Laser-LiuXin.SchLib
+Library Reference
+PWR_L78L05
+PCB3D
+
+Signal Integrity
+
+Simulation
+
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+]
+[
+DESIGNATOR
+U5
+FOOTPRINT
+SOT89-150P410X160-3N
+PARTTYPE
+AMS1117-3.3V
+DESCRIPTION
+5V×ª3V3 10mA  DC/DC
+Comment
+AMS1117-3.3V
+Component Kind
+Standard
+Description
+5V×ª3V3 10mA  DC/DC
+Footprint
+SOT89-150P410X160-3N
+Library Name
+Laser-LiuXin.SchLib
+Library Reference
+PWR_LM1XXX
+PCB3D
+
+Signal Integrity
+
+Simulation
+
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+]
+[
+DESIGNATOR
+Y1
+FOOTPRINT
+XTAL_SMT
+PARTTYPE
+XTAL
+DESCRIPTION
+Crystal Oscillator
+Comment
+XTAL
+Component Kind
+Standard
+Description
+Crystal Oscillator
+Footprint
+XTAL_SMT
+LatestRevisionDate
+17-Jul-2002
+LatestRevisionNote
+Re-released for DXP Platform.
+Library Name
+Miscellaneous Devices.IntLib
+Library Reference
+XTAL
+PackageDescription
+Crystal, Thru-Hole; 2 Leads; Body 3.1 x 8.2 mm (Dia.xH)
+PackageReference
+R38
+PCB3D
+
+Published
+8-Jun-2000
+Publisher
+Altium Limited
+Signal Integrity
+
+Simulation
+XTAL
+
+*
+
+*
+]
+(
+NetD6_1
+D6-1 LED-A Passive      
+R42-1 3K3-1 Passive      
+)
+(
+5V
+C32-2 10uF-2 Passive      
+C33-2 100nF-2 Passive      
+U4-1 L78L05-VOUT Passive      
+U5-3 AMS1117-3.3V-Vin Power        
+)
+(
+UVP
+R28-1 1K-1 Passive      
+R39-2 50K-2 Passive      
+R40-1 2K-1 Passive      
+)
+(
+TXD
+U2-19 STM32F051K8T6-PA9 Passive      
+U3-4 SP3485EN-DI Passive      
+)
+(
+TP1
+P4-2 Header 4-2 Passive      
+U2-26 STM32F051K8T6-PB3 Passive      
+)
+(
+TEC
+P2-6 HY-8AD-6 Passive      
+U2-30 STM32F051K8T6-PB7 Passive      
+)
+(
+SWDIO
+P2-4 HY-8AD-4 Passive      
+U2-23 STM32F051K8T6-PA13 Passive      
+)
+(
+SWCLK
+P2-5 HY-8AD-5 Passive      
+U2-24 STM32F051K8T6-PA14 Passive      
+)
+(
+STATE
+D6-2 LED-K Passive      
+R43-1 3K3-1 Passive      
+U2-22 STM32F051K8T6-PA12 Passive      
+)
+(
+RXD
+U2-20 STM32F051K8T6-PA10 Passive      
+U3-1 SP3485EN-RO Passive      
+)
+(
+OSC_P
+C23-1 20pF-1 Passive      
+R26-1 0-1 Passive      
+Y1-2 XTAL-OSC2 Passive      
+)
+(
+OSC_N
+C24-1 20pF-1 Passive      
+R27-1 390-1 Passive      
+Y1-1 XTAL-OSC1 Passive      
+)
+(
+NTC2+
+C28-2 100nF-2 Passive      
+P3-8 TJC3B-8AD-8 Passive      
+R29-2 3K3-2 Passive      
+U2-9 STM32F051K8T6-PA3 Passive      
+)
+(
+NTC1+
+C21-2 100nF-2 Passive      
+P3-6 TJC3B-8AD-6 Passive      
+R24-2 3K3-2 Passive      
+U2-8 STM32F051K8T6-PA2 Passive      
+)
+(
+NetC25_2
+C25-2 100nF-2 Passive      
+R23-1 10k-1 Passive      
+U2-4 STM32F051K8T6-NRST Passive      
+)
+(
+NetR28_2
+R28-2 1K-2 Passive      
+U2-7 STM32F051K8T6-PA1 Passive      
+)
+(
+NetR30_1
+R30-1 20K-1 Passive      
+U2-10 STM32F051K8T6-PA4 Passive      
+)
+(
+NetR32_1
+R32-1 1K-1 Passive      
+U2-12 STM32F051K8T6-PA6 Passive      
+)
+(
+NetR33_1
+R33-1 1K-1 Passive      
+U2-13 STM32F051K8T6-PA7 Passive      
+)
+(
+NetR34_1
+R34-1 50-1 Passive      
+U2-18 STM32F051K8T6-PA8 Passive      
+)
+(
+LP-
+C23-2 20pF-2 Passive      
+C24-2 20pF-2 Passive      
+C25-1 100nF-1 Passive      
+C26-2 100nF-2 Passive      
+C27-1 100nF-1 Passive      
+C29-1 100nF-1 Passive      
+C30-1 22uF-1 Passive      
+C31-1 22uF-1 Passive      
+C32-1 10uF-1 Passive      
+C33-1 100nF-1 Passive      
+C34-1 22uF-1 Passive      
+C35-1 10uF-1 Passive      
+P2-8 HY-8AD-8 Passive      
+P3-5 TJC3B-8AD-5 Passive      
+P3-7 TJC3B-8AD-7 Passive      
+P4-4 Header 4-4 Passive      
+R38-1 3K3-1 Passive      
+R40-2 2K-2 Passive      
+R41-1 0-1 Passive      
+R43-2 3K3-2 Passive      
+U2-16 STM32F051K8T6-VSS Passive      
+U2-31 STM32F051K8T6-BOOT0 Passive      
+U2-32 STM32F051K8T6-VSS Passive      
+U3-5 SP3485EN-GND Passive      
+U4-2 L78L05-GND Passive      
+U5-1 AMS1117-3.3V-Adj Passive      
+)
+(
+LP+
+C22-2 100nF-2 Passive      
+P4-3 Header 4-3 Passive      
+R25-2 3K3-2 Passive      
+U2-6 STM32F051K8T6-PA0 Passive      
+)
+(
+CLK_P
+R26-2 0-2 Passive      
+U2-2 STM32F051K8T6-PF0/OSC_IN Passive      
+)
+(
+CLK_N
+R27-2 390-2 Passive      
+U2-3 STM32F051K8T6-PF1/OSC_OUT Passive      
+)
+(
+485DIR
+U2-21 STM32F051K8T6-PA11 Passive      
+U3-2 SP3485EN-R\E\ Passive      
+U3-3 SP3485EN-DE Passive      
+)
+(
+485_P
+P2-2 HY-8AD-2 Passive      
+R36-1 3K3-1 Passive      
+R37-2 120-2 Passive      
+U3-7 SP3485EN-B Passive      
+)
+(
+485_N
+P2-3 HY-8AD-3 Passive      
+R37-1 120-1 Passive      
+R38-2 3K3-2 Passive      
+U3-6 SP3485EN-A Passive      
+)
+(
+3V3
+C21-1 100nF-1 Passive      
+C22-1 100nF-1 Passive      
+C26-1 100nF-1 Passive      
+C27-2 100nF-2 Passive      
+C28-1 100nF-1 Passive      
+C29-2 100nF-2 Passive      
+C34-2 22uF-2 Passive      
+C35-2 10uF-2 Passive      
+P2-1 HY-8AD-1 Passive      
+P4-1 Header 4-1 Passive      
+R23-2 10k-2 Passive      
+R24-1 3K3-1 Passive      
+R25-1 3K3-1 Passive      
+R29-1 3K3-1 Passive      
+R36-2 3K3-2 Passive      
+R42-2 3K3-2 Passive      
+U2-1 STM32F051K8T6-VDD Passive      
+U2-5 STM32F051K8T6-VDDA Passive      
+U2-17 STM32F051K8T6-VDD Passive      
+U3-8 SP3485EN-VCC Passive      
+U5-2 AMS1117-3.3V-Vout Power        
+)
+(
+VREF
+R3-1 50-1 Passive      
+R5-1 NoPop-1 Passive      
+U1-10 PWR_LT3796_Boost-VREF Passive      
+)
+(
+V\M\O\D\E\
+R6-1 100K-1 Passive      
+R7-2 100K-2 Passive      
+R33-2 1K-2 Passive      
+)
+(
+PWM
+P2-7 HY-8AD-7 Passive      
+R3-2 50-2 Passive      
+U1-14 PWR_LT3796_Boost-PWM Passive      
+U2-28 STM32F051K8T6-PB5 Passive      
+)
+(
+NetC4_1
+C4-1 100nF-1 Passive      
+R1-2 100K-2 Passive      
+R11-2 100K-2 Passive      
+U1-15 PWR_LT3796_Boost-F\A\U\L\T\ Passive      
+)
+(
+NetC5_2
+C5-2 100nF-2 Passive      
+R2-2 100K-2 Passive      
+R6-2 100K-2 Passive      
+U1-16 PWR_LT3796_Boost-V\M\O\D\E\ Passive      
+)
+(
+NetC10_1
+C10-1 1uF-1 Passive      
+U1-11 PWR_LT3796_Boost-SS Passive      
+)
+(
+NetC11_1
+C11-1 10nF-1 Passive      
+R15-2 10K-2 Passive      
+)
+(
+NetD4_1
+D4-1 PDS5100-A Passive      
+L1-2 IHLP-4040DZ-11-2 Passive      
+Q2-5 BSC160N10NS3 G-DRAIN Passive      
+Q2-6 BSC160N10NS3 G-DRAIN Passive      
+Q2-7 BSC160N10NS3 G-DRAIN Passive      
+Q2-8 BSC160N10NS3 G-DRAIN Passive      
+)
+(
+NetQ1_3
+Q1-3 2N2907-C Passive      
+Q3-4 Si7113dn-GATE Passive      
+U1-3 PWR_LT3796_Boost-TG Passive      
+)
+(
+NetQ2_1
+Q2-1 BSC160N10NS3 G-SOURCE Passive      
+Q2-2 BSC160N10NS3 G-SOURCE Passive      
+Q2-3 BSC160N10NS3 G-SOURCE Passive      
+R17-2 0.02-2 Passive      
+U1-18 PWR_LT3796_Boost-SENSE Passive      
+)
+(
+NetQ2_4
+Q2-4 BSC160N10NS3 G-GATE Passive      
+U1-19 PWR_LT3796_Boost-GATE Passive      
+)
+(
+NetR13_2
+R13-2 6K-2 Passive      
+U1-27 PWR_LT3796_Boost-CSP Passive      
+)
+(
+NetR15_1
+R15-1 10K-1 Passive      
+U1-8 PWR_LT3796_Boost-VC Passive      
+)
+(
+NetR16_1
+R16-1 20K-1 Passive      
+U1-12 PWR_LT3796_Boost-RT Passive      
+)
+(
+NetR18_1
+R18-1 620K-1 Passive      
+R19-1 20K-1 Passive      
+U1-7 PWR_LT3796_Boost-FB1 Passive      
+)
+(
+NetR20_1
+R20-1 0.05-1 Passive      
+R21-2 0.2-2 Passive      
+)
+(
+LD+
+C13-2 2.2uF/50V-2 Passive      
+C14-2 NoPop-2 Passive      
+D3-2 SMAJ36CA-K Passive      
+P3-1 TJC3B-8AD-1 Passive      
+P3-2 TJC3B-8AD-2 Passive      
+Q3-5 Si7113dn-DRAIN Passive      
+Q3-6 Si7113dn-DRAIN Passive      
+Q3-7 Si7113dn-DRAIN Passive      
+Q3-8 Si7113dn-DRAIN Passive      
+T3-1 Test Point-TP Passive      
+)
+(
+ISMON
+C8-2 100nF-2 Passive      
+U1-5 PWR_LT3796_Boost-ISMON Passive      
+U2-15 STM32F051K8T6-PB1 Passive      
+)
+(
+IS_P
+C15-2 47uF/50V-2 Passive      
+C16-2 22uF/50V-2 Passive      
+C17-2 22uF/50V-2 Passive      
+C18-2 100uF/50V-2 Passive      
+C19-2 100uF/50V-2 Passive      
+C20-1 NoPop-1 Passive      
+C36-2 100uF/50V-2 Passive      
+D4-2 PDS5100-K Passive      
+Q1-1 2N2907-E Passive      
+R18-2 620K-2 Passive      
+R20-2 0.05-2 Passive      
+R22-2 2M-2 Passive      
+U1-1 PWR_LT3796_Boost-ISP Passive      
+)
+(
+IS_N
+Q1-2 2N2907-B Passive      
+Q3-1 Si7113dn-SOURCE Passive      
+Q3-2 Si7113dn-SOURCE Passive      
+Q3-3 Si7113dn-SOURCE Passive      
+R21-1 0.2-1 Passive      
+U1-2 PWR_LT3796_Boost-ISN Passive      
+)
+(
+INTVCC
+C4-2 100nF-2 Passive      
+C5-1 100nF-1 Passive      
+C12-1 100nF-1 Passive      
+R1-1 100K-1 Passive      
+R2-1 100K-1 Passive      
+U1-20 PWR_LT3796_Boost-INTVCC Passive      
+)
+(
+GND
+C1-2 NoPop-2 Passive      
+C2-1 47uF/50V-1 Passive      
+C3-1 22uF/50V-1 Passive      
+C7-1 10nF-1 Passive      
+C8-1 100nF-1 Passive      
+C9-1 4.7uF/50V-1 Passive      
+C10-2 1uF-2 Passive      
+C11-2 10nF-2 Passive      
+C12-2 100nF-2 Passive      
+C13-1 2.2uF/50V-1 Passive      
+C14-1 NoPop-1 Passive      
+C15-1 47uF/50V-1 Passive      
+C16-1 22uF/50V-1 Passive      
+C17-1 22uF/50V-1 Passive      
+C18-1 100uF/50V-1 Passive      
+C19-1 100uF/50V-1 Passive      
+C20-2 NoPop-2 Passive      
+C36-1 100uF/50V-1 Passive      
+D3-1 SMAJ36CA-A Passive      
+D5-1 SMAJ26CA-A Passive      
+P1-2 VH Connector, B2P-VH-2 Passive      
+P3-3 TJC3B-8AD-3 Passive      
+P3-4 TJC3B-8AD-4 Passive      
+R4-1 20K-1 Passive      
+R7-1 100K-1 Passive      
+R8-2 2K-2 Passive      
+R10-1 200K-1 Passive      
+R12-1 100K-1 Passive      
+R16-2 20K-2 Passive      
+R17-1 0.02-1 Passive      
+R19-2 20K-2 Passive      
+R22-1 2M-1 Passive      
+R41-2 0-2 Passive      
+T2-1 Test Point-TP Passive      
+U1-4 PWR_LT3796_Boost-GND Passive      
+U1-13 PWR_LT3796_Boost-TGEN/SYNC Passive      
+U1-17 PWR_LT3796_Boost-GND Passive      
+U1-21 PWR_LT3796_Boost-GND Passive      
+U1-22 PWR_LT3796_Boost-GND Passive      
+U1-29 PWR_LT3796_Boost-GND Passive      
+)
+(
+F\A\U\L\T\
+R11-1 100K-1 Passive      
+R12-2 100K-2 Passive      
+R32-2 1K-2 Passive      
+)
+(
+EN/UVLO
+R8-1 2K-1 Passive      
+R9-1 NoPop-1 Passive      
+R34-2 50-2 Passive      
+U1-24 PWR_LT3796_Boost-EN/UVLO Passive      
+)
+(
+CTRL
+R4-2 20K-2 Passive      
+R5-2 NoPop-2 Passive      
+R30-2 20K-2 Passive      
+U1-9 PWR_LT3796_Boost-CTRL Passive      
+U2-11 STM32F051K8T6-PA5 Passive      
+)
+(
+CSOUT
+C7-2 10nF-2 Passive      
+R10-2 200K-2 Passive      
+U1-6 PWR_LT3796_Boost-FB2 Passive      
+U1-28 PWR_LT3796_Boost-CSOUT Passive      
+U2-14 STM32F051K8T6-PB0 Passive      
+)
+(
+CS_P
+C1-1 NoPop-1 Passive      
+C2-2 47uF/50V-2 Passive      
+C3-2 22uF/50V-2 Passive      
+C9-2 4.7uF/50V-2 Passive      
+C30-2 22uF-2 Passive      
+C31-2 22uF-2 Passive      
+D5-2 SMAJ26CA-K Passive      
+P1-1 VH Connector, B2P-VH-1 Passive      
+R9-2 NoPop-2 Passive      
+R13-1 6K-1 Passive      
+R14-1 0.01-1 Passive      
+R39-1 50K-1 Passive      
+T4-1 Test Point-TP Passive      
+U1-23 PWR_LT3796_Boost-VIN Power        
+U1-25 PWR_LT3796_Boost-VS Passive      
+U4-3 L78L05-VIN Passive      
+)
+(
+CS_N
+L1-1 IHLP-4040DZ-11-1 Passive      
+R14-2 0.01-2 Passive      
+U1-26 PWR_LT3796_Boost-CSN Passive      
+)

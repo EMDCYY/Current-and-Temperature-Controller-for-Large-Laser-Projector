@@ -1,0 +1,16 @@
+Change Component Footprint: Designator=U4 Old Footprint=TSOP65P490X110-8N New Footprint=SOIC127P600-8N
+Change Component Comment : Designator=C18 Old Comment=AE Cap, 100uF/50V New Comment=Altium Electrolytic Cap
+Change Component Comment : Designator=C19 Old Comment=Cap0.1uF/0805 New Comment=Ceramic Cap
+Change Component Comment : Designator=C7 Old Comment=Cap,0.1uF New Comment=Ceramic Cap
+Change Component Comment : Designator=C11 Old Comment=Cap,0.1uF New Comment=Ceramic Cap
+Change Component Comment : Designator=C9 Old Comment=Cap,1uF New Comment=Ceramic Cap
+Change Component Comment : Designator=C6 Old Comment=Cap,10nF New Comment=Ceramic Cap
+Change Component Comment : Designator=C10 Old Comment=Cap,10nF New Comment=Ceramic Cap
+Change Component Comment : Designator=C4 Old Comment=Cap New Comment=Ceramic Cap
+Change Component Comment : Designator=C5 Old Comment=Cap New Comment=Ceramic Cap
+Change Component Comment : Designator=C8 Old Comment=Ceramic Cap,2.2uF/50V New Comment=Ceramic Cap
+Change Component Comment : Designator=D6 Old Comment=GreenLed New Comment=LED_Red
+Change Component Comment : Designator=L1 Old Comment=Inductor New Comment=IHLP-4040DZ-11
+Change Component Comment : Designator=R13 Old Comment=Res,10K New Comment=Res
+Change Component Comment : Designator=R17 Old Comment=Res,20K New Comment=Res
+Change Component Comment : Designator=R16 Old Comment=Res,620k New Comment=Res

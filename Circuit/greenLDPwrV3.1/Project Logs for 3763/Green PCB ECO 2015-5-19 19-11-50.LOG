@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=PWM Pin=P3-3
+Removed Pin From Net: NetName=SWCLK Pin=P3-4
+Removed Pin From Net: NetName=SWDIO Pin=P3-5
+Removed Pin From Net: NetName=485A Pin=P3-6
+Removed Pin From Net: NetName=485B Pin=P3-7
+Added Pin To Net: NetName=SWCLK Pin=P3-3
+Added Pin To Net: NetName=SWDIO Pin=P3-4
+Added Pin To Net: NetName=485A Pin=P3-5
+Added Pin To Net: NetName=485B Pin=P3-6
+Added Pin To Net: NetName=PWM Pin=P3-7

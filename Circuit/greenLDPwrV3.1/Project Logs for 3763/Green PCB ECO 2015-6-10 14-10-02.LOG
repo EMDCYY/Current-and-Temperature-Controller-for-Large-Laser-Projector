@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=485DIR Pin=U2-18
+Added Pin To Net: NetName=STATUS Pin=U2-18
+Added Pin To Net: NetName=485DIR Pin=U2-21
+Change Net Name : Old Net Name=STATUS New Net Name=STATE
+Change Net Name : Old Net Name=UNDERVOLTAGEPROTECT New Net Name=UVP

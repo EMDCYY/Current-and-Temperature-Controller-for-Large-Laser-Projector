@@ -1,0 +1,688 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : sans-serif;
+			color : white;
+			background-color : #21489e;
+			padding: 0.3em;
+		}
+		body {
+			font-family : verdana;
+		}
+		td, th {
+			padding: 0.5em;
+			text-align : center;
+			width : 18%;
+		}
+		th {
+			background-color : #A6CAF0;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+		}
+		
+		.DRC_summary_header {							
+			padding-bottom : 0.1em;
+			border : 0px solid black;							
+			width: 100%;
+                        align: right;
+                        
+		}
+
+		.DRC_summary_header_col1, 
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3
+		{
+			color : black;
+			font-size:150%;
+                        padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2: 0em;
+			border : 0px solid black;
+			width : auto;
+			vertical-align: top;
+			font-weight: bold;				
+		}
+		
+		.DRC_summary_header_col1 	
+		{		                       
+			text-align: right;
+                        width: auto;	
+		}
+
+		.DRC_summary_header_col2 	
+		{		
+			text-align: center;	
+		}
+
+		.DRC_summary_header_col3 	
+		{		
+			text-align: left;	
+		}
+
+
+		
+		.header_holder
+		{
+		Width = 100%;
+		border = 0px solid green;
+		padding = 0;
+		}
+		
+		
+		
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+                {
+			left:0;
+			top:0;
+			padding-top : 0.1em;			
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top
+
+		}
+		.front_matter {	
+			
+			margin-top: 5px;
+ 			margin-left: 0px;					 			
+ 			horizontal-align: left;
+		}
+				
+		
+		.front_matter_column1 {
+			width : 10em;	
+			text-align  : right;
+			padding-right:0.1em;
+			
+		}
+		
+		.front_matter_column2 {
+                        width: 0.1em;
+			align: center;
+			text-align : center;
+			margin-right  : 0.1em;	
+			margin-left   : 0.1em;
+		}
+		.front_matter_column3 {
+			width         : auto;  
+			text-align    : left;	
+			margin-right  : 0.5em;				
+		}
+		
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : right;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #EEEEE0 
+		}
+		tr.onmouseout_even { 
+			background-color : #F3F3E3   
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : lightYellow
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #008000 
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Documents and Settings\All Users\Documents\Altium\AD13\Templates\AD-rgb_logo_223x64.gif
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td Style="width:70%">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">2015-8-26</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">17:58:27</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3"><a href="file:///E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc" class="file"><acronym title="E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc">E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td Style="Width:30%">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings</td>
+<td class="DRC_summary_header_col2">:</td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations</td>
+<td class="DRC_summary_header_col2">:</td>
+<td class="DRC_summary_header_col3" style="color : red">87</td></tr>
+</table>
+</td>
+</table>
+<hr><a name="IDASIYWD"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAEJYWD">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAKJYWD">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAQJYWD">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAWJYWD">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">60</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDA4KZWD">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAELZWD">Hole Size Constraint (Min=0.198mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAKLZWD">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAQLZWD">Width Constraint (Min=0.203mm) (Max=1.27mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAWLZWD">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDA2LZWD">Clearance Constraint (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">27</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAY1ZWD">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDA41ZWD">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">87</td>
+</tr>
+</table><br><hr><a name="IDAWJYWD"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2761.433mil|Location2.X=2791.087mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2761.433mil|Location2.X=2791.087mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-31(70.517mm,82.89mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2729.937mil|Location2.X=2759.59mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2729.937mil|Location2.X=2759.59mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-32(69.717mm,82.89mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2792.929mil|Location2.X=2822.583mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2792.929mil|Location2.X=2822.583mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-30(71.317mm,82.89mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2761.433mil|Location2.X=2791.087mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2761.433mil|Location2.X=2791.087mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-31(70.517mm,82.89mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2824.425mil|Location2.X=2854.079mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2824.425mil|Location2.X=2854.079mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-29(72.117mm,82.89mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2792.929mil|Location2.X=2822.583mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2792.929mil|Location2.X=2822.583mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-30(71.317mm,82.89mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.921mil|Location2.X=2885.575mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.921mil|Location2.X=2885.575mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-28(72.917mm,82.89mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2824.425mil|Location2.X=2854.079mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2824.425mil|Location2.X=2854.079mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-29(72.117mm,82.89mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2887.417mil|Location2.X=2917.071mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2887.417mil|Location2.X=2917.071mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-27(73.717mm,82.89mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.921mil|Location2.X=2885.575mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.921mil|Location2.X=2885.575mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-28(72.917mm,82.89mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.914mil|Location2.X=2948.567mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.914mil|Location2.X=2948.567mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-26(74.517mm,82.89mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2887.417mil|Location2.X=2917.071mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2887.417mil|Location2.X=2917.071mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-27(73.717mm,82.89mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2950.41mil|Location2.X=2980.063mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2950.41mil|Location2.X=2980.063mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-25(75.317mm,82.89mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.914mil|Location2.X=2948.567mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.914mil|Location2.X=2948.567mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-26(74.517mm,82.89mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3163.913mil|Location2.Y=3193.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3163.913mil|Location2.Y=3193.567mil|Absolute=True">Pad U2-23(76.667mm,80.74mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3195.41mil|Location2.Y=3225.063mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3195.41mil|Location2.Y=3225.063mil|Absolute=True">Pad U2-24(76.667mm,81.54mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3132.417mil|Location2.Y=3162.071mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3132.417mil|Location2.Y=3162.071mil|Absolute=True">Pad U2-22(76.667mm,79.94mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3163.913mil|Location2.Y=3193.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3163.913mil|Location2.Y=3193.567mil|Absolute=True">Pad U2-23(76.667mm,80.74mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3100.921mil|Location2.Y=3130.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3100.921mil|Location2.Y=3130.575mil|Absolute=True">Pad U2-21(76.667mm,79.14mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3132.417mil|Location2.Y=3162.071mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3132.417mil|Location2.Y=3162.071mil|Absolute=True">Pad U2-22(76.667mm,79.94mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3069.425mil|Location2.Y=3099.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3069.425mil|Location2.Y=3099.079mil|Absolute=True">Pad U2-20(76.667mm,78.34mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3100.921mil|Location2.Y=3130.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3100.921mil|Location2.Y=3130.575mil|Absolute=True">Pad U2-21(76.667mm,79.14mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3037.929mil|Location2.Y=3067.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3037.929mil|Location2.Y=3067.583mil|Absolute=True">Pad U2-19(76.667mm,77.54mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3069.425mil|Location2.Y=3099.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3069.425mil|Location2.Y=3099.079mil|Absolute=True">Pad U2-20(76.667mm,78.34mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3006.433mil|Location2.Y=3036.086mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3006.433mil|Location2.Y=3036.086mil|Absolute=True">Pad U2-18(76.667mm,76.74mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3037.929mil|Location2.Y=3067.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3037.929mil|Location2.Y=3067.583mil|Absolute=True">Pad U2-19(76.667mm,77.54mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=2974.937mil|Location2.Y=3004.59mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=2974.937mil|Location2.Y=3004.59mil|Absolute=True">Pad U2-17(76.667mm,75.94mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3006.433mil|Location2.Y=3036.086mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3006.433mil|Location2.Y=3036.086mil|Absolute=True">Pad U2-18(76.667mm,76.74mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.914mil|Location2.X=2948.567mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.914mil|Location2.X=2948.567mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-15(74.517mm,74.59mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2950.41mil|Location2.X=2980.063mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2950.41mil|Location2.X=2980.063mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-16(75.317mm,74.59mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2887.417mil|Location2.X=2917.071mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2887.417mil|Location2.X=2917.071mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-14(73.717mm,74.59mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.914mil|Location2.X=2948.567mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.914mil|Location2.X=2948.567mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-15(74.517mm,74.59mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.921mil|Location2.X=2885.575mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.921mil|Location2.X=2885.575mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-13(72.917mm,74.59mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2887.417mil|Location2.X=2917.071mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2887.417mil|Location2.X=2917.071mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-14(73.717mm,74.59mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2824.425mil|Location2.X=2854.079mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2824.425mil|Location2.X=2854.079mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-12(72.117mm,74.59mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.921mil|Location2.X=2885.575mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.921mil|Location2.X=2885.575mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-13(72.917mm,74.59mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2792.929mil|Location2.X=2822.583mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2792.929mil|Location2.X=2822.583mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-11(71.317mm,74.59mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2824.425mil|Location2.X=2854.079mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2824.425mil|Location2.X=2854.079mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-12(72.117mm,74.59mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2761.433mil|Location2.X=2791.087mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2761.433mil|Location2.X=2791.087mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-10(70.517mm,74.59mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2792.929mil|Location2.X=2822.583mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2792.929mil|Location2.X=2822.583mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-11(71.317mm,74.59mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2729.937mil|Location2.X=2759.59mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2729.937mil|Location2.X=2759.59mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-9(69.717mm,74.59mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2761.433mil|Location2.X=2791.087mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2761.433mil|Location2.X=2791.087mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-10(70.517mm,74.59mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3006.433mil|Location2.Y=3036.086mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3006.433mil|Location2.Y=3036.086mil|Absolute=True">Pad U2-7(68.367mm,76.74mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=2974.937mil|Location2.Y=3004.59mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=2974.937mil|Location2.Y=3004.59mil|Absolute=True">Pad U2-8(68.367mm,75.94mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3037.929mil|Location2.Y=3067.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3037.929mil|Location2.Y=3067.583mil|Absolute=True">Pad U2-6(68.367mm,77.54mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3006.433mil|Location2.Y=3036.086mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3006.433mil|Location2.Y=3036.086mil|Absolute=True">Pad U2-7(68.367mm,76.74mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3069.425mil|Location2.Y=3099.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3069.425mil|Location2.Y=3099.079mil|Absolute=True">Pad U2-5(68.367mm,78.34mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3037.929mil|Location2.Y=3067.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3037.929mil|Location2.Y=3067.583mil|Absolute=True">Pad U2-6(68.367mm,77.54mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3100.921mil|Location2.Y=3130.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3100.921mil|Location2.Y=3130.575mil|Absolute=True">Pad U2-4(68.367mm,79.14mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3069.425mil|Location2.Y=3099.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3069.425mil|Location2.Y=3099.079mil|Absolute=True">Pad U2-5(68.367mm,78.34mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3132.417mil|Location2.Y=3162.071mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3132.417mil|Location2.Y=3162.071mil|Absolute=True">Pad U2-3(68.367mm,79.94mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3100.921mil|Location2.Y=3130.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3100.921mil|Location2.Y=3130.575mil|Absolute=True">Pad U2-4(68.367mm,79.14mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3163.913mil|Location2.Y=3193.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3163.913mil|Location2.Y=3193.567mil|Absolute=True">Pad U2-2(68.367mm,80.74mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3132.417mil|Location2.Y=3162.071mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3132.417mil|Location2.Y=3162.071mil|Absolute=True">Pad U2-3(68.367mm,79.94mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3195.41mil|Location2.Y=3225.063mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3195.41mil|Location2.Y=3225.063mil|Absolute=True">Pad U2-1(68.367mm,81.54mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3163.913mil|Location2.Y=3193.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3163.913mil|Location2.Y=3193.567mil|Absolute=True">Pad U2-2(68.367mm,80.74mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4595.035mil|Location2.X=4618.98mil|Location1.Y=2269.071mil|Location2.Y=2340.063mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4595.035mil|Location2.X=4618.98mil|Location1.Y=2269.071mil|Location2.Y=2340.063mil|Absolute=True">Pad Q3-3(117.018mm,58.536mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4569.051mil|Location2.X=4592.996mil|Location1.Y=2269.071mil|Location2.Y=2340.063mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4569.051mil|Location2.X=4592.996mil|Location1.Y=2269.071mil|Location2.Y=2340.063mil|Absolute=True">Pad Q3-4(116.358mm,58.536mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4595.035mil|Location2.X=4618.98mil|Location1.Y=2418.677mil|Location2.Y=2473.921mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4595.035mil|Location2.X=4618.98mil|Location1.Y=2418.677mil|Location2.Y=2473.921mil|Absolute=True">Pad Q3-6(117.018mm,62.136mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4569.051mil|Location2.X=4592.996mil|Location1.Y=2418.677mil|Location2.Y=2473.921mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4569.051mil|Location2.X=4592.996mil|Location1.Y=2418.677mil|Location2.Y=2473.921mil|Absolute=True">Pad Q3-5(116.358mm,62.136mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4621.02mil|Location2.X=4644.965mil|Location1.Y=2269.071mil|Location2.Y=2340.063mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4621.02mil|Location2.X=4644.965mil|Location1.Y=2269.071mil|Location2.Y=2340.063mil|Absolute=True">Pad Q3-2(117.678mm,58.536mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4595.035mil|Location2.X=4618.98mil|Location1.Y=2269.071mil|Location2.Y=2340.063mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4595.035mil|Location2.X=4618.98mil|Location1.Y=2269.071mil|Location2.Y=2340.063mil|Absolute=True">Pad Q3-3(117.018mm,58.536mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4647.004mil|Location2.X=4670.949mil|Location1.Y=2269.071mil|Location2.Y=2340.063mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4647.004mil|Location2.X=4670.949mil|Location1.Y=2269.071mil|Location2.Y=2340.063mil|Absolute=True">Pad Q3-1(118.338mm,58.536mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4621.02mil|Location2.X=4644.965mil|Location1.Y=2269.071mil|Location2.Y=2340.063mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4621.02mil|Location2.X=4644.965mil|Location1.Y=2269.071mil|Location2.Y=2340.063mil|Absolute=True">Pad Q3-2(117.678mm,58.536mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4621.02mil|Location2.X=4644.965mil|Location1.Y=2418.677mil|Location2.Y=2473.921mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4621.02mil|Location2.X=4644.965mil|Location1.Y=2418.677mil|Location2.Y=2473.921mil|Absolute=True">Pad Q3-7(117.678mm,62.136mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4595.035mil|Location2.X=4618.98mil|Location1.Y=2418.677mil|Location2.Y=2473.921mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4595.035mil|Location2.X=4618.98mil|Location1.Y=2418.677mil|Location2.Y=2473.921mil|Absolute=True">Pad Q3-6(117.018mm,62.136mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4647.004mil|Location2.X=4670.949mil|Location1.Y=2418.677mil|Location2.Y=2473.921mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4647.004mil|Location2.X=4670.949mil|Location1.Y=2418.677mil|Location2.Y=2473.921mil|Absolute=True">Pad Q3-8(118.338mm,62.136mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4621.02mil|Location2.X=4644.965mil|Location1.Y=2418.677mil|Location2.Y=2473.921mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4621.02mil|Location2.X=4644.965mil|Location1.Y=2418.677mil|Location2.Y=2473.921mil|Absolute=True">Pad Q3-7(117.678mm,62.136mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3289.858mil|Location2.Y=3311.638mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3289.858mil|Location2.Y=3311.638mil|Absolute=True">Pad U1-2(107.142mm,83.839mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3315.449mil|Location2.Y=3337.228mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3315.449mil|Location2.Y=3337.228mil|Absolute=True">Pad U1-1(107.142mm,84.489mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3264.268mil|Location2.Y=3286.047mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3264.268mil|Location2.Y=3286.047mil|Absolute=True">Pad U1-3(107.142mm,83.189mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3289.858mil|Location2.Y=3311.638mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3289.858mil|Location2.Y=3311.638mil|Absolute=True">Pad U1-2(107.142mm,83.839mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3238.677mil|Location2.Y=3260.457mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3238.677mil|Location2.Y=3260.457mil|Absolute=True">Pad U1-4(107.142mm,82.539mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3264.268mil|Location2.Y=3286.047mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3264.268mil|Location2.Y=3286.047mil|Absolute=True">Pad U1-3(107.142mm,83.189mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3213.087mil|Location2.Y=3234.866mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3213.087mil|Location2.Y=3234.866mil|Absolute=True">Pad U1-5(107.142mm,81.889mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3238.677mil|Location2.Y=3260.457mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3238.677mil|Location2.Y=3260.457mil|Absolute=True">Pad U1-4(107.142mm,82.539mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3187.496mil|Location2.Y=3209.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3187.496mil|Location2.Y=3209.276mil|Absolute=True">Pad U1-6(107.142mm,81.239mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3213.087mil|Location2.Y=3234.866mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3213.087mil|Location2.Y=3234.866mil|Absolute=True">Pad U1-5(107.142mm,81.889mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3161.906mil|Location2.Y=3183.685mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3161.906mil|Location2.Y=3183.685mil|Absolute=True">Pad U1-7(107.142mm,80.589mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3187.496mil|Location2.Y=3209.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3187.496mil|Location2.Y=3209.276mil|Absolute=True">Pad U1-6(107.142mm,81.239mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3136.315mil|Location2.Y=3158.094mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3136.315mil|Location2.Y=3158.094mil|Absolute=True">Pad U1-8(107.142mm,79.939mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3161.906mil|Location2.Y=3183.685mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3161.906mil|Location2.Y=3183.685mil|Absolute=True">Pad U1-7(107.142mm,80.589mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3110.724mil|Location2.Y=3132.504mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3110.724mil|Location2.Y=3132.504mil|Absolute=True">Pad U1-9(107.142mm,79.289mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3136.315mil|Location2.Y=3158.094mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3136.315mil|Location2.Y=3158.094mil|Absolute=True">Pad U1-8(107.142mm,79.939mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3085.134mil|Location2.Y=3106.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3085.134mil|Location2.Y=3106.913mil|Absolute=True">Pad U1-10(107.142mm,78.639mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3110.724mil|Location2.Y=3132.504mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3110.724mil|Location2.Y=3132.504mil|Absolute=True">Pad U1-9(107.142mm,79.289mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3059.543mil|Location2.Y=3081.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3059.543mil|Location2.Y=3081.323mil|Absolute=True">Pad U1-11(107.142mm,77.989mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3085.134mil|Location2.Y=3106.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3085.134mil|Location2.Y=3106.913mil|Absolute=True">Pad U1-10(107.142mm,78.639mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3033.953mil|Location2.Y=3055.732mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3033.953mil|Location2.Y=3055.732mil|Absolute=True">Pad U1-12(107.142mm,77.339mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3059.543mil|Location2.Y=3081.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3059.543mil|Location2.Y=3081.323mil|Absolute=True">Pad U1-11(107.142mm,77.989mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3008.362mil|Location2.Y=3030.142mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3008.362mil|Location2.Y=3030.142mil|Absolute=True">Pad U1-13(107.142mm,76.689mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3033.953mil|Location2.Y=3055.732mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3033.953mil|Location2.Y=3055.732mil|Absolute=True">Pad U1-12(107.142mm,77.339mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=2982.772mil|Location2.Y=3004.551mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=2982.772mil|Location2.Y=3004.551mil|Absolute=True">Pad U1-14(107.142mm,76.039mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3008.362mil|Location2.Y=3030.142mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4183.677mil|Location2.X=4252.701mil|Location1.Y=3008.362mil|Location2.Y=3030.142mil|Absolute=True">Pad U1-13(107.142mm,76.689mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3289.858mil|Location2.Y=3311.638mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3289.858mil|Location2.Y=3311.638mil|Absolute=True">Pad U1-27(101.392mm,83.839mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3315.449mil|Location2.Y=3337.228mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3315.449mil|Location2.Y=3337.228mil|Absolute=True">Pad U1-28(101.392mm,84.489mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3264.268mil|Location2.Y=3286.047mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3264.268mil|Location2.Y=3286.047mil|Absolute=True">Pad U1-26(101.392mm,83.189mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3289.858mil|Location2.Y=3311.638mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3289.858mil|Location2.Y=3311.638mil|Absolute=True">Pad U1-27(101.392mm,83.839mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3238.677mil|Location2.Y=3260.457mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3238.677mil|Location2.Y=3260.457mil|Absolute=True">Pad U1-25(101.392mm,82.539mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3264.268mil|Location2.Y=3286.047mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3264.268mil|Location2.Y=3286.047mil|Absolute=True">Pad U1-26(101.392mm,83.189mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3213.087mil|Location2.Y=3234.866mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3213.087mil|Location2.Y=3234.866mil|Absolute=True">Pad U1-24(101.392mm,81.889mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3238.677mil|Location2.Y=3260.457mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3238.677mil|Location2.Y=3260.457mil|Absolute=True">Pad U1-25(101.392mm,82.539mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3187.496mil|Location2.Y=3209.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3187.496mil|Location2.Y=3209.276mil|Absolute=True">Pad U1-23(101.392mm,81.239mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3213.087mil|Location2.Y=3234.866mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3213.087mil|Location2.Y=3234.866mil|Absolute=True">Pad U1-24(101.392mm,81.889mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3161.906mil|Location2.Y=3183.685mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3161.906mil|Location2.Y=3183.685mil|Absolute=True">Pad U1-22(101.392mm,80.589mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3187.496mil|Location2.Y=3209.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3187.496mil|Location2.Y=3209.276mil|Absolute=True">Pad U1-23(101.392mm,81.239mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3136.315mil|Location2.Y=3158.094mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3136.315mil|Location2.Y=3158.094mil|Absolute=True">Pad U1-21(101.392mm,79.939mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3161.906mil|Location2.Y=3183.685mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3161.906mil|Location2.Y=3183.685mil|Absolute=True">Pad U1-22(101.392mm,80.589mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3110.724mil|Location2.Y=3132.504mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3110.724mil|Location2.Y=3132.504mil|Absolute=True">Pad U1-20(101.392mm,79.289mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3136.315mil|Location2.Y=3158.094mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3136.315mil|Location2.Y=3158.094mil|Absolute=True">Pad U1-21(101.392mm,79.939mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3085.134mil|Location2.Y=3106.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3085.134mil|Location2.Y=3106.913mil|Absolute=True">Pad U1-19(101.392mm,78.639mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3110.724mil|Location2.Y=3132.504mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3110.724mil|Location2.Y=3132.504mil|Absolute=True">Pad U1-20(101.392mm,79.289mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3059.543mil|Location2.Y=3081.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3059.543mil|Location2.Y=3081.323mil|Absolute=True">Pad U1-18(101.392mm,77.989mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3085.134mil|Location2.Y=3106.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3085.134mil|Location2.Y=3106.913mil|Absolute=True">Pad U1-19(101.392mm,78.639mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3033.953mil|Location2.Y=3055.732mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3033.953mil|Location2.Y=3055.732mil|Absolute=True">Pad U1-17(101.392mm,77.339mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3059.543mil|Location2.Y=3081.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3059.543mil|Location2.Y=3081.323mil|Absolute=True">Pad U1-18(101.392mm,77.989mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3008.362mil|Location2.Y=3030.142mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3008.362mil|Location2.Y=3030.142mil|Absolute=True">Pad U1-16(101.392mm,76.689mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3033.953mil|Location2.Y=3055.732mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3033.953mil|Location2.Y=3055.732mil|Absolute=True">Pad U1-17(101.392mm,77.339mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=2982.772mil|Location2.Y=3004.551mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=2982.772mil|Location2.Y=3004.551mil|Absolute=True">Pad U1-15(101.392mm,76.039mm)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3008.362mil|Location2.Y=3030.142mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3957.299mil|Location2.X=4026.323mil|Location1.Y=3008.362mil|Location2.Y=3030.142mil|Absolute=True">Pad U1-16(101.392mm,76.689mm)  Bottom Layer</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDA2LZWD"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Clearance Constraint (Gap=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2792.929mil|Location2.X=2822.583mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2792.929mil|Location2.X=2822.583mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-30(71.317mm,82.89mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2761.433mil|Location2.X=2791.087mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2761.433mil|Location2.X=2791.087mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-31(70.517mm,82.89mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2824.425mil|Location2.X=2854.079mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2824.425mil|Location2.X=2854.079mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-29(72.117mm,82.89mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2792.929mil|Location2.X=2822.583mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2792.929mil|Location2.X=2822.583mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-30(71.317mm,82.89mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.921mil|Location2.X=2885.575mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.921mil|Location2.X=2885.575mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-28(72.917mm,82.89mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2824.425mil|Location2.X=2854.079mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2824.425mil|Location2.X=2854.079mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-29(72.117mm,82.89mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2887.417mil|Location2.X=2917.071mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2887.417mil|Location2.X=2917.071mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-27(73.717mm,82.89mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.921mil|Location2.X=2885.575mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.921mil|Location2.X=2885.575mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-28(72.917mm,82.89mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.914mil|Location2.X=2948.567mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.914mil|Location2.X=2948.567mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-26(74.517mm,82.89mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2887.417mil|Location2.X=2917.071mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2887.417mil|Location2.X=2917.071mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-27(73.717mm,82.89mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2950.41mil|Location2.X=2980.063mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2950.41mil|Location2.X=2980.063mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-25(75.317mm,82.89mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.914mil|Location2.X=2948.567mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.914mil|Location2.X=2948.567mil|Location1.Y=3225.921mil|Location2.Y=3300.85mil|Absolute=True">Pad U2-26(74.517mm,82.89mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3163.913mil|Location2.Y=3193.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3163.913mil|Location2.Y=3193.567mil|Absolute=True">Pad U2-23(76.667mm,80.74mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3195.41mil|Location2.Y=3225.063mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3195.41mil|Location2.Y=3225.063mil|Absolute=True">Pad U2-24(76.667mm,81.54mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3132.417mil|Location2.Y=3162.071mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3132.417mil|Location2.Y=3162.071mil|Absolute=True">Pad U2-22(76.667mm,79.94mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3163.913mil|Location2.Y=3193.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3163.913mil|Location2.Y=3193.567mil|Absolute=True">Pad U2-23(76.667mm,80.74mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3100.921mil|Location2.Y=3130.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3100.921mil|Location2.Y=3130.575mil|Absolute=True">Pad U2-21(76.667mm,79.14mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3132.417mil|Location2.Y=3162.071mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3132.417mil|Location2.Y=3162.071mil|Absolute=True">Pad U2-22(76.667mm,79.94mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3069.425mil|Location2.Y=3099.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3069.425mil|Location2.Y=3099.079mil|Absolute=True">Pad U2-20(76.667mm,78.34mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3100.921mil|Location2.Y=3130.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3100.921mil|Location2.Y=3130.575mil|Absolute=True">Pad U2-21(76.667mm,79.14mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3037.929mil|Location2.Y=3067.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3037.929mil|Location2.Y=3067.583mil|Absolute=True">Pad U2-19(76.667mm,77.54mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3069.425mil|Location2.Y=3099.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3069.425mil|Location2.Y=3099.079mil|Absolute=True">Pad U2-20(76.667mm,78.34mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3006.433mil|Location2.Y=3036.086mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3006.433mil|Location2.Y=3036.086mil|Absolute=True">Pad U2-18(76.667mm,76.74mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3037.929mil|Location2.Y=3067.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3037.929mil|Location2.Y=3067.583mil|Absolute=True">Pad U2-19(76.667mm,77.54mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=2974.937mil|Location2.Y=3004.59mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=2974.937mil|Location2.Y=3004.59mil|Absolute=True">Pad U2-17(76.667mm,75.94mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3006.433mil|Location2.Y=3036.086mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2980.921mil|Location2.X=3055.85mil|Location1.Y=3006.433mil|Location2.Y=3036.086mil|Absolute=True">Pad U2-18(76.667mm,76.74mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.914mil|Location2.X=2948.567mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.914mil|Location2.X=2948.567mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-15(74.517mm,74.59mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2950.41mil|Location2.X=2980.063mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2950.41mil|Location2.X=2980.063mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-16(75.317mm,74.59mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2887.417mil|Location2.X=2917.071mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2887.417mil|Location2.X=2917.071mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-14(73.717mm,74.59mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.914mil|Location2.X=2948.567mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.914mil|Location2.X=2948.567mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-15(74.517mm,74.59mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.921mil|Location2.X=2885.575mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.921mil|Location2.X=2885.575mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-13(72.917mm,74.59mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2887.417mil|Location2.X=2917.071mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2887.417mil|Location2.X=2917.071mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-14(73.717mm,74.59mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2824.425mil|Location2.X=2854.079mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2824.425mil|Location2.X=2854.079mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-12(72.117mm,74.59mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.921mil|Location2.X=2885.575mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.921mil|Location2.X=2885.575mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-13(72.917mm,74.59mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2792.929mil|Location2.X=2822.583mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2792.929mil|Location2.X=2822.583mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-11(71.317mm,74.59mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2824.425mil|Location2.X=2854.079mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2824.425mil|Location2.X=2854.079mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-12(72.117mm,74.59mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2761.433mil|Location2.X=2791.087mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2761.433mil|Location2.X=2791.087mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-10(70.517mm,74.59mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2792.929mil|Location2.X=2822.583mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2792.929mil|Location2.X=2822.583mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-11(71.317mm,74.59mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2729.937mil|Location2.X=2759.59mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2729.937mil|Location2.X=2759.59mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-9(69.717mm,74.59mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2761.433mil|Location2.X=2791.087mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2761.433mil|Location2.X=2791.087mil|Location1.Y=2899.15mil|Location2.Y=2974.079mil|Absolute=True">Pad U2-10(70.517mm,74.59mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3006.433mil|Location2.Y=3036.086mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3006.433mil|Location2.Y=3036.086mil|Absolute=True">Pad U2-7(68.367mm,76.74mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=2974.937mil|Location2.Y=3004.59mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=2974.937mil|Location2.Y=3004.59mil|Absolute=True">Pad U2-8(68.367mm,75.94mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3037.929mil|Location2.Y=3067.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3037.929mil|Location2.Y=3067.583mil|Absolute=True">Pad U2-6(68.367mm,77.54mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3006.433mil|Location2.Y=3036.086mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3006.433mil|Location2.Y=3036.086mil|Absolute=True">Pad U2-7(68.367mm,76.74mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3069.425mil|Location2.Y=3099.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3069.425mil|Location2.Y=3099.079mil|Absolute=True">Pad U2-5(68.367mm,78.34mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3037.929mil|Location2.Y=3067.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3037.929mil|Location2.Y=3067.583mil|Absolute=True">Pad U2-6(68.367mm,77.54mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3100.921mil|Location2.Y=3130.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3100.921mil|Location2.Y=3130.575mil|Absolute=True">Pad U2-4(68.367mm,79.14mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3069.425mil|Location2.Y=3099.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3069.425mil|Location2.Y=3099.079mil|Absolute=True">Pad U2-5(68.367mm,78.34mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3132.417mil|Location2.Y=3162.071mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3132.417mil|Location2.Y=3162.071mil|Absolute=True">Pad U2-3(68.367mm,79.94mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3100.921mil|Location2.Y=3130.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3100.921mil|Location2.Y=3130.575mil|Absolute=True">Pad U2-4(68.367mm,79.14mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3163.913mil|Location2.Y=3193.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3163.913mil|Location2.Y=3193.567mil|Absolute=True">Pad U2-2(68.367mm,80.74mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3132.417mil|Location2.Y=3162.071mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3132.417mil|Location2.Y=3162.071mil|Absolute=True">Pad U2-3(68.367mm,79.94mm)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3195.41mil|Location2.Y=3225.063mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3195.41mil|Location2.Y=3225.063mil|Absolute=True">Pad U2-1(68.367mm,81.54mm)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3163.913mil|Location2.Y=3193.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.15mil|Location2.X=2729.079mil|Location1.Y=3163.913mil|Location2.Y=3193.567mil|Absolute=True">Pad U2-2(68.367mm,80.74mm)  Top Layer</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br></body>
+</html>

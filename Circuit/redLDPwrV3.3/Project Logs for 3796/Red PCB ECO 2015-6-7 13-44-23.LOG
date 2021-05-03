@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=GND Pin=C6-1
+Removed Pin From Net: NetName=CS_P Pin=C6-2
+Removed Pin From Net: NetName=GND Pin=C36-1
+Removed Pin From Net: NetName=IS_P Pin=C36-2
+Removed Member From Class: ClassName=3796 Member=C6
+Added Component: Designator=C36(1206[3216] - NP)
+Added Pin To Net: NetName=GND Pin=C36-1
+Added Pin To Net: NetName=IS_P Pin=C36-2

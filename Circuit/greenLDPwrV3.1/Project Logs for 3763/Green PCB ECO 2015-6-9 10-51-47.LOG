@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=NetR32_2 Pin=U2-14
+Removed Pin From Net: NetName=IVINMON Pin=U2-15
+Removed Member From Class: ClassName=PWR Member=R33
+Added Pin To Net: NetName=IVINMON Pin=U2-14
+Added Pin To Net: NetName=NetR32_2 Pin=U2-15

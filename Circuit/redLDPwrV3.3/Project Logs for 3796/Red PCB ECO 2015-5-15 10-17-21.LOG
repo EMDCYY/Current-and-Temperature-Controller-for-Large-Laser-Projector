@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=LP- Pin=D6-2
+Added Pin To Net: NetName=STATUS Pin=D6-2
+Added Pin To Net: NetName=STATUS Pin=U3-18
+Added Net: Name=STATUS

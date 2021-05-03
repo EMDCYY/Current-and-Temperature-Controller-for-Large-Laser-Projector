@@ -1,0 +1,6 @@
+Change Component Footprint: Designator=R25 Old Footprint=2012[0805] New Footprint=1206[3216] - NP
+Added Component: Designator=C23(1608[0603])
+Added Pin To Net: NetName=3V3 Pin=C23-1
+Added Pin To Net: NetName=GND Pin=C23-2
+Added Member To Class: ClassName=3796 Member=Component C8 Altium Electrolytic Cap
+Added Member To Class: ClassName=MCU Member=Component C23 Ceramic Cap

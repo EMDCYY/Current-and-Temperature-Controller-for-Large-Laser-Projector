@@ -1,0 +1,11 @@
+Change Component Designator: OldDesignator=24V NewDesignator=T1
+Added Component: Designator=T2(TestPoint)
+Added Component: Designator=T3(TestPoint)
+Added Component: Designator=T4(TestPoint)
+Added Pin To Net: NetName=CTRL Pin=T2-1
+Added Pin To Net: NetName=GND Pin=T3-1
+Added Pin To Net: NetName=LD+ Pin=T4-1
+Added Member To Class: ClassName=PWR Member=Component T1 Test Point
+Added Member To Class: ClassName=3796 Member=Component T2 Test Point
+Added Member To Class: ClassName=3796 Member=Component T3 Test Point
+Added Member To Class: ClassName=3796 Member=Component T4 Test Point

@@ -1,0 +1,2 @@
+Added Pin To Net: NetName=VOUT Pin=P3-6
+Change Net Name : Old Net Name=VOUT New Net Name=LD+

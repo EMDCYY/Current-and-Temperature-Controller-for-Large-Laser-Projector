@@ -1,0 +1,4 @@
+Added Component: Designator=R25(1206[3216] - NP)
+Added Pin To Net: NetName=VIN_24V Pin=R25-1
+Added Pin To Net: NetName=NetP1_1 Pin=R25-2
+Added Member To Class: ClassName=PWR Member=Component R25 PTC

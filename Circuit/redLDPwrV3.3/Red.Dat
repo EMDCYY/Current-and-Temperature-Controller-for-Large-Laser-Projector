@@ -1,0 +1,55 @@
+Field=Comment~String~Comment~100|Field=Description~String~Description~100|Field=Designator~String~Designator~100|Field=Footprint~String~Footprint~100|Field=LibRef~String~LibRef~100|Field=Quantity~Integer~Quantity~100|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~3796.PrjPCB|ReportField=ProjectFullPath~E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\3796.PrjPCB|ReportField=Title~Bill of Materials For PCB Document [Red.PcbDoc]|ReportField=TotalQuantity~97|ReportField=ReportTime~11:19:48|ReportField=ReportDate~2015-9-30|ReportField=ReportDateTime~2015-9-30 11:19:48|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=DataSourceFileName~Red.PcbDoc|ReportField=DataSourceFullPath~E:\laserTrackerDesign\$16LDPower\PCB\redLDPwrV3.3\Red.PcbDoc
+NoPop|Polarized Capacitor (Radial)|C1, C20|SMC_Altium Capacity 8*10|Cap Pol1|2
+47uF/50V|Capacitor|C2, C15|1206[3216] - NP|Cap|2
+22uF/50V|Capacitor|C3, C16, C17|1206[3216] - NP|Cap|3
+100nF|Capacitor|C4, C5, C8, C12, C21, C22, C25, C26, C27, C28, C29, C33|1608[0603]|Cap|12
+10nF|Capacitor|C7, C11|1608[0603]|Cap|2
+4.7uF/50V|Capacitor|C9|1206[3216] - NP|Cap|1
+1uF|Capacitor|C10|1608[0603]|Cap|1
+2.2uF/50V|Capacitor|C13|2012[0805]|Cap|1
+NoPop|Capacitor|C14|1206[3216] - NP|Cap|1
+100uF/50V|Capacitor|C18, C19, C36|1206[3216] - NP|Cap|3
+20pF|Capacitor|C23, C24|1608[0603]|Cap|2
+22uF|Capacitor|C30, C31, C34|1608[0603]|Cap|3
+10uF|Capacitor|C32, C35|1608[0603]|Cap|2
+SMAJ36CA|Schottky Diode|D3|SMA_DIOM5226X26N|D Schottky|1
+PDS5100|Schottky Diode|D4|PowerDI5|D Schottky|1
+SMAJ26CA|Schottky Diode|D5|SMA_DIOM5226X26N|D Schottky|1
+LED|Typical INFRARED GaAs LED|D6|2012[0805] - LED|LED0|1
+IHLP-4040DZ-11|Inductor|L1|IHLP4040|Inductor|1
+VH Connector, B2P-VH|Header, 2-Pin|P1|2PIN-B2P_VH|Header 2|1
+HY-8AD|Header, 8-Pin|P2|8P -HY-8AD|Header 8|1
+TJC3B-8AD|Header, 8-Pin|P3|8P-TJC3B8AD|Header 8|1
+Header 4|Header, 4-Pin|P4|HDR1X4|Header 4|1
+2N2907|PNP General Purpose Amplifier|Q1|SOT95P280X115-3N|2N3906|1
+BSC160N10NS3 G|N-Channel OptiMOS 3 Power-Transistor, 100 V VDS, 42 A ID, -55 to 150 degC, PG-TDSON-8-1, Reel, Green|Q2|INF-PG-TDSON-8-1_V|BSC160N10NS3 G|1
+Si7113dn|PMOS, Si7113dn|Q3|1212-8 SINGLE|PWR_ Si7113dn|1
+100K|Resistor|R1, R2, R6, R7, R11, R12|1608[0603]|Res1|6
+50|Resistor|R3, R34|1608[0603]|Res1|2
+20K|Variable Resistor|R4|RES-adj|Res Adj1|1
+NoPop|Resistor|R5, R9|1608[0603]|Res1|2
+2K|Resistor|R8, R40|1608[0603]|Res1|2
+200K|Resistor|R10|1608[0603]|Res1|1
+6K|Resistor|R13|1608[0603]|Res1|1
+0.01|Resistor|R14|2512[6432]|Res1|1
+10K|Resistor|R15, R23|1608[0603]|Res1|2
+20K|Resistor|R16, R19, R30|1608[0603]|Res1|3
+0.02|Resistor|R17|2512[6432]|Res1|1
+620K|Resistor|R18|1608[0603]|Res1|1
+0.05|Resistor|R20|2512[6432]|Res1|1
+0.2|Resistor|R21|2512[6432]|Res1|1
+2M|Resistor|R22|1608[0603]|Res1|1
+3K3|Resistor|R24, R25, R29, R36, R38, R42, R43|1608[0603]|Res1|7
+0|Resistor|R26|1608[0603]|Res1|1
+390|Resistor|R27|1608[0603]|Res1|1
+1K|Resistor|R28, R32, R33|1608[0603]|Res1|3
+120|Resistor|R37|1608[0603]|Res1|1
+50K|Resistor|R39|1608[0603]|Res1|1
+0|Resistor|R41|2012[0805]|Res1|1
+Test Point||T2, T3, T4|TestPoint|TP|3
+PWR_LT3796_Boost|100V Constant-Current and   Constant-Voltage Controller   with Dual Current Sense|U1|TSOP65P640X120_HS-29N|PWR_LT3796_Boost|1
+STM32F051K8T6|Low- and medium-density advanced ARM?-based 32-bit MCU with  16 to 64 Kbytes Flash, timers, ADC, DAC and comm. interfaces|U2|TQFP80P900X900X160-32N|MCU_STM32F051K8T6|1
+SP3485EN|Low-Power, Slew-Rate-Limited  RS-485/RS-422 Transceivers|U3|SOIC127P600-8N|LGC_RS485|1
+L78L05|POSITIVE VOLTAGE REGULATORS|U4|SOT89-150P410X160-3N|PWR_L78L05|1
+AMS1117-3.3V|5V×ª3V3 10mA  DC/DC|U5|SOT89-150P410X160-3N|PWR_LM1XXX|1
+XTAL|Crystal Oscillator|Y1|XTAL_SMT|XTAL|1

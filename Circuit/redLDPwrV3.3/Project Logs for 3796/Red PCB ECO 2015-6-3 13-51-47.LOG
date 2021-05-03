@@ -1,0 +1,21 @@
+Removed Pin From Net: NetName=NTC2+ Pin=R29-1
+Removed Pin From Net: NetName=3V3 Pin=R29-2
+Removed Pin From Net: NetName=LP- Pin=R41-1
+Removed Pin From Net: NetName=GND Pin=R41-2
+Removed Pin From Net: NetName=LP- Pin=R43-1
+Removed Pin From Net: NetName=STATE Pin=R43-2
+Added Component: Designator=R29(1608[0603])
+Added Component: Designator=R41(2012[0805])
+Added Component: Designator=R43(1608[0603])
+Added Pin To Net: NetName=NetC12_2 Pin=P3-3
+Added Pin To Net: NetName=NetC12_2 Pin=P3-4
+Added Pin To Net: NetName=NTC2+ Pin=R29-1
+Added Pin To Net: NetName=3V3 Pin=R29-2
+Added Pin To Net: NetName=LP- Pin=R41-1
+Added Pin To Net: NetName=GND Pin=R41-2
+Added Pin To Net: NetName=LP- Pin=R43-1
+Added Pin To Net: NetName=STATE Pin=R43-2
+Change Net Name : Old Net Name=NetC12_2 New Net Name=LD+
+Added Member To Class: ClassName=MCU Member=Component R29 3.3K
+Added Member To Class: ClassName=PWR Member=Component R41 0
+Added Member To Class: ClassName=PWR Member=Component R43 3.3K

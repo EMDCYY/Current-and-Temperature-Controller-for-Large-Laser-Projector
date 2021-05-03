@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=UNDERVOLTAGEPROTECT Pin=U3-6
+Removed Pin From Net: NetName=LP+ Pin=U3-7
+Added Pin To Net: NetName=LP+ Pin=U3-6
+Added Pin To Net: NetName=UNDERVOLTAGEPROTECT Pin=U3-7

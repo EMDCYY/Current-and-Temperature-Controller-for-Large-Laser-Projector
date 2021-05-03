@@ -1,0 +1,39 @@
+Bill of Material for 
+On 2015-5-25 at 10:43:29
+
+ Comment             Pattern     Quantity  Components
+------------------------------------------------------------------------------
+ 2N2907              SOT95P280X115-3N    1    Q1                           PNP General Purpose Amplifier 
+ Altium Electrolytic Cap SMC_ALTIUM CAPACITY 8*10    2    C1, C18                      Polarized Capacitor (Radial) 
+ AMS1117-3.3V        SOT89-150P410X160-3N    1    U6                           5V×ª3V3 10mA  DC/DC   
+ BSC160N10NS3 G      INF-PG-TDSON-8-1_V    1    Q2                           N-Channel OptiMOS 3 Power-Transistor, 100 V VDS, 42 A ID, -55 to 150 degC, PG-TDSON-8-1, Reel, Green 
+ Ceramic Cap         1206[3216] - NP    9    C2, C3, C8, C12, C13, C14    Capacitor            
+                                           C15, C16, C17
+ Ceramic Cap         1608[0603]      23    C4, C5, C6, C7, C9, C10, C11 Capacitor            
+                                           C19, C20, C21, C22, C23, C24
+                                           C25, C26, C27, C28, C29, C30
+                                           C31, C32, C33, C34
+ Header 4            HDR1X4           1    P4                           Header, 4-Pin        
+ HY-8AD              8P -HY-8AD       1    P2                           Header, 8-Pin        
+ IHLP-4040DZ-11      IHLP4040         1    L1                           Inductor             
+ L78L05              SOT89-150P410X160-3N    1    U5                           POSITIVE VOLTAGE REGULATORS 
+ LED_Red             2012[0805] - LED    3    D1, D2, D6                   Typical INFRARED GaAs LED 
+ MAX3207E            SOT95P280X145-6N    1    U2                           Dual, Quad, and Hex High-Speed  Differential ESD-Protection ICs 
+ PDS5100             PowerDI5         1    D4                           Schottky Diode       
+ PWR_LT3796_Boost    TSOP65P640X120_HS-29N    1    U1                           100V Constant-Current and   Constant-Voltage Controller   with Dual Current Sense 
+ Res Adj1            RES-adj          1    R5                           Variable Resistor    
+ Res                 1608[0603]      28    R1, R2, R3, R4, R6, R7, R8   Resistor             
+                                           R9, R10, R11, R13, R14, R16
+                                           R17, R20, R21, R22, R23, R24
+                                           R25, R26, R27, R28, R29, R30
+                                           R31, R33, R34
+ Res                 2012[0805]       1    R32                          Resistor             
+ Res                 2512[6432]       4    R12, R15, R18, R19           Resistor             
+ Si7113dn            1212-8 SINGLE    1    Q3                           PMOS, Si7113dn       
+ SMAJ26CA            SMA_DIOM5226X26N    1    D5                           Schottky Diode       
+ SMAJ36CA            SMA_DIOM5226X26N    1    D3                           Schottky Diode       
+ SP3485EN            SOIC127P600-8N    1    U4                           Low-Power, Slew-Rate-Limited  RS-485/RS-422 Transceivers 
+ STM32F051K8T6       TQFP80P900X900X160-32N    1    U3                           Low- and medium-density advanced ARM?-based 32-bit MCU with  16 to 64 Kbytes Flash, timers, ADC, DAC and comm. interfaces 
+ TJC3B-8AD           8P-TJC3B8AD      1    P3                           Header, 8-Pin        
+ VH Connector, B2P-VH 2PIN-B2P_VH      1    P1                           Header, 2-Pin        
+ XTAL                XTAL_SMT         1    Y1                           Crystal Oscillator   
